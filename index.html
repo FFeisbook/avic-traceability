@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>中航工业溯源平台 · 产品原型</title>
-<meta name="description" content="中航工业溯源平台产品原型：覆盖平台运营端、销售平台端、检测机构端、供应商端及消费者端，支持溯源任务派发、检测协同、溯源码管理与乡村振兴赋能。">
-<meta property="og:title" content="中航工业溯源平台 · 产品原型">
-<meta property="og:description" content="中航工业溯源平台产品原型：覆盖平台运营端、销售平台端、检测机构端、供应商端及消费者端，支持溯源任务派发、检测协同、溯源码管理与乡村振兴赋能。">
+<title>航空工业高质量乡村振兴赋能平台 · 产品原型</title>
+<meta name="description" content="航空工业高质量乡村振兴赋能平台产品原型：覆盖平台运营端、销售平台端、检测机构端、供应商端及消费者端，支持溯源任务派发、检测协同、溯源码管理与乡村振兴赋能。">
+<meta property="og:title" content="航空工业高质量乡村振兴赋能平台 · 产品原型">
+<meta property="og:description" content="航空工业高质量乡村振兴赋能平台产品原型：覆盖平台运营端、销售平台端、检测机构端、供应商端及消费者端，支持溯源任务派发、检测协同、溯源码管理与乡村振兴赋能。">
 <meta property="og:type" content="website">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
@@ -198,17 +198,28 @@ html,body{height:100%;margin:0;padding:0;font-family:var(--font);background:var(
 .scan-logo-icon{width:34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;}
 .scan-logo-text{font-size:15px;font-weight:700;color:var(--navy);}
 @media(max-width:900px){.sidebar{width:180px;}.main{left:180px;}}
+
+.flow-steps{display:flex;align-items:stretch;gap:6px;overflow-x:auto;padding:10px 4px;}
+.flow-step{flex:0 0 auto;width:110px;text-align:center;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:10px 6px;font-size:12px;line-height:1.4;display:flex;flex-direction:column;justify-content:flex-start;}
+.flow-step-num{width:20px;height:20px;border-radius:50%;background:var(--navy);color:#fff;font-size:11px;display:flex;align-items:center;justify-content:center;margin:0 auto 6px;font-weight:700;}
+.flow-step.sc2 .flow-step-num{background:var(--teal);}
+.flow-step.sc3 .flow-step-num{background:var(--orange);}
+.flow-step.sc4 .flow-step-num{background:var(--purple);}
+.flow-step-role{font-size:10px;color:#64748b;margin-bottom:3px;}
+.flow-step-action{font-weight:600;color:#1B3A6B;}
+.flow-arrow{flex:0 0 auto;display:flex;align-items:center;color:#94a3b8;font-size:18px;padding:0 2px;font-weight:700;}
+.flow-step-note{font-size:11px;color:var(--gray);margin-top:4px;line-height:1.4;}
 </style>
 </head>
 <body>
 <div class="topbar">
-  <div style="display:flex;align-items:center;"><span class="logo">中航工业溯源平台</span><span class="sub">产品端功能原型</span><span class="disclaimer">本原型仅用于业务需求澄清，实际功能以产品需求文档为准</span></div>
+  <div style="display:flex;align-items:center;"><span class="logo">航空工业高质量乡村振兴赋能平台</span><span class="sub">产品端功能原型</span><span class="disclaimer">本原型仅用于业务需求澄清，实际功能以产品需求文档为准</span></div>
   <div class="actions">
-    <select onchange="showScreen(this.value)"><option value="">快速跳转...</option><option value="overview-flow">业务需求理解</option><option value="overview-arch">产品架构总图</option><option value="admin-dashboard">工作台</option><option value="admin-platforms">销售平台管理</option><option value="admin-templates">检测模板配置</option><option value="admin-providers">溯源机构与费用配置</option><option value="admin-suppliers">供应商管理</option><option value="admin-products">溯源商品管理</option><option value="admin-dispatch">溯源任务派发</option><option value="admin-spotcheck">天虹监督任务</option><option value="admin-reports">溯源报告&溯源码管理</option><option value="admin-api-interface">溯源信息标准接口</option><option value="admin-report-products">乡村振兴商品清单</option><option value="admin-report-fees">溯源机构费用报表</option><option value="admin-report-sales">销售报表/看板</option><option value="admin-report-rural">乡村振兴工作报告</option><option value="admin-empower">乡村振兴赋能</option><option value="admin-roles">角色管理</option><option value="admin-permissions">权限管理</option><option value="admin-accounts">账号配置</option><option value="sales-submit">商品与供应商提报</option><option value="sales-tracking">溯源商品跟踪</option><option value="sales-collab">检测协同</option><option value="sales-code">溯源码下载</option><option value="inspector-tasks">任务接收</option><option value="inspector-detail">任务详情</option><option value="inspector-api">检测报告API对接</option><option value="supplier-origin">源头资料补充</option><option value="supplier-label">溯源码应用</option><option value="consumer-scan">扫码结果</option><option value="label-design">标签设计</option></select>
+    <select onchange="showScreen(this.value)"><option value="">快速跳转...</option><option value="overview-flow">业务需求理解</option><option value="overview-arch">产品架构总图</option><option value="admin-dashboard">工作台</option><option value="admin-platforms">销售平台管理</option><option value="admin-templates">检测模板配置</option><option value="admin-providers">溯源机构与费用配置</option><option value="admin-suppliers">供应商管理</option><option value="admin-products">溯源商品管理</option><option value="admin-dispatch">溯源任务派发</option><option value="admin-spotcheck">天虹监督任务</option><option value="admin-reports">溯源报告&溯源码管理</option><option value="admin-api-interface">溯源信息标准接口</option><option value="admin-report-products">乡村振兴商品清单</option><option value="admin-report-fees">溯源机构费用报表</option><option value="admin-report-sales">销售报表/看板</option><option value="admin-report-rural">乡村振兴工作报告</option><option value="admin-empower">乡村振兴赋能</option><option value="admin-roles">角色管理</option><option value="admin-permissions">权限管理</option><option value="admin-accounts">账号配置</option><option value="sales-submit">商品与供应商提报</option><option value="sales-tracking">溯源商品跟踪</option><option value="sales-collab">检测协同</option><option value="sales-code">溯源码下载</option><option value="inspector-tasks">任务接收</option><option value="inspector-detail">任务详情</option><option value="inspector-api">检测报告API对接</option><option value="supplier-origin">源头资料补充</option><option value="supplier-label">溯源码应用</option><option value="consumer-scan-avic">扫码结果（中航溯源）</option><option value="consumer-scan-tianhong">扫码结果（天虹溯源）</option><option value="label-design">标签设计</option></select>
     <button onclick="nextScreen()">下一页 ↓</button>
   </div>
 </div>
-<div class="sidebar"><div class="group"><div class="group-title">业务需求理解</div><a href="#" data-screen="overview-flow" onclick="showScreen('overview-flow');return false;">业务需求理解</a><a href="#" data-screen="overview-arch" onclick="showScreen('overview-arch');return false;">产品架构总图</a></div><div class="group"><div class="group-title">平台运营端</div><a href="#" data-screen="admin-dashboard" onclick="showScreen('admin-dashboard');return false;">工作台</a><div class="sub-group-title">基础信息配置</div><a href="#" data-screen="admin-platforms" onclick="showScreen('admin-platforms');return false;">销售平台管理</a><a href="#" data-screen="admin-api-interface" onclick="showScreen('admin-api-interface');return false;">溯源信息标准接口</a><a href="#" data-screen="admin-templates" onclick="showScreen('admin-templates');return false;">检测模板配置</a><a href="#" data-screen="admin-providers" onclick="showScreen('admin-providers');return false;">溯源机构与费用配置</a><a href="#" data-screen="admin-suppliers" onclick="showScreen('admin-suppliers');return false;">供应商管理</a><a href="#" data-screen="admin-products" onclick="showScreen('admin-products');return false;">溯源商品管理</a><div class="sub-group-title">溯源管理</div><a href="#" data-screen="admin-dispatch" onclick="showScreen('admin-dispatch');return false;">溯源任务派发</a><a href="#" data-screen="admin-spotcheck" onclick="showScreen('admin-spotcheck');return false;">天虹监督任务</a><a href="#" data-screen="admin-reports" onclick="showScreen('admin-reports');return false;">溯源报告&溯源码管理</a><div class="sub-group-title">数据报表</div><a href="#" data-screen="admin-report-products" onclick="showScreen('admin-report-products');return false;">乡村振兴商品清单</a><a href="#" data-screen="admin-report-fees" onclick="showScreen('admin-report-fees');return false;">溯源机构费用报表</a><a href="#" data-screen="admin-report-sales" onclick="showScreen('admin-report-sales');return false;">销售报表/看板</a><a href="#" data-screen="admin-report-rural" onclick="showScreen('admin-report-rural');return false;">乡村振兴工作报告</a><div class="sub-group-title">乡村振兴赋能</div><a href="#" data-screen="admin-empower" onclick="showScreen('admin-empower');return false;">乡村振兴赋能</a><div class="sub-group-title">系统管理</div><a href="#" data-screen="admin-roles" onclick="showScreen('admin-roles');return false;">角色管理</a><a href="#" data-screen="admin-permissions" onclick="showScreen('admin-permissions');return false;">权限管理</a><a href="#" data-screen="admin-accounts" onclick="showScreen('admin-accounts');return false;">账号配置</a></div><div class="group"><div class="group-title">销售平台端（集团各子单位）</div><a href="#" data-screen="sales-submit" onclick="showScreen('sales-submit');return false;">商品与供应商提报</a><a href="#" data-screen="sales-tracking" onclick="showScreen('sales-tracking');return false;">溯源商品跟踪</a><a href="#" data-screen="sales-collab" onclick="showScreen('sales-collab');return false;">检测协同</a><a href="#" data-screen="sales-code" onclick="showScreen('sales-code');return false;">溯源码下载</a></div><div class="group"><div class="group-title">检测机构端</div><a href="#" data-screen="inspector-tasks" onclick="showScreen('inspector-tasks');return false;">任务接收</a><a href="#" data-screen="inspector-detail" onclick="showScreen('inspector-detail');return false;">任务详情</a><a href="#" data-screen="inspector-api" onclick="showScreen('inspector-api');return false;">检测报告API对接</a></div><div class="group"><div class="group-title">供应商端</div><a href="#" data-screen="supplier-origin" onclick="showScreen('supplier-origin');return false;">源头资料补充</a><a href="#" data-screen="supplier-label" onclick="showScreen('supplier-label');return false;">溯源码应用</a></div><div class="group"><div class="group-title">消费者端</div><a href="#" data-screen="consumer-scan" onclick="showScreen('consumer-scan');return false;">扫码结果</a></div><div class="group"><div class="group-title">溯源码标签</div><a href="#" data-screen="label-design" onclick="showScreen('label-design');return false;">标签设计</a></div></div>
+<div class="sidebar"><div class="group"><div class="group-title">业务需求理解</div><a href="#" data-screen="overview-flow" onclick="showScreen('overview-flow');return false;">业务需求理解</a><a href="#" data-screen="overview-arch" onclick="showScreen('overview-arch');return false;">产品架构总图</a></div><div class="group"><div class="group-title">平台运营端</div><a href="#" data-screen="admin-dashboard" onclick="showScreen('admin-dashboard');return false;">工作台</a><div class="sub-group-title">基础信息配置</div><a href="#" data-screen="admin-platforms" onclick="showScreen('admin-platforms');return false;">销售平台管理</a><a href="#" data-screen="admin-api-interface" onclick="showScreen('admin-api-interface');return false;">溯源信息标准接口</a><a href="#" data-screen="admin-templates" onclick="showScreen('admin-templates');return false;">检测模板配置</a><a href="#" data-screen="admin-providers" onclick="showScreen('admin-providers');return false;">溯源机构与费用配置</a><a href="#" data-screen="admin-suppliers" onclick="showScreen('admin-suppliers');return false;">供应商管理</a><a href="#" data-screen="admin-products" onclick="showScreen('admin-products');return false;">溯源商品管理</a><div class="sub-group-title">溯源管理</div><a href="#" data-screen="admin-dispatch" onclick="showScreen('admin-dispatch');return false;">溯源任务派发</a><a href="#" data-screen="admin-spotcheck" onclick="showScreen('admin-spotcheck');return false;">天虹监督任务</a><a href="#" data-screen="admin-reports" onclick="showScreen('admin-reports');return false;">溯源报告&溯源码管理</a><div class="sub-group-title">数据报表</div><a href="#" data-screen="admin-report-products" onclick="showScreen('admin-report-products');return false;">乡村振兴商品清单</a><a href="#" data-screen="admin-report-fees" onclick="showScreen('admin-report-fees');return false;">溯源机构费用报表</a><a href="#" data-screen="admin-report-sales" onclick="showScreen('admin-report-sales');return false;">销售报表/看板</a><a href="#" data-screen="admin-report-rural" onclick="showScreen('admin-report-rural');return false;">乡村振兴工作报告</a><div class="sub-group-title">乡村振兴赋能</div><a href="#" data-screen="admin-empower" onclick="showScreen('admin-empower');return false;">乡村振兴赋能</a><div class="sub-group-title">系统管理</div><a href="#" data-screen="admin-roles" onclick="showScreen('admin-roles');return false;">角色管理</a><a href="#" data-screen="admin-permissions" onclick="showScreen('admin-permissions');return false;">权限管理</a><a href="#" data-screen="admin-accounts" onclick="showScreen('admin-accounts');return false;">账号配置</a></div><div class="group"><div class="group-title">销售平台端（集团各子单位）</div><a href="#" data-screen="sales-submit" onclick="showScreen('sales-submit');return false;">商品与供应商提报</a><a href="#" data-screen="sales-tracking" onclick="showScreen('sales-tracking');return false;">溯源商品跟踪</a><a href="#" data-screen="sales-collab" onclick="showScreen('sales-collab');return false;">检测协同</a><a href="#" data-screen="sales-code" onclick="showScreen('sales-code');return false;">溯源码下载</a></div><div class="group"><div class="group-title">检测机构端</div><a href="#" data-screen="inspector-tasks" onclick="showScreen('inspector-tasks');return false;">任务接收</a><a href="#" data-screen="inspector-detail" onclick="showScreen('inspector-detail');return false;">任务详情</a><a href="#" data-screen="inspector-api" onclick="showScreen('inspector-api');return false;">检测报告API对接</a></div><div class="group"><div class="group-title">供应商端</div><a href="#" data-screen="supplier-origin" onclick="showScreen('supplier-origin');return false;">源头资料补充</a><a href="#" data-screen="supplier-label" onclick="showScreen('supplier-label');return false;">溯源码应用</a></div><div class="group"><div class="group-title">消费者端</div><a href="#" data-screen="consumer-scan-avic" onclick="showScreen('consumer-scan-avic');return false;">扫码结果（中航溯源）</a><a href="#" data-screen="consumer-scan-tianhong" onclick="showScreen('consumer-scan-tianhong');return false;">扫码结果（天虹溯源）</a></div><div class="group"><div class="group-title">溯源码标签</div><a href="#" data-screen="label-design" onclick="showScreen('label-design');return false;">标签设计</a></div></div>
 <div class="main">
 <div class="screen" id="overview-flow"><div class="page-title">业务需求理解</div><div class="page-desc">基于政企规划流程图，梳理四大业务场景、关键角色及平台服务的全链路动作：乡村振兴商品溯源、超市商品溯源、天虹自行监督、乡村振兴赋能</div>
 <div class="card" style="margin-bottom:12px;background:linear-gradient(90deg,#1B3A6B 0%,#2C4F7C 100%);color:#fff;">
@@ -242,66 +253,61 @@ html,body{height:100%;margin:0;padding:0;font-family:var(--font);background:var(
   </div>
 </div>
 <div class="card">
-  <div class="card-title"><span class="bar"></span>四大业务场景详细流程（角色 · 端 · 关键动作）</div>
-  <div style="font-size:11px;color:var(--gray);margin:-6px 0 8px;">下表列出每种场景中，<b>什么角色在什么端做哪些关键业务动作</b>。</div>
+  <div class="card-title"><span class="bar"></span>四大业务场景详细流程（从左到右：动作先后顺序）</div>
+  <div style="font-size:11px;color:var(--gray);margin:-6px 0 8px;">以下按时间顺序展示每种场景中各角色/端的关键动作，箭头表示流程推进方向。</div>
 
   <div class="card" style="border-left:3px solid var(--navy);margin-bottom:10px;">
     <div class="card-title"><span class="bar"></span>场景一：集团子单位乡村振兴商品提报及溯源（中航溯源）</div>
-    <table class="table"><thead><tr><th style="width:18%">角色</th><th style="width:20%">操作端</th><th>关键业务动作</th></tr></thead><tbody>
-      <tr><td>各集团子公司<br>（销售平台）</td><td>销售平台端</td><td>提报需要溯源的乡村振兴商品；维护商品与供应商档案；查看溯源进度与检测结果；下载/应用溯源码。</td></tr>
-      <tr><td>平台运营方<br>（天虹）</td><td>平台运管端</td><td>审核提报商品；管理溯源及检查模板；向溯源机构派发检测任务（快检 / 定量 / 供应商工厂审核 / 虫害等）；审核检测报告；生成中航溯源码；管理物料打印。</td></tr>
-      <tr><td>溯源机构</td><td>检测机构端</td><td>接收任务；通过 API 对接按检测模板项目回传结构化检测报告；支持上传 PDF 报告。</td></tr>
-      <tr><td>供应商</td><td>供应商端</td><td>填写并提交企业/产地/生产等需要供应商维护的信息；配合整改；打印/粘贴溯源标签。</td></tr>
-      <tr><td>集团用户</td><td>平台运管端</td><td>查看各类乡村振兴工作报告（商品溯源进度、检测报告、赋能汇总等）。</td></tr>
-    </tbody></table>
+    <div class="flow-steps">
+      <div class="flow-step "><div class="flow-step-num">1</div><div class="flow-step-role">销售平台端</div><div class="flow-step-action">子单位提报商品</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step "><div class="flow-step-num">2</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">审核商品</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step "><div class="flow-step-num">3</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">派发检测任务</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step "><div class="flow-step-num">4</div><div class="flow-step-role">检测机构端</div><div class="flow-step-action">API回传/PDF报告</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step "><div class="flow-step-num">5</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">审核报告</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step "><div class="flow-step-num">6</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">生成中航溯源码</div><div class="flow-step-note">一物一码</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step "><div class="flow-step-num">7</div><div class="flow-step-role">供应商端</div><div class="flow-step-action">打印/粘贴标签</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step "><div class="flow-step-num">8</div><div class="flow-step-role">销售平台</div><div class="flow-step-action">渠道展示/扫码验真</div></div>
+    </div>
   </div>
 
   <div class="card" style="border-left:3px solid var(--teal);margin-bottom:10px;">
     <div class="card-title"><span class="bar"></span>场景二：天虹超市商品溯源（天虹溯源）</div>
-    <table class="table"><thead><tr><th style="width:18%">角色</th><th style="width:20%">操作端</th><th>关键业务动作</th></tr></thead><tbody>
-      <tr><td>天虹</td><td>销售平台端</td><td>导入 / 填写需要溯源检查的超市商品；维护商品与供应商档案；查看检测结果；下载/应用天虹溯源码。</td></tr>
-      <tr><td>平台运营方<br>（天虹）</td><td>平台运管端</td><td>审核提报商品；管理检测模板；向溯源机构派发检测任务（快检 / 定量 / 供应商工厂审核 / 虫害等）；审核检测报告；生成天虹溯源码；管理物料打印。</td></tr>
-      <tr><td>溯源机构</td><td>检测机构端</td><td>接收任务；通过 API 对接按检测模板项目回传结构化检测报告；支持上传 PDF 报告。</td></tr>
-      <tr><td>供应商</td><td>供应商端</td><td>填写并提交需要供应商维护的信息；配合整改；打印/粘贴溯源标签。</td></tr>
-    </tbody></table>
+    <div class="flow-steps">
+      <div class="flow-step sc2"><div class="flow-step-num">1</div><div class="flow-step-role">销售平台端</div><div class="flow-step-action">天虹导入商品</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step sc2"><div class="flow-step-num">2</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">审核商品</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step sc2"><div class="flow-step-num">3</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">派发检测任务</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step sc2"><div class="flow-step-num">4</div><div class="flow-step-role">检测机构端</div><div class="flow-step-action">API回传/PDF报告</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step sc2"><div class="flow-step-num">5</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">审核报告</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step sc2"><div class="flow-step-num">6</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">生成天虹溯源码</div><div class="flow-step-note">一物一码</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step sc2"><div class="flow-step-num">7</div><div class="flow-step-role">供应商端</div><div class="flow-step-action">打印/粘贴标签</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step sc2"><div class="flow-step-num">8</div><div class="flow-step-role">天虹渠道</div><div class="flow-step-action">APP/小程序/超市展示</div></div>
+    </div>
   </div>
 
   <div class="card" style="border-left:3px solid var(--orange);margin-bottom:10px;">
     <div class="card-title"><span class="bar"></span>场景三：天虹自行监督</div>
-    <table class="table"><thead><tr><th style="width:18%">角色</th><th style="width:20%">操作端</th><th>关键业务动作</th></tr></thead><tbody>
-      <tr><td>平台运营方<br>（天虹）</td><td>平台运管端</td><td>向天虹内部人员派发监督任务（选择检测模板）；查看任务执行进度；审核回填结果；形成监督报告和结论。</td></tr>
-      <tr><td>天虹内部业务人员</td><td>平台运管端<br>/ 移动端</td><td>接收监督任务；实地检查；按检测模板回填检查结果；提交监督报告。</td></tr>
-      <tr><td>供应商</td><td>供应商端</td><td>接收整改要求（如监督发现不合格）；提交整改资料。</td></tr>
-    </tbody></table>
+    <div class="flow-steps">
+      <div class="flow-step sc3"><div class="flow-step-num">1</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">派发监督任务</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step sc3"><div class="flow-step-num">2</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">选择检测模板</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step sc3"><div class="flow-step-num">3</div><div class="flow-step-role">天虹人员</div><div class="flow-step-action">实地检查</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step sc3"><div class="flow-step-num">4</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">回填检查结果</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step sc3"><div class="flow-step-num">5</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">形成监督报告</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step sc3"><div class="flow-step-num">6</div><div class="flow-step-role">供应商端</div><div class="flow-step-action">整改闭环</div><div class="flow-step-note">不生成溯源码</div></div>
+    </div>
     <div class="note mt-8">说明：监督任务<b>不生成溯源码</b>，仅用于平台内部质量管控与报告归档。</div>
   </div>
 
   <div class="card" style="border-left:3px solid var(--purple);margin-bottom:10px;">
     <div class="card-title"><span class="bar"></span>场景四：乡村振兴赋能</div>
-    <table class="table"><thead><tr><th style="width:18%">角色</th><th style="width:20%">操作端</th><th>关键业务动作</th></tr></thead><tbody>
-      <tr><td>天虹乡村振兴人员</td><td>平台运管端</td><td>在种-产-销全链路各环节赋能帮扶供应商；结构化填写帮扶工作内容（资质证件、生产操作合规、市场化能力、需求匹配、赋能建议）。</td></tr>
-      <tr><td>供应商</td><td>供应商端 / 现场</td><td>配合实地调研；提供资质与生产记录；接收赋能建议并整改。</td></tr>
-      <tr><td>集团用户</td><td>平台运管端</td><td>查看乡村振兴赋能汇总报告，了解天虹全链路帮扶乡村振兴企业的工作成果。</td></tr>
-    </tbody></table>
+    <div class="flow-steps">
+      <div class="flow-step sc4"><div class="flow-step-num">1</div><div class="flow-step-role">天虹乡村振兴人员</div><div class="flow-step-action">种-产-销实地调研</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step sc4"><div class="flow-step-num">2</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">结构化填写帮扶内容</div><div class="flow-step-note">资质/合规/市场化/需求匹配</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step sc4"><div class="flow-step-num">3</div><div class="flow-step-role">供应商</div><div class="flow-step-action">接收赋能建议并整改</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step sc4"><div class="flow-step-num">4</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">形成赋能汇总报告</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step sc4"><div class="flow-step-num">5</div><div class="flow-step-role">集团用户</div><div class="flow-step-action">查看工作成果</div></div>
+    </div>
   </div>
 </div>
-<div class="card">
-  <div class="card-title"><span class="bar"></span>业务流程泳道图（基于政企规划流程图）</div>
-  <div style="font-size:11px;color:var(--gray);margin-bottom:8px;">实线箭头表示同角色内流程推进，<b>虚线箭头表示跨角色/跨泳道的交接与回流</b>。</div>
-  <div style="overflow-x:auto;border:1px solid #e0e5ec;border-radius:8px;background:#FAFBFD;">
-<svg viewBox="0 0 1600 500" style="width:100%;height:auto;display:block;"><defs><marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#94a3b8"/></marker><marker id="arrD" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#F59E0B"/></marker></defs><rect x="0" y="10" width="1600" height="88" fill="#FFFFFF" stroke="#E2E8F0"/><rect x="0" y="10" width="140" height="88" fill="#F1F5F9" stroke="#E2E8F0"/><text x="10" y="32" font-size="13" font-weight="700" fill="#1B3A6B">平台运营方</text><text x="10" y="50" font-size="10" fill="#64748B">天虹数科</text><rect x="0" y="106" width="1600" height="88" fill="#F8FAFC" stroke="#E2E8F0"/><rect x="0" y="106" width="140" height="88" fill="#F1F5F9" stroke="#E2E8F0"/><text x="10" y="128" font-size="13" font-weight="700" fill="#1B3A6B">销售平台/提报方</text><text x="10" y="146" font-size="10" fill="#64748B">子单位、天虹超市</text><rect x="0" y="202" width="1600" height="88" fill="#FFFFFF" stroke="#E2E8F0"/><rect x="0" y="202" width="140" height="88" fill="#F1F5F9" stroke="#E2E8F0"/><text x="10" y="224" font-size="13" font-weight="700" fill="#1B3A6B">检测机构</text><text x="10" y="242" font-size="10" fill="#64748B">中检等第三方</text><rect x="0" y="298" width="1600" height="88" fill="#F8FAFC" stroke="#E2E8F0"/><rect x="0" y="298" width="140" height="88" fill="#F1F5F9" stroke="#E2E8F0"/><text x="10" y="320" font-size="13" font-weight="700" fill="#1B3A6B">供应商</text><text x="10" y="338" font-size="10" fill="#64748B">溯源商品供应商</text><rect x="0" y="394" width="1600" height="88" fill="#FFFFFF" stroke="#E2E8F0"/><rect x="0" y="394" width="140" height="88" fill="#F1F5F9" stroke="#E2E8F0"/><text x="10" y="416" font-size="13" font-weight="700" fill="#1B3A6B">销售/消费端</text><text x="10" y="434" font-size="10" fill="#64748B">集团内/天虹/消费者</text><rect x="160.0" y="36" width="100" height="36" rx="6" ry="6" fill="#E3F2FD" stroke="#90CAF9" stroke-width="1.5"/><foreignObject x="160.0" y="36" width="100" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:center;justify-content:center;height:100%;padding:0 4px;text-align:center;font-size:10.5px;color:#1565C0;line-height:1.2;">配置销售平台</div></foreignObject><rect x="278.0" y="36" width="100" height="36" rx="6" ry="6" fill="#E3F2FD" stroke="#90CAF9" stroke-width="1.5"/><foreignObject x="278.0" y="36" width="100" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:center;justify-content:center;height:100%;padding:0 4px;text-align:center;font-size:10.5px;color:#1565C0;line-height:1.2;">配置检测模板</div></foreignObject><rect x="396.0" y="36" width="100" height="36" rx="6" ry="6" fill="#E3F2FD" stroke="#90CAF9" stroke-width="1.5"/><foreignObject x="396.0" y="36" width="100" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:center;justify-content:center;height:100%;padding:0 4px;text-align:center;font-size:10.5px;color:#1565C0;line-height:1.2;">配置检测机构</div></foreignObject><rect x="514.0" y="36" width="100" height="36" rx="6" ry="6" fill="#E3F2FD" stroke="#90CAF9" stroke-width="1.5"/><foreignObject x="514.0" y="36" width="100" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:center;justify-content:center;height:100%;padding:0 4px;text-align:center;font-size:10.5px;color:#1565C0;line-height:1.2;">配置供应商</div></foreignObject><rect x="632.0" y="36" width="100" height="36" rx="18" ry="18" fill="#FFF3E0" stroke="#FFCC80" stroke-width="1.5"/><foreignObject x="632.0" y="36" width="100" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:center;justify-content:center;height:100%;padding:0 4px;text-align:center;font-size:10.5px;color:#B45309;line-height:1.2;">是否溯源</div></foreignObject><rect x="750.0" y="36" width="100" height="36" rx="6" ry="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/><foreignObject x="750.0" y="36" width="100" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:center;justify-content:center;height:100%;padding:0 4px;text-align:center;font-size:10.5px;color:#334155;line-height:1.2;">发起溯源<br/>监督任务</div></foreignObject><rect x="868.0" y="36" width="100" height="36" rx="6" ry="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/><foreignObject x="868.0" y="36" width="100" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:center;justify-content:center;height:100%;padding:0 4px;text-align:center;font-size:10.5px;color:#334155;line-height:1.2;">配置检测费用</div></foreignObject><rect x="986.0" y="36" width="100" height="36" rx="6" ry="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/><foreignObject x="986.0" y="36" width="100" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:center;justify-content:center;height:100%;padding:0 4px;text-align:center;font-size:10.5px;color:#334155;line-height:1.2;">审核溯源报告</div></foreignObject><rect x="1104.0" y="36" width="100" height="36" rx="6" ry="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/><foreignObject x="1104.0" y="36" width="100" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:center;justify-content:center;height:100%;padding:0 4px;text-align:center;font-size:10.5px;color:#334155;line-height:1.2;">生成一物一码</div></foreignObject><rect x="1222.0" y="36" width="100" height="36" rx="6" ry="6" fill="#E6F4EA" stroke="#A5D6A7" stroke-width="1.5"/><foreignObject x="1222.0" y="36" width="100" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:center;justify-content:center;height:100%;padding:0 4px;text-align:center;font-size:10.5px;color:#2E7D32;line-height:1.2;">通知打印标签</div></foreignObject><rect x="160.0" y="132" width="100" height="36" rx="6" ry="6" fill="#E3F2FD" stroke="#90CAF9" stroke-width="1.5"/><foreignObject x="160.0" y="132" width="100" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:center;justify-content:center;height:100%;padding:0 4px;text-align:center;font-size:10.5px;color:#1565C0;line-height:1.2;">商品档案<br/>商品池</div></foreignObject><rect x="278.0" y="132" width="100" height="36" rx="6" ry="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/><foreignObject x="278.0" y="132" width="100" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:center;justify-content:center;height:100%;padding:0 4px;text-align:center;font-size:10.5px;color:#334155;line-height:1.2;">填报溯源商品</div></foreignObject><rect x="396.0" y="132" width="100" height="36" rx="6" ry="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/><foreignObject x="396.0" y="132" width="100" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:center;justify-content:center;height:100%;padding:0 4px;text-align:center;font-size:10.5px;color:#334155;line-height:1.2;">供应商建档<br/>关联</div></foreignObject><rect x="514.0" y="132" width="100" height="36" rx="6" ry="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/><foreignObject x="514.0" y="132" width="100" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:center;justify-content:center;height:100%;padding:0 4px;text-align:center;font-size:10.5px;color:#334155;line-height:1.2;">溯源商品列表</div></foreignObject><rect x="750.0" y="132" width="100" height="36" rx="6" ry="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/><foreignObject x="750.0" y="132" width="100" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:center;justify-content:center;height:100%;padding:0 4px;text-align:center;font-size:10.5px;color:#334155;line-height:1.2;">查看任务状态</div></foreignObject><rect x="868.0" y="132" width="100" height="36" rx="6" ry="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/><foreignObject x="868.0" y="132" width="100" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:center;justify-content:center;height:100%;padding:0 4px;text-align:center;font-size:10.5px;color:#334155;line-height:1.2;">协调整改</div></foreignObject><rect x="1222.0" y="132" width="100" height="36" rx="6" ry="6" fill="#E6F4EA" stroke="#A5D6A7" stroke-width="1.5"/><foreignObject x="1222.0" y="132" width="100" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:center;justify-content:center;height:100%;padding:0 4px;text-align:center;font-size:10.5px;color:#2E7D32;line-height:1.2;">上架销售</div></foreignObject><rect x="750.0" y="228" width="100" height="36" rx="6" ry="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/><foreignObject x="750.0" y="228" width="100" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:center;justify-content:center;height:100%;padding:0 4px;text-align:center;font-size:10.5px;color:#334155;line-height:1.2;">接收任务</div></foreignObject><rect x="868.0" y="228" width="100" height="36" rx="6" ry="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/><foreignObject x="868.0" y="228" width="100" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:center;justify-content:center;height:100%;padding:0 4px;text-align:center;font-size:10.5px;color:#334155;line-height:1.2;">上门检查<br/>二次复核</div></foreignObject><rect x="986.0" y="228" width="100" height="36" rx="18" ry="18" fill="#FFF3E0" stroke="#FFCC80" stroke-width="1.5"/><foreignObject x="986.0" y="228" width="100" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:center;justify-content:center;height:100%;padding:0 4px;text-align:center;font-size:10.5px;color:#B45309;line-height:1.2;">是否通过</div></foreignObject><rect x="1104.0" y="228" width="100" height="36" rx="6" ry="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/><foreignObject x="1104.0" y="228" width="100" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:center;justify-content:center;height:100%;padding:0 4px;text-align:center;font-size:10.5px;color:#334155;line-height:1.2;">生成检查终稿</div></foreignObject><rect x="1222.0" y="228" width="100" height="36" rx="6" ry="6" fill="#E6F4EA" stroke="#A5D6A7" stroke-width="1.5"/><foreignObject x="1222.0" y="228" width="100" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:center;justify-content:center;height:100%;padding:0 4px;text-align:center;font-size:10.5px;color:#2E7D32;line-height:1.2;">签章提交</div></foreignObject><rect x="514.0" y="324" width="100" height="36" rx="6" ry="6" fill="#E3F2FD" stroke="#90CAF9" stroke-width="1.5"/><foreignObject x="514.0" y="324" width="100" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:center;justify-content:center;height:100%;padding:0 4px;text-align:center;font-size:10.5px;color:#1565C0;line-height:1.2;">补充源头资料</div></foreignObject><rect x="986.0" y="324" width="100" height="36" rx="6" ry="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/><foreignObject x="986.0" y="324" width="100" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:center;justify-content:center;height:100%;padding:0 4px;text-align:center;font-size:10.5px;color:#334155;line-height:1.2;">接收整改要求</div></foreignObject><rect x="1104.0" y="324" width="100" height="36" rx="6" ry="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/><foreignObject x="1104.0" y="324" width="100" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:center;justify-content:center;height:100%;padding:0 4px;text-align:center;font-size:10.5px;color:#334155;line-height:1.2;">提交整改资料</div></foreignObject><rect x="1222.0" y="324" width="100" height="36" rx="6" ry="6" fill="#E6F4EA" stroke="#A5D6A7" stroke-width="1.5"/><foreignObject x="1222.0" y="324" width="100" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:center;justify-content:center;height:100%;padding:0 4px;text-align:center;font-size:10.5px;color:#2E7D32;line-height:1.2;">粘贴溯源码发货</div></foreignObject><rect x="1222.0" y="420" width="100" height="36" rx="6" ry="6" fill="#E3F2FD" stroke="#90CAF9" stroke-width="1.5"/><foreignObject x="1222.0" y="420" width="100" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:center;justify-content:center;height:100%;padding:0 4px;text-align:center;font-size:10.5px;color:#1565C0;line-height:1.2;">销售平台展示</div></foreignObject><rect x="1340.0" y="420" width="100" height="36" rx="6" ry="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/><foreignObject x="1340.0" y="420" width="100" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:center;justify-content:center;height:100%;padding:0 4px;text-align:center;font-size:10.5px;color:#334155;line-height:1.2;">消费者扫码</div></foreignObject><rect x="1458.0" y="420" width="100" height="36" rx="6" ry="6" fill="#E6F4EA" stroke="#A5D6A7" stroke-width="1.5"/><foreignObject x="1458.0" y="420" width="100" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:center;justify-content:center;height:100%;padding:0 4px;text-align:center;font-size:10.5px;color:#2E7D32;line-height:1.2;">查看溯源信息</div></foreignObject><line x1="260.0" y1="54" x2="278.0" y2="54" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)" /><line x1="378.0" y1="54" x2="396.0" y2="54" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)" /><line x1="496.0" y1="54" x2="514.0" y2="54" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)" /><line x1="614.0" y1="54" x2="632.0" y2="54" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)" /><line x1="732.0" y1="54" x2="750.0" y2="54" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)" /><line x1="850.0" y1="54" x2="868.0" y2="54" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)" /><line x1="968.0" y1="54" x2="986.0" y2="54" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)" /><line x1="1086.0" y1="54" x2="1104.0" y2="54" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)" /><line x1="1204.0" y1="54" x2="1222.0" y2="54" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)" /><line x1="260.0" y1="150" x2="278.0" y2="150" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)" /><line x1="378.0" y1="150" x2="396.0" y2="150" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)" /><line x1="496.0" y1="150" x2="514.0" y2="150" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)" /><line x1="614.0" y1="150" x2="750.0" y2="150" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)" /><line x1="850.0" y1="150" x2="868.0" y2="150" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)" /><line x1="968.0" y1="150" x2="1222.0" y2="150" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)" /><line x1="850.0" y1="246" x2="868.0" y2="246" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)" /><line x1="968.0" y1="246" x2="986.0" y2="246" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)" /><line x1="1086.0" y1="246" x2="1104.0" y2="246" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)" /><line x1="1204.0" y1="246" x2="1222.0" y2="246" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)" /><line x1="614.0" y1="342" x2="986.0" y2="342" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)" /><line x1="1086.0" y1="342" x2="1104.0" y2="342" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)" /><line x1="1204.0" y1="342" x2="1222.0" y2="342" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)" /><line x1="1322.0" y1="438" x2="1340.0" y2="438" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)" /><line x1="1440.0" y1="438" x2="1458.0" y2="438" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)" /><path d="M564,54 L564,54 L564,342" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)" stroke-dasharray="5,4"/><path d="M800,54 L800,54 L800,246" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)" stroke-dasharray="5,4"/><path d="M918,54 L918,54 L918,246" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)" stroke-dasharray="5,4"/><path d="M1036,246 L1036,246 L1036,342" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)" stroke-dasharray="5,4"/><path d="M1154,342 L918,342 L918,246" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)" stroke-dasharray="5,4"/><path d="M1272,246 L1036,246 L1036,54" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)" stroke-dasharray="5,4"/><path d="M1272,54 L1272,54 L1272,342" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)" stroke-dasharray="5,4"/><path d="M1272,342 L1272,342 L1272,150" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)" stroke-dasharray="5,4"/><path d="M1272,150 L1272,150 L1272,438" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)" stroke-dasharray="5,4"/></svg>
-  </div>
-  <div class="flow-lane-legend">
-    <span><b>图例：</b></span>
-    <span><span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:#E3F2FD;border:1px solid #90CAF9;margin-right:4px;vertical-align:middle;"></span>起始/配置节点</span>
-    <span><span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:#fff;border:1px solid #d0d7e2;margin-right:4px;vertical-align:middle;"></span>处理节点</span>
-    <span><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#FFF3E0;border:1px solid #FFCC80;margin-right:4px;vertical-align:middle;"></span>判断节点</span>
-    <span><span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:#E6F4EA;border:1px solid #A5D6A7;margin-right:4px;vertical-align:middle;"></span>结束节点</span>
-    <span><span style="display:inline-block;width:20px;height:1px;background:#94a3b8;margin-right:4px;vertical-align:middle;"></span>同角色推进</span>
-    <span><span style="display:inline-block;width:20px;height:1px;border-top:1px dashed #94a3b8;margin-right:4px;vertical-align:middle;"></span>跨角色交接/回流</span>
-  </div>
-</div>
-<div class="flow-arrow">⬇ 商品溯源信息标准接口 ⬇</div>
 <div class="card">
   <div class="card-title"><span class="bar"></span>销售平台出口</div>
   <div class="row">
@@ -655,7 +661,7 @@ html,body{height:100%;margin:0;padding:0;font-family:var(--font);background:var(
   <div class="col" style="max-width:200px;"><div class="form-group"><label>状态</label><select><option>全部</option><option>启用</option><option>停用</option></select></div></div>
   <div class="col" style="max-width:160px;"><button class="btn btn-primary"  >查询</button></div>
 </div>
-<table class="table"><thead><tr><th>账号</th><th>姓名</th><th>角色</th><th>所属组织</th><th>状态</th><th>最近登录</th><th>操作</th></tr></thead><tbody><tr><td>admin</td><td>系统管理员</td><td>平台超级管理员</td><td>中航工业溯源平台</td><td><span class="badge badge-green">启用</span></td><td>2026-07-27 09:12</td><td><button class="btn btn-gray"  >编辑</button><button class="btn btn-red"  >停用</button></td></tr><tr><td>op01</td><td>王运营</td><td>运营专员</td><td>中航工业溯源平台</td><td><span class="badge badge-green">启用</span></td><td>2026-07-26 18:40</td><td><button class="btn btn-gray"  >编辑</button><button class="btn btn-red"  >停用</button></td></tr><tr><td>13800138001</td><td>陈检测</td><td>检测机构操作员</td><td>CCIC</td><td><span class="badge badge-green">启用</span></td><td>2026-07-25 14:03</td><td><button class="btn btn-gray"  >编辑</button><button class="btn btn-red"  >停用</button></td></tr><tr><td>miao123</td><td>苗干妈</td><td>供应商管理员</td><td>贵州苗干妈食品</td><td><span class="badge badge-green">启用</span></td><td>2026-07-24 10:21</td><td><button class="btn btn-gray"  >编辑</button><button class="btn btn-red"  >停用</button></td></tr><tr><td>th_op</td><td>李婷</td><td>销售平台管理员</td><td>天虹数科</td><td><span class="badge badge-red">停用</span></td><td>2026-07-20 11:00</td><td><button class="btn btn-gray"  >编辑</button><button class="btn btn-teal"  >启用</button></td></tr></tbody></table>
+<table class="table"><thead><tr><th>账号</th><th>姓名</th><th>角色</th><th>所属组织</th><th>状态</th><th>最近登录</th><th>操作</th></tr></thead><tbody><tr><td>admin</td><td>系统管理员</td><td>平台超级管理员</td><td>航空工业高质量乡村振兴赋能平台</td><td><span class="badge badge-green">启用</span></td><td>2026-07-27 09:12</td><td><button class="btn btn-gray"  >编辑</button><button class="btn btn-red"  >停用</button></td></tr><tr><td>op01</td><td>王运营</td><td>运营专员</td><td>航空工业高质量乡村振兴赋能平台</td><td><span class="badge badge-green">启用</span></td><td>2026-07-26 18:40</td><td><button class="btn btn-gray"  >编辑</button><button class="btn btn-red"  >停用</button></td></tr><tr><td>13800138001</td><td>陈检测</td><td>检测机构操作员</td><td>CCIC</td><td><span class="badge badge-green">启用</span></td><td>2026-07-25 14:03</td><td><button class="btn btn-gray"  >编辑</button><button class="btn btn-red"  >停用</button></td></tr><tr><td>miao123</td><td>苗干妈</td><td>供应商管理员</td><td>贵州苗干妈食品</td><td><span class="badge badge-green">启用</span></td><td>2026-07-24 10:21</td><td><button class="btn btn-gray"  >编辑</button><button class="btn btn-red"  >停用</button></td></tr><tr><td>th_op</td><td>李婷</td><td>销售平台管理员</td><td>天虹数科</td><td><span class="badge badge-red">停用</span></td><td>2026-07-20 11:00</td><td><button class="btn btn-gray"  >编辑</button><button class="btn btn-teal"  >启用</button></td></tr></tbody></table>
 <div class="mt-12"><button class="btn btn-primary"  >+ 新增账号</button></div>
 </div><div class="card"><div class="card-title"><span class="bar"></span>新增账号</div>
 <div class="row">
@@ -866,16 +872,15 @@ html,body{height:100%;margin:0;padding:0;font-family:var(--font);background:var(
   </div>
 </div>
 </div></div></div>
-<div class="screen" id="consumer-scan"><div class="page-title">消费者端 · 扫码结果</div><div class="page-desc">消费者扫描溯源码后看到的产品信息、企业信息、追溯信息；支持中航溯源与天虹溯源两种品牌标识</div><div class="phone-frame"><div class="phone-notch"></div><div class="phone-screen">
-<div class="appbar"><span id="consumer-brand-title">中航溯源 · 扫码结果</span></div>
-<div style="display:flex;gap:8px;padding:10px 12px 0;"><button class="btn btn-primary" onclick="switchConsumerBrand('avic')" id="btn-avic" style="flex:1;font-size:12px;padding:6px 0;">中航溯源</button><button class="btn btn-gray" onclick="switchConsumerBrand('tianhong')" id="btn-tianhong" style="flex:1;font-size:12px;padding:6px 0;">天虹溯源</button></div>
+<div class="screen" id="consumer-scan-avic"><div class="page-title">消费者端 · 扫码结果（中航溯源）</div><div class="page-desc">扫描中航溯源码后看到的产品信息、企业信息、追溯信息（适用于乡村振兴商品）</div><div class="phone-frame"><div class="phone-notch"></div><div class="phone-screen">
+<div class="appbar"><span>中航溯源 · 扫码结果</span></div>
 <div class="mt-12" style="padding:0 4px;">
-  <div id="avic-logo" class="scan-logo"><div class="scan-logo-icon">AVIC</div><div class="scan-logo-text">中航溯源</div></div><div id="tianhong-logo" class="scan-logo hide"><div class="scan-logo-icon" style="background:var(--teal);">TH</div><div class="scan-logo-text">天虹溯源</div></div>
+  <div class="scan-logo"><div class="scan-logo-icon">AVIC</div><div class="scan-logo-text">中航溯源</div></div>
   <div class="product-img">[商品图片占位]</div>
   <div class="product-name">苗干妈荞麦面</div>
   <div class="product-company">贵州苗干妈食品有限公司</div>
   <div class="product-tags"><span class="badge badge-green">溯源信息已核验</span></div>
-  <div id="avic-panel"><div class="consumer-tabs">
+  <div class="consumer-tabs">
     <div class="consumer-tab active" onclick="showTab(0)">产品信息</div>
     <div class="consumer-tab" onclick="showTab(1)">企业信息</div>
     <div class="consumer-tab" onclick="showTab(2)">追溯信息</div>
@@ -932,29 +937,66 @@ html,body{height:100%;margin:0;padding:0;font-family:var(--font);background:var(
     </div>
     <div class="accordion">
       <div class="accordion-hd" onclick="toggleAcc(this)"><span>中航声明</span><span class="arr">▼</span></div>
-      <div class="accordion-bd">本溯源信息由中航工业溯源平台汇总，数据来源于销售平台提报、第三方检测机构实地检查及供应商源头资料。</div>
-    </div>
-  </div></div>
-  <div id="tianhong-panel" class="hide">
-    <div class="consumer-tabs">
-      <div class="consumer-tab active" onclick="showTab(0,'tianhong')">产品信息</div>
-      <div class="consumer-tab" onclick="showTab(1,'tianhong')">企业信息</div>
-      <div class="consumer-tab" onclick="showTab(2,'tianhong')">追溯信息</div>
-    </div>
-    <div class="consumer-panel active">
-      <div class="accordion open"><div class="accordion-hd" onclick="toggleAcc(this)"><span>产品信息</span><span class="arr">▼</span></div><div class="accordion-bd"><div><b>产品品牌：</b>蓝天水井</div><div><b>规格：</b>550ml/瓶</div><div><b>保质期：</b>18个月</div><div><b>储存环境：</b>常温避光</div><div><b>配料信息：</b>天然山泉水</div><div><b>销售平台：</b>天虹 APP/小程序/超市</div></div></div>
-    </div>
-    <div class="consumer-panel">
-      <div class="accordion open"><div class="accordion-hd" onclick="toggleAcc(this)"><span>企业信息</span><span class="arr">▼</span></div><div class="accordion-bd"><div><b>企业名称：</b>蓝天水井饮品有限公司</div><div><b>社会信用代码：</b>91520100785432109P</div><div><b>许可证编号：</b>SC10152010234567</div><div><b>企业地址：</b>贵州省贵阳市乌当区水田镇</div></div></div>
-    </div>
-    <div class="consumer-panel">
-      <div class="accordion"><div class="accordion-hd" onclick="toggleAcc(this)"><span>产品检测</span><span class="arr">▼</span></div><div class="accordion-bd">检测机构：SGS 通标标准技术服务有限公司；评价结果：合格；检测日期：2026-05-22。</div></div>
-      <div class="accordion"><div class="accordion-hd" onclick="toggleAcc(this)"><span>天虹声明</span><span class="arr">▼</span></div><div class="accordion-bd">本溯源信息由天虹溯源平台汇总，数据来源于天虹超市商品溯源体系及第三方检测机构报告。</div></div>
+      <div class="accordion-bd">本溯源信息由航空工业高质量乡村振兴赋能平台汇总，数据来源于销售平台提报、第三方检测机构实地检查及供应商源头资料。</div>
     </div>
   </div>
   <div style="display:flex;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #e0e5ec;padding:10px 14px;gap:10px;z-index:50;">
     <div style="flex:1;text-align:center;padding:10px 0;background:#f5f5f5;border-radius:4px;font-size:13px;color:var(--gray);cursor:pointer;">消费反馈</div>
     <div style="flex:1;text-align:center;padding:10px 0;background:var(--orange);border-radius:4px;font-size:13px;color:#fff;font-weight:700;cursor:pointer;">防伪查询</div>
+  </div>
+  <div style="height:60px;"></div>
+</div>
+</div></div></div>
+<div class="screen" id="consumer-scan-tianhong"><div class="page-title">消费者端 · 扫码结果（天虹溯源）</div><div class="page-desc">扫描天虹溯源码后看到的产品信息、企业信息、追溯信息（适用于天虹超市商品）</div><div class="phone-frame"><div class="phone-notch"></div><div class="phone-screen">
+<div class="appbar"><span>天虹溯源 · 扫码结果</span></div>
+<div class="mt-12" style="padding:0 4px;">
+  <div class="scan-logo"><div class="scan-logo-icon" style="background:var(--teal);">TH</div><div class="scan-logo-text" style="color:var(--teal);">天虹溯源</div></div>
+  <div class="product-img">[商品图片占位]</div>
+  <div class="product-name">蓝天水井山泉水</div>
+  <div class="product-company">蓝天水井饮品有限公司</div>
+  <div class="product-tags"><span class="badge badge-green">溯源信息已核验</span></div>
+  <div class="consumer-tabs">
+    <div class="consumer-tab active" onclick="showTab(0)">产品信息</div>
+    <div class="consumer-tab" onclick="showTab(1)">企业信息</div>
+    <div class="consumer-tab" onclick="showTab(2)">追溯信息</div>
+  </div>
+  <div class="consumer-panel active">
+    <div class="accordion open">
+      <div class="accordion-hd" onclick="toggleAcc(this)"><span>产品信息</span><span class="arr">▼</span></div>
+      <div class="accordion-bd">
+        <div><b>产品品牌：</b>蓝天水井</div>
+        <div><b>规格：</b>550ml/瓶</div>
+        <div><b>保质期：</b>18个月</div>
+        <div><b>储存环境：</b>常温避光</div>
+        <div><b>配料信息：</b>天然山泉水</div>
+        <div><b>销售平台：</b>天虹 APP/小程序/超市</div>
+      </div>
+    </div>
+  </div>
+  <div class="consumer-panel">
+    <div class="accordion open">
+      <div class="accordion-hd" onclick="toggleAcc(this)"><span>企业信息</span><span class="arr">▼</span></div>
+      <div class="accordion-bd">
+        <div><b>企业名称：</b>蓝天水井饮品有限公司</div>
+        <div><b>社会信用代码：</b>91520100785432109P</div>
+        <div><b>许可证编号：</b>SC10152010234567</div>
+        <div><b>企业地址：</b>贵州省贵阳市乌当区水田镇</div>
+      </div>
+    </div>
+  </div>
+  <div class="consumer-panel">
+    <div class="accordion">
+      <div class="accordion-hd" onclick="toggleAcc(this)"><span>产品检测</span><span class="arr">▼</span></div>
+      <div class="accordion-bd">检测机构：SGS 通标标准技术服务有限公司；评价结果：合格；检测日期：2026-05-22。</div>
+    </div>
+    <div class="accordion">
+      <div class="accordion-hd" onclick="toggleAcc(this)"><span>天虹声明</span><span class="arr">▼</span></div>
+      <div class="accordion-bd">本溯源信息由天虹溯源平台汇总，数据来源于天虹超市商品溯源体系及第三方检测机构报告。</div>
+    </div>
+  </div>
+  <div style="display:flex;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #e0e5ec;padding:10px 14px;gap:10px;z-index:50;">
+    <div style="flex:1;text-align:center;padding:10px 0;background:#f5f5f5;border-radius:4px;font-size:13px;color:var(--gray);cursor:pointer;">消费反馈</div>
+    <div style="flex:1;text-align:center;padding:10px 0;background:var(--teal);border-radius:4px;font-size:13px;color:#fff;font-weight:700;cursor:pointer;">防伪查询</div>
   </div>
   <div style="height:60px;"></div>
 </div>
@@ -982,7 +1024,7 @@ html,body{height:100%;margin:0;padding:0;font-family:var(--font);background:var(
         </div>
       </div>
       <div class="label-foot">
-        <div>中航工业溯源平台 · 一物一码</div>
+        <div>航空工业高质量乡村振兴赋能平台 · 一物一码</div>
       </div>
     </div>
     <div style="text-align:center;margin-top:12px;">
@@ -997,7 +1039,7 @@ html,body{height:100%;margin:0;padding:0;font-family:var(--font);background:var(
       <div class="ci"><span>批次/溯源码</span><span class="ci-r ci-ok">PG2508220-20260524 / 0000033300609168</span></div>
       <div class="ci"><span>检测机构背书</span><span class="ci-r ci-ok">CCIC（中国检验认证集团）</span></div>
       <div class="ci"><span>扫码引导</span><span class="ci-r ci-ok">微信扫码查看完整溯源</span></div>
-      <div class="ci"><span>平台归属</span><span class="ci-r ci-ok">中航工业溯源平台</span></div>
+      <div class="ci"><span>平台归属</span><span class="ci-r ci-ok">航空工业高质量乡村振兴赋能平台</span></div>
     </div>
     <div class="mt-12"><button class="btn btn-teal"  >下载标签设计稿</button><button class="btn btn-gray"  >调整样式</button></div>
     </div>
@@ -1034,29 +1076,11 @@ function toggleEmpower(mode){
 function saveEmpower(){var r=document.getElementById('empower-result');if(r)r.classList.remove('hide');}
 function printLabel(){alert('标签已加入打印队列，将由供应商/物料商打印后寄送。');}
 
-function switchConsumerBrand(brand){
-  var avicLogo=document.getElementById('avic-logo');
-  var thLogo=document.getElementById('tianhong-logo');
-  var avicPanel=document.getElementById('avic-panel');
-  var thPanel=document.getElementById('tianhong-panel');
-  var title=document.getElementById('consumer-brand-title');
-  var btnAvic=document.getElementById('btn-avic');
-  var btnTh=document.getElementById('btn-tianhong');
-  if(brand==='avic'){
-    avicLogo.classList.remove('hide'); thLogo.classList.add('hide');
-    avicPanel.classList.remove('hide'); thPanel.classList.add('hide');
-    title.textContent='中航溯源 · 扫码结果';
-    btnAvic.className='btn btn-primary'; btnTh.className='btn btn-gray';
-  } else {
-    avicLogo.classList.add('hide'); thLogo.classList.remove('hide');
-    avicPanel.classList.add('hide'); thPanel.classList.remove('hide');
-    title.textContent='天虹溯源 · 扫码结果';
-    btnAvic.className='btn btn-gray'; btnTh.className='btn btn-primary';
-  }
-}
 function showTab(idx){
-  document.querySelectorAll('.consumer-tab').forEach((t,i)=>{t.classList.toggle('active',i===idx);});
-  document.querySelectorAll('.consumer-panel').forEach((p,i)=>{p.classList.toggle('active',i===idx);});
+  const screen=document.querySelector('.screen.active');
+  if(!screen) return;
+  screen.querySelectorAll('.consumer-tab').forEach((t,i)=>{t.classList.toggle('active',i===idx);});
+  screen.querySelectorAll('.consumer-panel').forEach((p,i)=>{p.classList.toggle('active',i===idx);});
 }
 function toggleAcc(el){el.closest('.accordion').classList.toggle('open');}
 // keyboard nav
