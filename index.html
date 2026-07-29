@@ -335,23 +335,6 @@ html,body{height:100%;margin:0;padding:0;font-family:var(--font);background:var(
     </div>
   </div>
 </div>
-<div class="card" style="border-left:3px solid var(--purple);">
-  <div class="card-title"><span class="bar" style="background:var(--purple);"></span>业务规则与状态机（已知要点 · 待 PRD 最终确认）</div>
-  <div class="rule-note">
-    <div class="h">① 溯源商品状态机（平台运营端统一管理）</div>
-    提报 → 审核中 → 已通过 / 已打回 → 上架 / 下架；打回后由提报方修改再提交。
-    <div class="h">② 溯源 / 检测任务状态机</div>
-    平台派发 → 机构接收 → 检测中 → 待签章 → 已提交 → 平台审核报告 → 通过（生成溯源码） / 不通过（触发整改）。
-    <div class="h">③ 监督任务（与溯源任务区分）</div>
-    由天虹向内部人员派发，按检测模板执行并回填结果，仅产出监督报告与结论，<b>不生成溯源码</b>。
-    <div class="h">④ 整改闭环</div>
-    检测/监督不通过 → 供应商接收整改要求 → 提交整改资料 → 检测机构通过 API 回传复检报告 → 平台运营方审核 → 通过 / 再整改。
-    <div class="h">⑤ 溯源码规则</div>
-    一物一码，绑定商品 + 检测报告；支持中航溯源与天虹溯源两种品牌标识；标签由平台通知打印、供应商粘贴发货；消费者扫码验真。
-    <div class="h">⑥ 检测报告接入</div>
-    检测机构端不做逐项录入功能；检测机构通过标准 API 按检测模板项目回传结构化检测报告，同时支持上传 PDF 报告。
-  </div>
-</div>
 </div>
 <div class="screen" id="overview-arch"><div class="page-title">产品架构总图</div><div class="page-desc">分层梳理平台整体产品架构：接入角色端 → 业务能力中台 → 基础设施底座 → 销售平台出口</div>
 <div class="arch-layer t1">
