@@ -517,7 +517,7 @@ html,body{height:100%;margin:0;padding:0;font-family:var(--font);background:var(
 
   <div class="card mt-12"><div class="card-title"><span class="bar"></span>主表间流转关系（逻辑 ERD）</div>
     <div class="checklist">
-      <div class="ci"><span>销售平台 → 供应商</span><span class="ci-r ci-ok">创建即入库，平台级复用，非强绑定</span></div>
+      <div class="ci"><span>销售平台 → 供应商</span><span class="ci-r ci-ok">创建即入库，平台级复用</span></div>
       <div class="ci"><span>供应商 → 商品档案</span><span class="ci-r ci-ok">1:N，供应商提供多个商品</span></div>
       <div class="ci"><span>商品档案 → 任务</span><span class="ci-r ci-ok">1:N，商品被派发多个检测任务</span></div>
       <div class="ci"><span>检测模板 → 任务</span><span class="ci-r ci-ok">1:1，一个任务仅对应一个检测模板</span></div>
@@ -530,6 +530,24 @@ html,body{height:100%;margin:0;padding:0;font-family:var(--font);background:var(
     </div>
   </div>
   <div class="note mt-8"><b>说明：</b>以上为原型阶段逻辑数据模型（实体与关系），用于对齐各端数据口径；落地时按实际选型（如关系库 + 一物一码引擎）细化字段、索引与一致性约束。</div>
+
+  <div class="card mt-12"><div class="card-title"><span class="bar"></span>主数据表字段示例与关联示意</div>
+    <table class="table">
+      <thead><tr><th style="width:12%">表名</th><th style="width:34%">示例字段（示例值）</th><th style="width:12%">关联到</th><th style="width:12%">关系</th><th style="width:30%">说明</th></tr></thead>
+      <tbody>
+        <tr><td>销售平台</td><td style="font-family:monospace;font-size:12px;">platform_id: PLAT_001<br>name: 天虹超市<br>group: 中国航空工业集团</td><td>供应商</td><td>创建</td><td>销售平台创建供应商后进入平台供应商库，其他销售平台可复用</td></tr>
+        <tr><td>供应商</td><td style="font-family:monospace;font-size:12px;">supplier_id: SUP_001<br>name: 贵州苗干妈食品<br>created_by: PLAT_001</td><td>商品档案</td><td>1:N</td><td>一个供应商可提供多个商品</td></tr>
+        <tr><td>商品档案</td><td style="font-family:monospace;font-size:12px;">product_id: PROD_001<br>name: 苗干妈荞麦面<br>supplier_id: SUP_001</td><td>任务</td><td>1:N</td><td>一个商品可被派发多个检测任务</td></tr>
+        <tr><td>检测模板</td><td style="font-family:monospace;font-size:12px;">template_id: TPL_001<br>items: [农残, 重金属]<br>source: 平台标准</td><td>任务</td><td>1:1</td><td>一个任务仅引用一个检测模板</td></tr>
+        <tr><td>检测机构</td><td style="font-family:monospace;font-size:12px;">org_id: ORG_001<br>name: CCIC<br>fee_std: 500元/样</td><td>任务</td><td>N:1</td><td>机构或天虹作为任务执行方</td></tr>
+        <tr><td>溯源/监督任务</td><td style="font-family:monospace;font-size:12px;">task_id: TASK_001<br>product_id: PROD_001<br>template_id: TPL_001<br>executor: ORG_001</td><td>检测报告</td><td>1:1</td><td>一个任务仅出一份完整检测报告</td></tr>
+        <tr><td>源头资料</td><td style="font-family:monospace;font-size:12px;">origin_id: ORIG_001<br>product_id: PROD_001<br>farm: 安顺基地<br>pesticide: 生物农药</td><td>检测报告</td><td>补充</td><td>供应商补充产地、农事、投入品等资料</td></tr>
+        <tr><td>检测报告</td><td style="font-family:monospace;font-size:12px;">report_id: RPT_001<br>task_id: TASK_001<br>result: 合格<br>pdf_url: ...</td><td>溯源码</td><td>N:1</td><td>一个商品的多份报告汇总生成一个溯源码</td></tr>
+        <tr><td>溯源码</td><td style="font-family:monospace;font-size:12px;">code_id: CODE_001<br>product_id: PROD_001<br>report_ids: [RPT_001, ...]<br>status: 已激活</td><td>销售平台</td><td>OpenAPI</td><td>通过 OpenAPI 向销售平台推送溯源信息</td></tr>
+        <tr><td>销售回传</td><td style="font-family:monospace;font-size:12px;">sales_id: SAL_001<br>platform_id: PLAT_001<br>product_id: PROD_001<br>sales_qty: 1200</td><td>—</td><td>回传</td><td>销售平台回传销量、扫码验真次数等数据</td></tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 <div class="screen" id="admin-dashboard"><div class="page-title">平台运营端 · 工作台</div><div class="page-desc">集团运营方总控视图：待办、KPI、核心单据流转</div>
 <div class="kpi-grid">
