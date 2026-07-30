@@ -20,7 +20,7 @@
 }
 *{box-sizing:border-box;}
 html,body{height:100%;margin:0;padding:0;font-family:var(--font);background:var(--bg);color:#222;}
-body{display:grid;grid-template-rows:56px 1fr;grid-template-columns:220px 1fr;height:100vh;overflow:hidden;}
+body{display:grid;grid-template-rows:56px 1fr;grid-template-columns:220px minmax(0,1fr);height:100vh;overflow:hidden;}
 .topbar{height:56px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 20px;grid-column:1/-1;grid-row:1;z-index:100;}
 .topbar .logo{font-size:18px;font-weight:700;}
 .topbar .sub{font-size:12px;color:#AEC4DC;margin-left:8px;}
@@ -42,9 +42,9 @@ body{display:grid;grid-template-rows:56px 1fr;grid-template-columns:220px 1fr;he
 .group a{display:block;padding:9px 16px;color:#333;text-decoration:none;font-size:13px;border-left:3px solid transparent;transition:.15s;border-radius:4px;}
 .group a:hover{background:var(--light);}
 .group a.active{background:var(--light);color:var(--navy);border-left-color:var(--orange);font-weight:700;}
-.main{grid-row:2;grid-column:2;overflow:auto;padding:20px;min-width:0;}
+.main{grid-row:2;grid-column:2;overflow:auto;padding:20px;min-width:0;display:flex;flex-direction:column;}
 .screen{display:none;animation:fade .25s;width:100%;min-width:0;}
-.screen.active{display:block;}
+.screen.active{display:flex;flex-direction:column;flex:1 1 auto;}
 @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
 .page-title{font-size:22px;font-weight:700;color:var(--navy);margin-bottom:4px;}
 .page-desc{font-size:13px;color:var(--gray);margin-bottom:18px;}
@@ -206,7 +206,7 @@ body{display:grid;grid-template-rows:56px 1fr;grid-template-columns:220px 1fr;he
 .scan-logo{display:flex;align-items:center;gap:8px;margin-bottom:12px;}
 .scan-logo-icon{width:34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;}
 .scan-logo-text{font-size:15px;font-weight:700;color:var(--navy);}
-@media(max-width:900px){body{grid-template-columns:180px 1fr;}}
+@media(max-width:900px){body{grid-template-columns:180px minmax(0,1fr);}}
 
 .flow-steps{display:flex;align-items:stretch;gap:6px;overflow-x:auto;padding:10px 4px;}
 .flow-step{flex:0 0 auto;width:110px;text-align:center;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:10px 6px;font-size:12px;line-height:1.4;display:flex;flex-direction:column;justify-content:flex-start;}
@@ -1100,13 +1100,25 @@ body{display:grid;grid-template-rows:56px 1fr;grid-template-columns:220px 1fr;he
 <div class="mt-12"><button class="btn btn-primary" onclick="submitForm('inspector')">保存检测报告</button> <button class="btn btn-orange" onclick="showScreen('admin-reports')">提交平台审核</button> <button class="btn btn-gray" onclick="showScreen('inspector-detail')">返回任务详情</button></div>
 </div></div>
 <div class="screen" id="supplier-trace-entry"><div class="page-title">供应商端 · 溯源信息录入</div><div class="page-desc">按源头层（种植/养殖）与加工层（生产/处理）录入溯源信息，溯源机构接收任务后可核对并补录完整报告</div>
-<div class="card"><div class="card-title"><span class="bar"></span>商品基础信息</div>
-<div class="row"><div class="col"><div class="form-group"><label>商品名称</label><input value="蓝天水井山泉水 550ml" readonly></div><div class="form-group"><label>供应商</label><input value="蓝天水井饮品有限公司" readonly></div><div class="form-group"><label>生产许可证编号</label><input value="SC10652011200xxx" readonly></div></div><div class="col"><div class="form-group"><label>批次号</label><input value="TH20260728A"></div><div class="form-group"><label>生产日期</label><input type="date" value="2026-07-20"></div><div class="form-group"><label>保质期</label><input value="12个月"></div></div></div>
+<div class="consumer-tabs">
+  <div class="consumer-tab active" onclick="showTab(0)">商品基础信息</div>
+  <div class="consumer-tab" onclick="showTab(1)">源头层</div>
+  <div class="consumer-tab" onclick="showTab(2)">加工层</div>
+  <div class="consumer-tab" onclick="showTab(3)">凭证上传</div>
 </div>
-<div class="card"><div class="card-title"><span class="bar" style="background:var(--green)"></span>源头层（种植/养殖）</div>
-<div class="row">
-  <div class="col">
-    <div class="card"><div class="card-title"><span class="bar" style="background:var(--green)"></span>农事档案</div>
+<div class="consumer-panel active">
+  <div class="card"><div class="card-title"><span class="bar"></span>商品基础信息</div>
+    <div class="form-group"><label>商品名称</label><input value="蓝天水井山泉水 550ml" readonly></div>
+    <div class="form-group"><label>供应商</label><input value="蓝天水井饮品有限公司" readonly></div>
+    <div class="form-group"><label>生产许可证编号</label><input value="SC10652011200xxx" readonly></div>
+    <div class="form-group"><label>批次号</label><input value="TH20260728A"></div>
+    <div class="form-group"><label>生产日期</label><input type="date" value="2026-07-20"></div>
+    <div class="form-group"><label>保质期</label><input value="12个月"></div>
+  </div>
+</div>
+<div class="consumer-panel">
+  <div class="card"><div class="card-title"><span class="bar" style="background:var(--green)"></span>源头层（种植/养殖）</div>
+    <div class="card" style="border-left:3px solid var(--green);"><div class="card-title"><span class="bar" style="background:var(--green)"></span>农事档案</div>
       <div class="form-group"><label>基地备案</label><input value="贵州普定青山村荞麦种植基地"></div>
       <div class="form-group"><label>种苗来源</label><input value="本地优选荞麦种"></div>
       <div class="form-group"><label>生长周期</label><input value="2025-10-15 至 2026-06-20"></div>
@@ -1114,9 +1126,7 @@ body{display:grid;grid-template-rows:56px 1fr;grid-template-columns:220px 1fr;he
       <div class="form-group"><label>采收/捕捞信息</label><input value="2026-06-20 机械化采收"></div>
       <div class="form-group"><label>环境检测</label><textarea rows="2">土壤、灌溉水、温湿度检测记录</textarea></div>
     </div>
-  </div>
-  <div class="col">
-    <div class="card"><div class="card-title"><span class="bar" style="background:var(--green)"></span>投入品安全管控</div>
+    <div class="card" style="border-left:3px solid var(--green);"><div class="card-title"><span class="bar" style="background:var(--green)"></span>投入品安全管控</div>
       <div class="form-group"><label>农资/饲料/农兽药采购来源</label><input value="有机肥采购自XX农资公司"></div>
       <div class="form-group"><label>领用记录</label><textarea rows="2">记录投入品领用时间、数量、用途</textarea></div>
       <div class="form-group"><label>使用记录</label><textarea rows="2">有机肥 500kg/亩，2025-11-10</textarea></div>
@@ -1125,10 +1135,8 @@ body{display:grid;grid-template-rows:56px 1fr;grid-template-columns:220px 1fr;he
     </div>
   </div>
 </div>
-</div>
-<div class="card"><div class="card-title"><span class="bar"></span>加工层（生产/处理）</div>
-<div class="row">
-  <div class="col">
+<div class="consumer-panel">
+  <div class="card"><div class="card-title"><span class="bar"></span>加工层（生产/处理）</div>
     <div class="card"><div class="card-title"><span class="bar"></span>原料管理</div>
       <div class="form-group"><label>原料及包材来源信息</label><input value="原料来自自有基地，包材来自XX包装厂"></div>
       <div class="form-group"><label>原料/包材验收合格证明</label><input value="验收合格，附合格证明"></div>
@@ -1137,8 +1145,6 @@ body{display:grid;grid-template-rows:56px 1fr;grid-template-columns:220px 1fr;he
       <div class="form-group"><label>原料领用</label><input value="按生产计划领用"></div>
       <div class="form-group"><label>生产用水检测报告</label><input value="山泉水检测报告合格"></div>
     </div>
-  </div>
-  <div class="col">
     <div class="card"><div class="card-title"><span class="bar"></span>生产过程</div>
       <div class="form-group"><label>工艺流程及设备</label><input value="过滤→杀菌→灌装→封盖"></div>
       <div class="form-group"><label>核心工艺参数（如杀菌）</label><input value="杀菌温度/时间等关键参数"></div>
@@ -1148,20 +1154,19 @@ body{display:grid;grid-template-rows:56px 1fr;grid-template-columns:220px 1fr;he
       <div class="form-group"><label>温湿度监测</label><input value="生产车间温湿度记录"></div>
       <div class="form-group"><label>包装记录</label><input value="包装日期、数量、批次"></div>
     </div>
+    <div class="card"><div class="card-title"><span class="bar"></span>成品检测</div>
+      <div class="form-group"><label>成品出厂/型式检测</label><input value="出厂检验报告齐全"></div>
+      <div class="form-group"><label>成品出库核验</label><input value="核验合格，准备出库"></div>
+    </div>
   </div>
 </div>
-<div class="row"><div class="col">
-  <div class="card"><div class="card-title"><span class="bar"></span>成品检测</div>
-    <div class="form-group"><label>成品出厂/型式检测</label><input value="出厂检验报告齐全"></div>
-    <div class="form-group"><label>成品出库核验</label><input value="核验合格，准备出库"></div>
+<div class="consumer-panel">
+  <div class="card"><div class="card-title"><span class="bar"></span>凭证上传</div>
+    <div class="photo-grid">
+      <div class="photo-box">基地全景</div><div class="photo-box">加工车间</div><div class="photo-box">投入品票据</div>
+      <div class="photo-box">质检报告</div><div class="photo-box">生产记录</div><div class="photo-box">+</div>
+    </div>
   </div>
-</div></div>
-</div>
-<div class="card"><div class="card-title"><span class="bar"></span>凭证上传</div>
-<div class="photo-grid">
-  <div class="photo-box">基地全景</div><div class="photo-box">加工车间</div><div class="photo-box">投入品票据</div>
-  <div class="photo-box">质检报告</div><div class="photo-box">生产记录</div><div class="photo-box">+</div>
-</div>
 </div>
 <div class="mt-12"><button class="btn btn-primary" onclick="submitForm('supplier')">提交溯源信息</button> <span id="supplier-trace-result" class="badge badge-green hide">已提交，待溯源机构核对</span></div>
 <div style="height:80px;"></div>
