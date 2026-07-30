@@ -515,22 +515,6 @@ html,body{height:100%;margin:0;padding:0;font-family:var(--font);background:var(
     </div>
   </div>
 
-  <div class="card mt-12"><div class="card-title"><span class="bar"></span>主表间流转关系（逻辑 ERD）</div>
-    <div class="checklist">
-      <div class="ci"><span>销售平台 → 供应商</span><span class="ci-r ci-ok">创建即入库，平台级复用</span></div>
-      <div class="ci"><span>供应商 → 商品档案</span><span class="ci-r ci-ok">1:N，供应商提供多个商品</span></div>
-      <div class="ci"><span>商品档案 → 任务</span><span class="ci-r ci-ok">1:N，商品被派发多个检测任务</span></div>
-      <div class="ci"><span>检测模板 → 任务</span><span class="ci-r ci-ok">1:1，一个任务仅对应一个检测模板</span></div>
-      <div class="ci"><span>检测机构 → 任务</span><span class="ci-r ci-ok">N:1，机构或天虹作执行方</span></div>
-      <div class="ci"><span>任务 → 检测报告</span><span class="ci-r ci-ok">1:1，一个任务仅出一份完整检测报告</span></div>
-      <div class="ci"><span>源头资料 → 报告</span><span class="ci-r ci-ok">补充，绑定供应商/商品</span></div>
-      <div class="ci"><span>报告 → 溯源码</span><span class="ci-r ci-ok">N:1，多份报告汇总生成一个商品溯源码</span></div>
-      <div class="ci"><span>溯源码 → 销售平台</span><span class="ci-r ci-ok">OpenAPI 推送溯源信息</span></div>
-      <div class="ci"><span>销售平台 → 销售回传</span><span class="ci-r ci-ok">平台回传销量/扫码数据</span></div>
-    </div>
-  </div>
-  <div class="note mt-8"><b>说明：</b>以上为原型阶段逻辑数据模型（实体与关系），用于对齐各端数据口径；落地时按实际选型（如关系库 + 一物一码引擎）细化字段、索引与一致性约束。</div>
-
   <div class="card mt-12"><div class="card-title"><span class="bar"></span>主数据表 ER 关系图（含示例字段）</div>
     <div style="overflow-x:auto;">
     <svg viewBox="0 0 1040 760" width="100%" style="min-width:1000px;">
@@ -662,6 +646,22 @@ html,body{height:100%;margin:0;padding:0;font-family:var(--font);background:var(
     </div>
     <div class="note mt-8"><b>图例：</b>实线为引用/生成关系，虚线为「销售平台创建供应商后进入平台供应商库、其他销售平台可复用」；业务流转表（橙）关联基础主数据表（蓝），并由检测报告（橙）汇总生成溯源码（青），溯源码经 OpenAPI 推送至销售平台，销售平台回传销量数据。</div>
   </div>
+
+  <div class="card mt-12"><div class="card-title"><span class="bar"></span>主表间流转关系（逻辑 ERD）</div>
+    <div class="checklist">
+      <div class="ci"><span>销售平台 → 供应商</span><span class="ci-r ci-ok">创建即入库，平台级复用</span></div>
+      <div class="ci"><span>供应商 → 商品档案</span><span class="ci-r ci-ok">1:N，供应商提供多个商品</span></div>
+      <div class="ci"><span>商品档案 → 任务</span><span class="ci-r ci-ok">1:N，商品被派发多个检测任务</span></div>
+      <div class="ci"><span>检测模板 → 任务</span><span class="ci-r ci-ok">1:1，一个任务仅对应一个检测模板</span></div>
+      <div class="ci"><span>检测机构 → 任务</span><span class="ci-r ci-ok">N:1，机构或天虹作执行方</span></div>
+      <div class="ci"><span>任务 → 检测报告</span><span class="ci-r ci-ok">1:1，一个任务仅出一份完整检测报告</span></div>
+      <div class="ci"><span>源头资料 → 报告</span><span class="ci-r ci-ok">补充，绑定供应商/商品</span></div>
+      <div class="ci"><span>报告 → 溯源码</span><span class="ci-r ci-ok">N:1，多份报告汇总生成一个商品溯源码</span></div>
+      <div class="ci"><span>溯源码 → 销售平台</span><span class="ci-r ci-ok">OpenAPI 推送溯源信息</span></div>
+      <div class="ci"><span>销售平台 → 销售回传</span><span class="ci-r ci-ok">平台回传销量/扫码数据</span></div>
+    </div>
+  </div>
+  <div class="note mt-8"><b>说明：</b>以上为原型阶段逻辑数据模型（实体与关系），用于对齐各端数据口径；落地时按实际选型（如关系库 + 一物一码引擎）细化字段、索引与一致性约束。</div>
 </div>
 <div class="screen" id="admin-dashboard"><div class="page-title">平台运营端 · 工作台</div><div class="page-desc">集团运营方总控视图：待办、KPI、核心单据流转</div>
 <div class="kpi-grid">
