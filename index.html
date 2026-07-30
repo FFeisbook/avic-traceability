@@ -205,14 +205,39 @@ html,body{height:100%;margin:0;padding:0;font-family:var(--font);background:var(
 .flow-step.sc2 .flow-step-num{background:var(--teal);}
 .flow-step.sc3 .flow-step-num{background:var(--orange);}
 .flow-step.sc4 .flow-step-num{background:var(--purple);}
+/* 流程图按角色着色 */
+.flow-step.role-admin{border-color:var(--navy);background:var(--navy)08;}
+.flow-step.role-admin .flow-step-num{background:var(--navy);}
+.flow-step.role-admin.reusable{border:2px dashed var(--navy);background:#fff;}
+.flow-step.role-admin .flow-step-reuse{background:var(--navy);}
+.flow-step.role-sales{border-color:var(--teal);background:var(--teal)08;}
+.flow-step.role-sales .flow-step-num{background:var(--teal);}
+.flow-step.role-sales.reusable{border:2px dashed var(--teal);background:#fff;}
+.flow-step.role-sales .flow-step-reuse{background:var(--teal);}
+.flow-step.role-inspector{border-color:var(--orange);background:var(--orange)08;}
+.flow-step.role-inspector .flow-step-num{background:var(--orange);}
+.flow-step.role-inspector.reusable{border:2px dashed var(--orange);background:#fff;}
+.flow-step.role-inspector .flow-step-reuse{background:var(--orange);}
+.flow-step.role-supplier{border-color:var(--purple);background:var(--purple)08;}
+.flow-step.role-supplier .flow-step-num{background:var(--purple);}
+.flow-step.role-supplier.reusable{border:2px dashed var(--purple);background:#fff;}
+.flow-step.role-supplier .flow-step-reuse{background:var(--purple);}
+.flow-step.role-tianhong{border-color:var(--red);background:var(--red)08;}
+.flow-step.role-tianhong .flow-step-num{background:var(--red);}
+.flow-step.role-tianhong.reusable{border:2px dashed var(--red);background:#fff;}
+.flow-step.role-tianhong .flow-step-reuse{background:var(--red);}
+.flow-step.role-group{border-color:var(--gray);background:var(--gray)08;}
+.flow-step.role-group .flow-step-num{background:var(--gray);}
+.flow-step.role-group.reusable{border:2px dashed var(--gray);background:#fff;}
+.flow-step.role-group .flow-step-reuse{background:var(--gray);}
 .flow-step-role{font-size:10px;color:#64748b;margin-bottom:3px;}
 .flow-step-action{font-weight:600;color:#1B3A6B;}
 .flow-arrow{flex:0 0 auto;display:flex;align-items:center;color:#94a3b8;font-size:18px;padding:0 2px;font-weight:700;}
 .flow-step-note{font-size:11px;color:var(--gray);margin-top:4px;line-height:1.4;}
 .flow-step.reusable{border:2px dashed var(--navy);background:#fff;}
-.flow-step.sc2.reusable{border-color:var(--teal);}
+/* .flow-step.sc2.reusable 颜色由 role-* 接管 */
 .flow-step-reuse{font-size:10px;color:#fff;background:var(--navy);border-radius:3px;padding:1px 5px;margin-top:4px;display:inline-block;font-weight:700;}
-.flow-step.sc2 .flow-step-reuse{background:var(--teal);}
+/* .flow-step.sc2 .flow-step-reuse 颜色由 role-* 接管 */
 .scan-logo img{height:34px;width:auto;display:block;}
 </style>
 </head>
@@ -240,17 +265,17 @@ html,body{height:100%;margin:0;padding:0;font-family:var(--font);background:var(
       <div class="t">集团子单位乡村振兴商品提报及溯源</div>
       <div class="d">各集团子公司（销售平台）在销售平台端提报需要溯源的乡村振兴商品；平台运营方（天虹）审核后派发检测任务；检测机构回传报告；审核通过后生成<b>中航溯源</b>码，接入集团销售渠道展示。</div>
     </div>
-    <div class="scenario-card sc2">
+    <div class="scenario-card">
       <div class="num">场景二</div>
       <div class="t">天虹超市商品溯源</div>
       <div class="d">天虹在销售平台端导入/填写需要溯源检查的超市商品；平台运营方（天虹）审核后派发检测任务；检测机构回传报告；审核通过后生成<b>天虹溯源</b>码，用于天虹 APP/小程序/超市线下展示。</div>
     </div>
-    <div class="scenario-card sc3">
+    <div class="scenario-card">
       <div class="num">场景三</div>
       <div class="t">天虹自行监督</div>
       <div class="d">平台运营方（天虹）向天虹内部人员派发监督任务（选择检测模板），业务人员实地检查后在平台运管端回填结果，形成监督报告与结论，<b>不生成溯源码</b>。</div>
     </div>
-    <div class="scenario-card sc4">
+    <div class="scenario-card">
       <div class="num">场景四</div>
       <div class="t">乡村振兴赋能</div>
       <div class="d">天虹乡村振兴人员在种-产-销全链路各环节赋能帮扶供应商，在平台运管端结构化填写帮扶工作内容，形成汇总报告，向集团展示乡村振兴工作成果。</div>
@@ -261,54 +286,54 @@ html,body{height:100%;margin:0;padding:0;font-family:var(--font);background:var(
   <div class="card-title"><span class="bar"></span>四大业务场景详细流程（从左到右：动作先后顺序）</div>
   <div style="font-size:11px;color:var(--gray);margin:-6px 0 8px;">以下按时间顺序展示每种场景中各角色/端的关键动作，箭头表示流程推进方向。</div>
 
-  <div class="card" style="border-left:3px solid var(--navy);margin-bottom:10px;">
+  <div class="card" style="border-left:3px solid #cbd5e1;margin-bottom:10px;">
     <div class="card-title"><span class="bar"></span>场景一：集团子单位乡村振兴商品提报及溯源（中航溯源）</div>
     <div class="flow-steps">
-      <div class="flow-step "><div class="flow-step-num">1</div><div class="flow-step-role">销售平台端</div><div class="flow-step-action">子单位提报商品</div></div><div class="flow-arrow">→</div>
-      <div class="flow-step reusable"><div class="flow-step-num">2</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">审核商品</div><div class="flow-step-reuse">共用</div></div><div class="flow-arrow">→</div>
-      <div class="flow-step reusable"><div class="flow-step-num">3</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">派发检测任务</div><div class="flow-step-reuse">共用</div></div><div class="flow-arrow">→</div>
-      <div class="flow-step reusable"><div class="flow-step-num">4</div><div class="flow-step-role">检测机构端</div><div class="flow-step-action">API回传/PDF报告</div><div class="flow-step-reuse">共用</div></div><div class="flow-arrow">→</div>
-      <div class="flow-step reusable"><div class="flow-step-num">5</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">审核报告</div><div class="flow-step-reuse">共用</div></div><div class="flow-arrow">→</div>
-      <div class="flow-step "><div class="flow-step-num">6</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">生成中航溯源码</div><div class="flow-step-note">一物一码</div></div><div class="flow-arrow">→</div>
-      <div class="flow-step reusable"><div class="flow-step-num">7</div><div class="flow-step-role">供应商端</div><div class="flow-step-action">打印/粘贴标签</div><div class="flow-step-reuse">共用</div></div><div class="flow-arrow">→</div>
-      <div class="flow-step "><div class="flow-step-num">8</div><div class="flow-step-role">销售平台</div><div class="flow-step-action">渠道展示/扫码验真</div></div>
+      <div class="flow-step role-sales"><div class="flow-step-num">1</div><div class="flow-step-role">销售平台端</div><div class="flow-step-action">子单位提报商品</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step reusable role-admin"><div class="flow-step-num">2</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">审核商品</div><div class="flow-step-reuse">共用</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step reusable role-admin"><div class="flow-step-num">3</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">派发检测任务</div><div class="flow-step-reuse">共用</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step reusable role-inspector"><div class="flow-step-num">4</div><div class="flow-step-role">检测机构端</div><div class="flow-step-action">API回传/PDF报告</div><div class="flow-step-reuse">共用</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step reusable role-admin"><div class="flow-step-num">5</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">审核报告</div><div class="flow-step-reuse">共用</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step role-admin"><div class="flow-step-num">6</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">生成中航溯源码</div><div class="flow-step-note">一物一码</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step reusable role-supplier"><div class="flow-step-num">7</div><div class="flow-step-role">供应商端</div><div class="flow-step-action">打印/粘贴标签</div><div class="flow-step-reuse">共用</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step role-sales"><div class="flow-step-num">8</div><div class="flow-step-role">销售平台</div><div class="flow-step-action">渠道展示/扫码验真</div></div>
     </div>
   </div>
 
-  <div class="card" style="border-left:3px solid var(--teal);margin-bottom:10px;">
+  <div class="card" style="border-left:3px solid #cbd5e1;margin-bottom:10px;">
     <div class="card-title"><span class="bar"></span>场景二：天虹超市商品溯源（天虹溯源）</div>
     <div class="flow-steps">
-      <div class="flow-step sc2"><div class="flow-step-num">1</div><div class="flow-step-role">销售平台端</div><div class="flow-step-action">天虹导入商品</div></div><div class="flow-arrow">→</div>
-      <div class="flow-step sc2 reusable"><div class="flow-step-num">2</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">审核商品</div><div class="flow-step-reuse">共用</div></div><div class="flow-arrow">→</div>
-      <div class="flow-step sc2 reusable"><div class="flow-step-num">3</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">派发检测任务</div><div class="flow-step-reuse">共用</div></div><div class="flow-arrow">→</div>
-      <div class="flow-step sc2 reusable"><div class="flow-step-num">4</div><div class="flow-step-role">检测机构端</div><div class="flow-step-action">API回传/PDF报告</div><div class="flow-step-reuse">共用</div></div><div class="flow-arrow">→</div>
-      <div class="flow-step sc2 reusable"><div class="flow-step-num">5</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">审核报告</div><div class="flow-step-reuse">共用</div></div><div class="flow-arrow">→</div>
-      <div class="flow-step sc2"><div class="flow-step-num">6</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">生成天虹溯源码</div><div class="flow-step-note">一物一码</div></div><div class="flow-arrow">→</div>
-      <div class="flow-step sc2 reusable"><div class="flow-step-num">7</div><div class="flow-step-role">供应商端</div><div class="flow-step-action">打印/粘贴标签</div><div class="flow-step-reuse">共用</div></div><div class="flow-arrow">→</div>
-      <div class="flow-step sc2"><div class="flow-step-num">8</div><div class="flow-step-role">天虹渠道</div><div class="flow-step-action">APP/小程序/超市展示</div></div>
+      <div class="flow-step role-sales"><div class="flow-step-num">1</div><div class="flow-step-role">销售平台端</div><div class="flow-step-action">天虹导入商品</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step reusable role-admin"><div class="flow-step-num">2</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">审核商品</div><div class="flow-step-reuse">共用</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step reusable role-admin"><div class="flow-step-num">3</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">派发检测任务</div><div class="flow-step-reuse">共用</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step reusable role-inspector"><div class="flow-step-num">4</div><div class="flow-step-role">检测机构端</div><div class="flow-step-action">API回传/PDF报告</div><div class="flow-step-reuse">共用</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step reusable role-admin"><div class="flow-step-num">5</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">审核报告</div><div class="flow-step-reuse">共用</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step role-admin"><div class="flow-step-num">6</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">生成天虹溯源码</div><div class="flow-step-note">一物一码</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step reusable role-supplier"><div class="flow-step-num">7</div><div class="flow-step-role">供应商端</div><div class="flow-step-action">打印/粘贴标签</div><div class="flow-step-reuse">共用</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step role-sales"><div class="flow-step-num">8</div><div class="flow-step-role">天虹渠道</div><div class="flow-step-action">APP/小程序/超市展示</div></div>
     </div>
   </div>
 
-  <div class="card" style="border-left:3px solid var(--orange);margin-bottom:10px;">
+  <div class="card" style="border-left:3px solid #cbd5e1;margin-bottom:10px;">
     <div class="card-title"><span class="bar"></span>场景三：天虹自行监督</div>
     <div class="flow-steps">
-      <div class="flow-step sc3"><div class="flow-step-num">1</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">派发监督任务</div></div><div class="flow-arrow">→</div>
-      <div class="flow-step sc3"><div class="flow-step-num">2</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">选择检测模板</div></div><div class="flow-arrow">→</div>
-      <div class="flow-step sc3"><div class="flow-step-num">3</div><div class="flow-step-role">天虹人员</div><div class="flow-step-action">实地检查</div></div><div class="flow-arrow">→</div>
-      <div class="flow-step sc3"><div class="flow-step-num">4</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">回填检查结果</div></div><div class="flow-arrow">→</div>
-      <div class="flow-step sc3"><div class="flow-step-num">5</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">形成监督报告</div></div><div class="flow-arrow">→</div>
-      <div class="flow-step sc3"><div class="flow-step-num">6</div><div class="flow-step-role">供应商端</div><div class="flow-step-action">整改闭环</div><div class="flow-step-note">不生成溯源码</div></div>
+      <div class="flow-step role-admin"><div class="flow-step-num">1</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">派发监督任务</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step role-admin"><div class="flow-step-num">2</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">选择检测模板</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step role-tianhong"><div class="flow-step-num">3</div><div class="flow-step-role">天虹人员</div><div class="flow-step-action">实地检查</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step role-admin"><div class="flow-step-num">4</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">回填检查结果</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step role-admin"><div class="flow-step-num">5</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">形成监督报告</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step role-supplier"><div class="flow-step-num">6</div><div class="flow-step-role">供应商端</div><div class="flow-step-action">整改闭环</div><div class="flow-step-note">不生成溯源码</div></div>
     </div>
     <div class="note mt-8">说明：监督任务<b>不生成溯源码</b>，仅用于平台内部质量管控与报告归档。</div>
   </div>
 
-  <div class="card" style="border-left:3px solid var(--purple);margin-bottom:10px;">
+  <div class="card" style="border-left:3px solid #cbd5e1;margin-bottom:10px;">
     <div class="card-title"><span class="bar"></span>场景四：乡村振兴赋能</div>
     <div class="flow-steps">
-      <div class="flow-step sc4"><div class="flow-step-num">1</div><div class="flow-step-role">天虹乡村振兴人员</div><div class="flow-step-action">种-产-销实地调研</div></div><div class="flow-arrow">→</div>
-      <div class="flow-step sc4"><div class="flow-step-num">2</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">结构化填写帮扶内容</div><div class="flow-step-note">资质/合规/市场化/需求匹配</div></div><div class="flow-arrow">→</div>
-      <div class="flow-step sc4"><div class="flow-step-num">3</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">形成赋能汇总报告</div></div><div class="flow-arrow">→</div>
-      <div class="flow-step sc4"><div class="flow-step-num">4</div><div class="flow-step-role">集团用户</div><div class="flow-step-action">查看工作成果</div></div>
+      <div class="flow-step role-tianhong"><div class="flow-step-num">1</div><div class="flow-step-role">天虹乡村振兴人员</div><div class="flow-step-action">种-产-销实地调研</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step role-admin"><div class="flow-step-num">2</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">结构化填写帮扶内容</div><div class="flow-step-note">资质/合规/市场化/需求匹配</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step role-admin"><div class="flow-step-num">3</div><div class="flow-step-role">平台运管端</div><div class="flow-step-action">形成赋能汇总报告</div></div><div class="flow-arrow">→</div>
+      <div class="flow-step role-group"><div class="flow-step-num">4</div><div class="flow-step-role">集团用户</div><div class="flow-step-action">查看工作成果</div></div>
     </div>
   </div>
 </div>
@@ -416,7 +441,7 @@ html,body{height:100%;margin:0;padding:0;font-family:var(--font);background:var(
   <table class="table"><thead><tr><th>事项</th><th>来源</th><th>状态</th><th>操作</th></tr></thead><tbody><tr><td>贵州苗干妈食品有限公司 / 苗干妈荞麦面（PG2508220）</td><td>天虹销售平台</td><td><span class="badge badge-orange">待派发</span></td><td><button class="btn btn-teal" onclick="showScreen(\'admin-dispatch\')" >去派发</button></td></tr><tr><td>蓝天水井山泉水（批次 20260522A）</td><td>亿通销售平台</td><td><span class="badge badge-orange">待审核</span></td><td><button class="btn btn-primary" onclick="showScreen(\'admin-products\')" >去审核</button></td></tr><tr><td>云南哈尼红米（云S-1001）</td><td>天虹销售平台</td><td><span class="badge badge-red">整改中</span></td><td><button class="btn btn-orange" onclick="showScreen(\'admin-reports\')" >查看</button></td></tr></tbody></table>
 </div>
 </div>
-<div class="screen" id="admin-platforms"><div class="page-title">平台运营端 · 销售平台管理</div><div class="page-desc">维护集团子公司/销售渠道基础信息，配置 OpenAPI 对接</div><div class="card"><div class="card-title"><span class="bar"></span>销售平台管理（集团子公司）</div><table class="table"><thead><tr><th>销售平台</th><th>负责人</th><th>手机号</th><th>状态</th><th>操作</th></tr></thead><tbody><tr><td>天虹数科（乡村振兴）</td><td>张明</td><td>138****1234</td><td><span class="badge badge-green">已启用</span></td><td><button class="btn btn-gray"  >配置</button></td></tr><tr><td>天虹数科（超市商品）</td><td>李婷</td><td>138****1235</td><td><span class="badge badge-green">已启用</span></td><td><button class="btn btn-gray"  >配置</button></td></tr><tr><td>亿通（爱心航空）</td><td>李红</td><td>139****5678</td><td><span class="badge badge-green">已启用</span></td><td><button class="btn btn-gray"  >配置</button></td></tr><tr><td>航空工业集团内部采购平台</td><td>王磊</td><td>137****9012</td><td><span class="badge badge-orange">待启用</span></td><td><button class="btn btn-teal"  >启用</button></td></tr></tbody></table><div class="mt-12"><button class="btn btn-primary"  >+ 新增销售平台</button></div></div></div>
+<div class="screen" id="admin-platforms"><div class="page-title">平台运营端 · 销售平台管理</div><div class="page-desc">维护集团及旗下子公司/销售渠道基础信息，配置 OpenAPI 对接。支持多集团租户，未来可对外输出。</div><div class="card" style="background:linear-gradient(90deg,#1B3A6B 0%,#2C4F7C 100%);color:#fff;"><div style="display:flex;justify-content:space-between;align-items:center;"><div><div style="font-size:12px;opacity:.85;margin-bottom:4px;">当前集团租户</div><div style="font-size:18px;font-weight:700;">中国航空工业集团</div></div><div><button class="btn" style="background:#fff;color:var(--navy);" >+ 新增集团</button><button class="btn" style="background:rgba(255,255,255,.2);color:#fff;margin-left:8px;" >切换集团</button></div></div></div><div class="card"><div class="card-title"><span class="bar"></span>销售平台管理（集团子公司/销售渠道）</div><table class="table"><thead><tr><th>所属集团</th><th>销售平台</th><th>负责人</th><th>手机号</th><th>状态</th><th>操作</th></tr></thead><tbody><tr><td>中国航空工业集团</td><td>天虹数科（乡村振兴）</td><td>张明</td><td>138****1234</td><td><span class="badge badge-green">已启用</span></td><td><button class="btn btn-gray"  >配置</button></td></tr><tr><td>中国航空工业集团</td><td>天虹数科（超市商品）</td><td>李婷</td><td>138****1235</td><td><span class="badge badge-green">已启用</span></td><td><button class="btn btn-gray"  >配置</button></td></tr><tr><td>中国航空工业集团</td><td>亿通（爱心航空）</td><td>李红</td><td>139****5678</td><td><span class="badge badge-green">已启用</span></td><td><button class="btn btn-gray"  >配置</button></td></tr><tr><td>中国航空工业集团</td><td>航空工业集团内部采购平台</td><td>王磊</td><td>137****9012</td><td><span class="badge badge-orange">待启用</span></td><td><button class="btn btn-teal"  >启用</button></td></tr></tbody></table><div class="mt-12"><button class="btn btn-primary"  >+ 新增销售平台</button></div><div class="note mt-8"><b>多集团租户示意：</b>未来对外输出时，可为中石油、国家电网等外部集团创建独立租户；各集团拥有独立的销售平台、供应商、检测模板与数据权限，底层共享同一套平台能力。</div></div></div>
 <div class="screen" id="admin-templates"><div class="page-title">平台运营端 · 检测模板配置</div><div class="page-desc">定义商品档案、检查项、标准库，支持平台/检测机构双来源模板</div><div class="card"><div class="card-title"><span class="bar"></span>检测标准与模板配置</div>
 <div class="row">
   <div class="col">
@@ -622,7 +647,7 @@ html,body{height:100%;margin:0;padding:0;font-family:var(--font);background:var(
 <div class="card"><div class="card-title"><span class="bar"></span>核心接口清单</div><table class="table"><thead><tr><th>接口路径</th><th>方式</th><th>功能说明</th><th>调用方</th></tr></thead><tbody><tr><td>/api/v1/products</td><td>GET</td><td>获取已上架乡村振兴商品列表及基础信息</td><td>销售平台</td></tr><tr><td>/api/v1/products/{id}/trace</td><td>GET</td><td>获取指定商品的溯源信息（产地、检测、报告）</td><td>销售平台</td></tr><tr><td>/api/v1/products/{id}/qrcode</td><td>GET</td><td>获取商品溯源码图片及扫码链接</td><td>销售平台</td></tr><tr><td>/api/v1/sales/upload</td><td>POST</td><td>回传销售数据（销量、销售额、时间）</td><td>销售平台</td></tr><tr><td>/api/v1/reports/{id}</td><td>GET</td><td>获取检测报告结构化数据</td><td>销售平台</td></tr>
 <tr><td>/api/v1/products/{id}/sync</td><td>POST</td><td>同步溯源码/商品信息至销售平台</td><td>平台运营方</td></tr>
 <tr><td>/api/v1/products/{id}/sync/status</td><td>GET</td><td>查询同步状态与日志</td><td>平台运营方 / 销售平台</td></tr></tbody></table></div>
-<div class="card"><div class="card-title"><span class="bar"></span>接口状态与接入管理</div><table class="table"><thead><tr><th>销售平台</th><th>AppKey</th><th>接口权限</th><th>最后调用</th><th>状态</th><th>操作</th></tr></thead><tbody><tr><td>天虹 APP/小程序</td><td>th_***1234</td><td>查询+回传+同步</td><td>2026-07-28 09:23</td><td><span class="badge badge-green">已启用</span></td><td><button class="btn btn-gray">查看密钥</button></td></tr><tr><td>亿通爱心航空</td><td>yt_***5678</td><td>查询+回传+同步</td><td>2026-07-27 16:45</td><td><span class="badge badge-green">已启用</span></td><td><button class="btn btn-gray">查看密钥</button></td></tr><tr><td>航空工业集团内部采购</td><td>—</td><td>待分配</td><td>—</td><td><span class="badge badge-gray">待启用</span></td><td><button class="btn btn-teal">启用</button></td></tr></tbody></table></div><div class="card"><div class="card-title"><span class="bar"></span>溯源码同步至销售平台管理</div><table class="table"><thead><tr><th>商品</th><th>目标销售平台</th><th>同步内容</th><th>最近同步</th><th>状态</th><th>操作</th></tr></thead><tbody><tr><td>苗干妈荞麦面</td><td>亿通爱心航空</td><td>溯源码 + 检测报告</td><td>2026-07-28 10:15</td><td><span class="badge badge-green">成功</span></td><td><button class="btn btn-gray">查看日志</button></td></tr><tr><td>蓝天水井山泉水</td><td>天虹 APP/小程序</td><td>溯源码 + 商品信息</td><td>2026-07-28 09:30</td><td><span class="badge badge-green">成功</span></td><td><button class="btn btn-gray">查看日志</button></td></tr><tr><td>哈尼红米</td><td>天虹 APP/小程序</td><td>—</td><td>—</td><td><span class="badge badge-gray">未同步</span></td><td><button class="btn btn-teal">立即同步</button></td></tr></tbody></table></div></div>
+<div class="card"><div class="card-title"><span class="bar"></span>接口状态与接入管理（销售平台 + 供应链中台）</div><div class="rule-note mb-12"><b>超市商品检测结果回传：</b>天虹超市商品经检测机构出具的检测报告，除同步至 C 端销售平台外，需通过标准接口回传至<b>天虹供应链中台</b>，支撑采购、品控、供应商协同等供应链业务闭环。</div><table class="table"><thead><tr><th>接入方</th><th>AppKey</th><th>接口权限</th><th>最后调用</th><th>状态</th><th>操作</th></tr></thead><tbody><tr><td>天虹 APP/小程序</td><td>th_***1234</td><td>查询+回传+同步</td><td>2026-07-28 09:23</td><td><span class="badge badge-green">已启用</span></td><td><button class="btn btn-gray">查看密钥</button></td></tr><tr><td>亿通爱心航空</td><td>yt_***5678</td><td>查询+回传+同步</td><td>2026-07-27 16:45</td><td><span class="badge badge-green">已启用</span></td><td><button class="btn btn-gray">查看密钥</button></td></tr><tr><td>天虹供应链中台</td><td>thsc_***9012</td><td>超市商品检测结果回传</td><td>2026-07-28 10:05</td><td><span class="badge badge-green">已启用</span></td><td><button class="btn btn-gray">查看密钥</button></td></tr><tr><td>航空工业集团内部采购</td><td>—</td><td>待分配</td><td>—</td><td><span class="badge badge-gray">待启用</span></td><td><button class="btn btn-teal">启用</button></td></tr></tbody></table></div><div class="card"><div class="card-title"><span class="bar"></span>溯源码同步至销售平台管理</div><table class="table"><thead><tr><th>商品</th><th>目标销售平台</th><th>同步内容</th><th>最近同步</th><th>状态</th><th>操作</th></tr></thead><tbody><tr><td>苗干妈荞麦面</td><td>亿通爱心航空</td><td>溯源码 + 检测报告</td><td>2026-07-28 10:15</td><td><span class="badge badge-green">成功</span></td><td><button class="btn btn-gray">查看日志</button></td></tr><tr><td>蓝天水井山泉水</td><td>天虹 APP/小程序</td><td>溯源码 + 商品信息</td><td>2026-07-28 09:30</td><td><span class="badge badge-green">成功</span></td><td><button class="btn btn-gray">查看日志</button></td></tr><tr><td>哈尼红米</td><td>天虹 APP/小程序</td><td>—</td><td>—</td><td><span class="badge badge-gray">未同步</span></td><td><button class="btn btn-teal">立即同步</button></td></tr></tbody></table></div></div>
 </div>
 
 <div class="screen" id="admin-report-products"><div class="page-title">平台运营端 · 乡村振兴商品清单</div><div class="page-desc">汇总已接入溯源体系的乡村振兴商品及其溯源码状态</div>
