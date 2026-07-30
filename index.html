@@ -253,11 +253,11 @@ html,body{height:100%;margin:0;padding:0;font-family:var(--font);background:var(
 <div class="topbar">
   <div style="display:flex;align-items:center;"><span class="logo">航空工业高质量乡村振兴赋能平台</span><span class="sub">产品端功能原型</span><span class="disclaimer">本原型仅用于业务需求澄清，实际功能以产品需求文档为准</span></div>
   <div class="actions">
-    <select onchange="showScreen(this.value)"><option value="">快速跳转...</option><option value="overview-flow">业务需求理解</option><option value="overview-arch">产品架构总图</option><option value="admin-dashboard">工作台</option><option value="admin-platforms">销售平台管理</option><option value="admin-templates">检测模板配置</option><option value="admin-providers">溯源机构与费用配置</option><option value="admin-suppliers">供应商管理</option><option value="admin-products">溯源商品管理</option><option value="admin-dispatch">溯源任务派发</option><option value="admin-spotcheck">天虹监督任务</option><option value="admin-reports">溯源报告&溯源码管理</option><option value="admin-api-interface">溯源信息标准接口</option><option value="admin-report-products">乡村振兴商品清单</option><option value="admin-report-fees">溯源机构费用报表</option><option value="admin-report-sales">销售报表/看板</option><option value="admin-report-rural">乡村振兴工作报告</option><option value="admin-empower">乡村振兴赋能</option><option value="admin-roles">角色管理</option><option value="admin-permissions">权限管理</option><option value="admin-accounts">账号配置</option><option value="sales-submit">商品与供应商提报</option><option value="sales-tracking">溯源商品跟踪</option><option value="sales-collab">检测协同</option><option value="sales-code">溯源码下载</option><option value="inspector-tasks">任务接收</option><option value="inspector-detail">任务详情</option><option value="inspector-api">检测报告API对接</option><option value="supplier-origin">源头资料补充</option><option value="supplier-label">溯源码应用</option><option value="consumer-scan-avic">扫码结果（中航溯源）</option><option value="consumer-scan-tianhong">扫码结果（天虹溯源）</option><option value="label-design">标签设计</option></select>
+    <select onchange="showScreen(this.value)"><option value="">快速跳转...</option><option value="overview-flow">业务需求理解</option><option value="overview-arch">产品架构总图</option><option value="admin-dashboard">工作台</option><option value="admin-platforms">销售平台管理</option><option value="admin-templates">检测模板配置</option><option value="admin-providers">溯源机构与费用配置</option><option value="admin-suppliers">供应商管理</option><option value="admin-products">溯源商品管理</option><option value="admin-dispatch">溯源任务派发</option><option value="admin-spotcheck">天虹监督任务</option><option value="admin-reports">溯源报告&溯源码管理</option><option value="admin-api-interface">溯源信息标准接口</option><option value="admin-report-products">乡村振兴商品清单</option><option value="admin-report-fees">溯源机构费用报表</option><option value="admin-report-sales">销售报表/看板</option><option value="admin-report-rural">乡村振兴工作报告</option><option value="admin-empower">乡村振兴赋能</option><option value="admin-roles">角色管理</option><option value="admin-permissions">权限管理</option><option value="admin-accounts">账号配置</option><option value="sales-submit">商品与供应商提报</option><option value="sales-tracking">溯源商品跟踪</option><option value="sales-collab">检测协同</option><option value="sales-code">溯源码下载</option><option value="inspector-tasks">任务接收</option><option value="inspector-detail">任务详情</option><option value="inspector-manual-check">检测信息核对与报告填写</option><option value="inspector-api">检测报告API对接</option><option value="supplier-trace-entry">溯源信息录入</option><option value="supplier-label">溯源码应用</option><option value="consumer-scan-avic">扫码结果（中航溯源）</option><option value="consumer-scan-tianhong">扫码结果（天虹溯源）</option><option value="label-design">标签设计</option></select>
     <button onclick="nextScreen()">下一页 ↓</button>
   </div>
 </div>
-<div class="sidebar"><div class="group group-overview"><div class="group-title">业务需求理解</div><a href="#" data-screen="overview-flow" onclick="showScreen('overview-flow');return false;">业务需求理解</a><a href="#" data-screen="overview-arch" onclick="showScreen('overview-arch');return false;">产品架构总图</a><a href="#" data-screen="overview-dataflow" onclick="showScreen('overview-dataflow');return false;">数据流转关系</a></div><div class="group group-admin"><div class="group-title">平台运营端</div><a href="#" data-screen="admin-dashboard" onclick="showScreen('admin-dashboard');return false;">工作台</a><div class="sub-group-title">基础信息配置</div><a href="#" data-screen="admin-platforms" onclick="showScreen('admin-platforms');return false;">销售平台管理</a><a href="#" data-screen="admin-templates" onclick="showScreen('admin-templates');return false;">检测模板配置</a><a href="#" data-screen="label-design" onclick="showScreen('label-design');return false;">溯源码标签设计</a><a href="#" data-screen="admin-providers" onclick="showScreen('admin-providers');return false;">溯源机构与费用配置</a><a href="#" data-screen="admin-suppliers" onclick="showScreen('admin-suppliers');return false;">供应商管理</a><a href="#" data-screen="admin-products" onclick="showScreen('admin-products');return false;">溯源商品管理</a><div class="sub-group-title">溯源管理</div><a href="#" data-screen="admin-dispatch" onclick="showScreen('admin-dispatch');return false;">溯源任务派发</a><a href="#" data-screen="admin-spotcheck" onclick="showScreen('admin-spotcheck');return false;">天虹监督任务</a><a href="#" data-screen="admin-reports" onclick="showScreen('admin-reports');return false;">溯源报告&溯源码管理</a><a href="#" data-screen="admin-api-interface" onclick="showScreen('admin-api-interface');return false;">溯源信息标准接口</a><div class="sub-group-title">数据报表</div><a href="#" data-screen="admin-report-products" onclick="showScreen('admin-report-products');return false;">乡村振兴商品清单</a><a href="#" data-screen="admin-report-fees" onclick="showScreen('admin-report-fees');return false;">溯源机构费用报表</a><a href="#" data-screen="admin-report-sales" onclick="showScreen('admin-report-sales');return false;">销售报表/看板</a><a href="#" data-screen="admin-report-rural" onclick="showScreen('admin-report-rural');return false;">乡村振兴工作报告</a><div class="sub-group-title">乡村振兴赋能</div><a href="#" data-screen="admin-empower" onclick="showScreen('admin-empower');return false;">乡村振兴赋能</a><div class="sub-group-title">系统管理</div><a href="#" data-screen="admin-roles" onclick="showScreen('admin-roles');return false;">角色管理</a><a href="#" data-screen="admin-permissions" onclick="showScreen('admin-permissions');return false;">权限管理</a><a href="#" data-screen="admin-accounts" onclick="showScreen('admin-accounts');return false;">账号配置</a></div><div class="group group-sales"><div class="group-title">销售平台端（集团各子单位）</div><a href="#" data-screen="sales-submit" onclick="showScreen('sales-submit');return false;">商品与供应商提报</a><a href="#" data-screen="sales-tracking" onclick="showScreen('sales-tracking');return false;">溯源商品跟踪</a><a href="#" data-screen="sales-collab" onclick="showScreen('sales-collab');return false;">检测协同</a><a href="#" data-screen="sales-code" onclick="showScreen('sales-code');return false;">溯源码下载</a></div><div class="group group-inspector"><div class="group-title">检测机构端</div><a href="#" data-screen="inspector-tasks" onclick="showScreen('inspector-tasks');return false;">任务接收</a><a href="#" data-screen="inspector-detail" onclick="showScreen('inspector-detail');return false;">任务详情</a><a href="#" data-screen="inspector-manual-check" onclick="showScreen('inspector-manual-check');return false;">检测信息核对与报告填写</a><a href="#" data-screen="inspector-api" onclick="showScreen('inspector-api');return false;">检测报告API对接</a></div><div class="group group-supplier"><div class="group-title">供应商端</div><a href="#" data-screen="supplier-origin" onclick="showScreen('supplier-origin');return false;">源头资料补充</a><a href="#" data-screen="supplier-prefill" onclick="showScreen('supplier-prefill');return false;">检测信息预填报</a><a href="#" data-screen="supplier-label" onclick="showScreen('supplier-label');return false;">溯源码应用</a></div><div class="group group-consumer"><div class="group-title">消费者端</div><a href="#" data-screen="consumer-scan-avic" onclick="showScreen('consumer-scan-avic');return false;">扫码结果（中航溯源）</a><a href="#" data-screen="consumer-scan-tianhong" onclick="showScreen('consumer-scan-tianhong');return false;">扫码结果（天虹溯源）</a></div></div>
+<div class="sidebar"><div class="group group-overview"><div class="group-title">业务需求理解</div><a href="#" data-screen="overview-flow" onclick="showScreen('overview-flow');return false;">业务需求理解</a><a href="#" data-screen="overview-arch" onclick="showScreen('overview-arch');return false;">产品架构总图</a><a href="#" data-screen="overview-dataflow" onclick="showScreen('overview-dataflow');return false;">数据流转关系</a></div><div class="group group-admin"><div class="group-title">平台运营端</div><a href="#" data-screen="admin-dashboard" onclick="showScreen('admin-dashboard');return false;">工作台</a><div class="sub-group-title">基础信息配置</div><a href="#" data-screen="admin-platforms" onclick="showScreen('admin-platforms');return false;">销售平台管理</a><a href="#" data-screen="admin-templates" onclick="showScreen('admin-templates');return false;">检测模板配置</a><a href="#" data-screen="label-design" onclick="showScreen('label-design');return false;">溯源码标签设计</a><a href="#" data-screen="admin-providers" onclick="showScreen('admin-providers');return false;">溯源机构与费用配置</a><a href="#" data-screen="admin-suppliers" onclick="showScreen('admin-suppliers');return false;">供应商管理</a><a href="#" data-screen="admin-products" onclick="showScreen('admin-products');return false;">溯源商品管理</a><div class="sub-group-title">溯源管理</div><a href="#" data-screen="admin-dispatch" onclick="showScreen('admin-dispatch');return false;">溯源任务派发</a><a href="#" data-screen="admin-spotcheck" onclick="showScreen('admin-spotcheck');return false;">天虹监督任务</a><a href="#" data-screen="admin-reports" onclick="showScreen('admin-reports');return false;">溯源报告&溯源码管理</a><a href="#" data-screen="admin-api-interface" onclick="showScreen('admin-api-interface');return false;">溯源信息标准接口</a><div class="sub-group-title">数据报表</div><a href="#" data-screen="admin-report-products" onclick="showScreen('admin-report-products');return false;">乡村振兴商品清单</a><a href="#" data-screen="admin-report-fees" onclick="showScreen('admin-report-fees');return false;">溯源机构费用报表</a><a href="#" data-screen="admin-report-sales" onclick="showScreen('admin-report-sales');return false;">销售报表/看板</a><a href="#" data-screen="admin-report-rural" onclick="showScreen('admin-report-rural');return false;">乡村振兴工作报告</a><div class="sub-group-title">乡村振兴赋能</div><a href="#" data-screen="admin-empower" onclick="showScreen('admin-empower');return false;">乡村振兴赋能</a><div class="sub-group-title">系统管理</div><a href="#" data-screen="admin-roles" onclick="showScreen('admin-roles');return false;">角色管理</a><a href="#" data-screen="admin-permissions" onclick="showScreen('admin-permissions');return false;">权限管理</a><a href="#" data-screen="admin-accounts" onclick="showScreen('admin-accounts');return false;">账号配置</a></div><div class="group group-sales"><div class="group-title">销售平台端（集团各子单位）</div><a href="#" data-screen="sales-submit" onclick="showScreen('sales-submit');return false;">商品与供应商提报</a><a href="#" data-screen="sales-tracking" onclick="showScreen('sales-tracking');return false;">溯源商品跟踪</a><a href="#" data-screen="sales-collab" onclick="showScreen('sales-collab');return false;">检测协同</a><a href="#" data-screen="sales-code" onclick="showScreen('sales-code');return false;">溯源码下载</a></div><div class="group group-inspector"><div class="group-title">检测机构端</div><a href="#" data-screen="inspector-tasks" onclick="showScreen('inspector-tasks');return false;">任务接收</a><a href="#" data-screen="inspector-detail" onclick="showScreen('inspector-detail');return false;">任务详情</a><a href="#" data-screen="inspector-manual-check" onclick="showScreen('inspector-manual-check');return false;">检测信息核对与报告填写</a><a href="#" data-screen="inspector-api" onclick="showScreen('inspector-api');return false;">检测报告API对接</a></div><div class="group group-supplier"><div class="group-title">供应商端</div><a href="#" data-screen="supplier-trace-entry" onclick="showScreen('supplier-trace-entry');return false;">溯源信息录入</a><a href="#" data-screen="supplier-label" onclick="showScreen('supplier-label');return false;">溯源码应用</a></div><div class="group group-consumer"><div class="group-title">消费者端</div><a href="#" data-screen="consumer-scan-avic" onclick="showScreen('consumer-scan-avic');return false;">扫码结果（中航溯源）</a><a href="#" data-screen="consumer-scan-tianhong" onclick="showScreen('consumer-scan-tianhong');return false;">扫码结果（天虹溯源）</a></div></div>
 <div class="main">
 <div class="screen" id="overview-flow"><div class="page-title">业务需求理解</div>
 <div class="card" style="margin-bottom:12px;background:linear-gradient(90deg,#1B3A6B 0%,#2C4F7C 100%);color:#fff;">
@@ -489,7 +489,7 @@ html,body{height:100%;margin:0;padding:0;font-family:var(--font);background:var(
     </div>
     <div class="note" style="margin-top:8px;">关联：商品 × 检测模板（标准引用）× 检测机构 / 天虹（执行方）</div>
   </div>
-  <div class="arch-arrow">⬇ 机构 / 天虹回填结果；源头资料补充</div>
+  <div class="arch-arrow">⬇ 机构 / 天虹回填结果；溯源信息录入</div>
 
   <div class="arch-layer t2">
     <div class="arch-layer-title">③ 检测结果</div>
@@ -1098,51 +1098,73 @@ html,body{height:100%;margin:0;padding:0;font-family:var(--font);background:var(
 <div class="row"><div class="col"><div class="form-group"><label>检测机构</label><input value="XX 市食品检验所" readonly></div><div class="form-group"><label>报告编号</label><input value="TH-JC-20260728-001"></div><div class="form-group"><label>检验日期</label><input type="date" value="2026-07-29"></div></div><div class="col"><div class="form-group"><label>综合结论</label><select><option selected>合格</option><option>不合格</option><option>整改后合格</option></select></div><div class="form-group"><label>上传 PDF 报告</label><input value="点击上传签章报告 PDF" readonly></div><div class="form-group"><label>上传现场照片</label><input value="选填" readonly></div></div></div>
 <div class="mt-12"><button class="btn btn-primary" onclick="submitForm('inspector')">保存检测报告</button> <button class="btn btn-orange" onclick="showScreen('admin-reports')">提交平台审核</button> <button class="btn btn-gray" onclick="showScreen('inspector-detail')">返回任务详情</button></div>
 </div></div>
-<div class="screen" id="supplier-origin"><div class="page-title">供应商端 · 源头资料补充</div><div class="page-desc">补充产地档案、农事记录、投入品台账、环境数据及凭证</div><div class="card"><div class="card-title"><span class="bar"></span>源头资料补充</div>
-<div class="row">
-  <div class="col">
-    <div class="card"><div class="card-title"><span class="bar"></span>产地档案</div>
-    <div class="form-group"><label>产地名称</label><input value="贵州普定青山村"></div>
-    <div class="form-group"><label>种植面积/产能</label><input value="荞麦种植基地 120 亩"></div>
-    <div class="form-group"><label>产地环境</label><textarea rows="3">海拔 1200m，年均气温 15℃，水源来自青山泉。</textarea></div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card"><div class="card-title"><span class="bar"></span>农事记录与投入品台账</div>
-    <div class="form-group"><label>播种日期</label><input type="date" value="2025-10-15"></div>
-    <div class="form-group"><label>施肥记录</label><textarea rows="2">有机肥 500kg/亩，2025-11-10</textarea></div>
-    <div class="form-group"><label>农药/投入品使用</label><textarea rows="2">无化学农药，使用生物防治。</textarea></div>
-    </div>
-  </div>
-</div>
-<div class="mt-12">
-  <div class="card"><div class="card-title"><span class="bar"></span>照片/视频/凭证上传</div>
-  <div class="photo-grid">
-    <div class="photo-box">基地全景</div><div class="photo-box">加工车间</div><div class="photo-box">投入品票据</div>
-    <div class="photo-box">质检报告</div><div class="photo-box">+</div>
-  </div>
-  <div class="mt-12"><button class="btn btn-primary" onclick="submitForm("supplier")" >保存源头资料</button></div>
-  </div>
-</div>
-</div></div>
-<div class="screen" id="supplier-prefill"><div class="page-title">供应商端 · 检测信息预填报</div><div class="page-desc">供应商先填写基础信息、自检/自报检测项与资料，检测机构接收任务后核对并补录完整报告</div>
+<div class="screen" id="supplier-trace-entry"><div class="page-title">供应商端 · 溯源信息录入</div><div class="page-desc">按源头层（种植/养殖）与加工层（生产/处理）录入溯源信息，检测机构接收任务后可核对并补录完整报告</div>
 <div class="card"><div class="card-title"><span class="bar"></span>商品基础信息</div>
 <div class="row"><div class="col"><div class="form-group"><label>商品名称</label><input value="蓝天水井山泉水 550ml" readonly></div><div class="form-group"><label>供应商</label><input value="蓝天水井饮品有限公司" readonly></div><div class="form-group"><label>生产许可证编号</label><input value="SC10652011200xxx" readonly></div></div><div class="col"><div class="form-group"><label>批次号</label><input value="TH20260728A"></div><div class="form-group"><label>生产日期</label><input type="date" value="2026-07-20"></div><div class="form-group"><label>保质期</label><input value="12个月"></div></div></div>
 </div>
-<div class="card"><div class="card-title"><span class="bar"></span>自报检测项（供应商预填）</div>
-<div class="checklist">
-  <div class="ci"><span>营业执照 / 生产许可证是否有效</span><span class="ci-r ci-ok">有效</span></div>
-  <div class="ci"><span>出厂检验报告是否齐全</span><span class="ci-r ci-ok">齐全</span></div>
-  <div class="ci"><span>标签标识是否符合 GB 7718</span><span class="ci-r ci-no">待确认</span></div>
-  <div class="ci"><span>是否开展微生物/重金属自检</span><span class="ci-r ci-ok">已自检</span></div>
-  <div class="ci"><span>原材料进货查验记录</span><span class="ci-r ci-ok">完整</span></div>
+<div class="card"><div class="card-title"><span class="bar" style="background:var(--green)"></span>源头层（种植/养殖）</div>
+<div class="row">
+  <div class="col">
+    <div class="card"><div class="card-title"><span class="bar" style="background:var(--green)"></span>农事档案</div>
+      <div class="form-group"><label>基地备案</label><input value="贵州普定青山村荞麦种植基地"></div>
+      <div class="form-group"><label>种苗来源</label><input value="本地优选荞麦种"></div>
+      <div class="form-group"><label>生长周期</label><input value="2025-10-15 至 2026-06-20"></div>
+      <div class="form-group"><label>农事记录</label><textarea rows="2">播种、施肥、灌溉、除草、病虫害防治等关键节点记录</textarea></div>
+      <div class="form-group"><label>采收/捕捞信息</label><input value="2026-06-20 机械化采收"></div>
+      <div class="form-group"><label>环境检测</label><textarea rows="2">土壤、灌溉水、温湿度检测记录</textarea></div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card"><div class="card-title"><span class="bar" style="background:var(--green)"></span>投入品安全管控</div>
+      <div class="form-group"><label>农资/饲料/农兽药采购来源</label><input value="有机肥采购自XX农资公司"></div>
+      <div class="form-group"><label>领用记录</label><textarea rows="2">记录投入品领用时间、数量、用途</textarea></div>
+      <div class="form-group"><label>使用记录</label><textarea rows="2">有机肥 500kg/亩，2025-11-10</textarea></div>
+      <div class="form-group"><label>休药期/安全间隔期</label><input value="符合安全间隔期要求"></div>
+      <div class="form-group"><label>过程监测</label><textarea rows="2">病虫害监测、生物防治记录</textarea></div>
+    </div>
+  </div>
 </div>
-<div class="mt-12 note">检测机构将以上述预填内容为基础，到现场核对真实性，并补充完整检测数据。</div>
 </div>
-<div class="card"><div class="card-title"><span class="bar"></span>自检报告与凭证上传</div>
-<div class="row"><div class="col"><div class="form-group"><label>出厂检验报告 PDF</label><input value="出厂检验报告_蓝天水井_20260720.pdf" readonly></div><div class="form-group"><label>第三方快检报告（如有）</label><input placeholder="选填，可上传 PDF 或图片"></div></div><div class="col"><div class="form-group"><label>标签样张</label><input placeholder="上传产品标签样张"></div><div class="form-group"><label>其他说明</label><textarea rows="2" placeholder="如检测项目、检测机构、抽样日期等"></textarea></div></div></div>
-<div class="mt-12"><button class="btn btn-primary" onclick="submitForm('supplier')">提交预填信息</button> <span id="supplier-prefill-result" class="badge badge-green hide">已提交，待检测机构核对</span></div>
+<div class="card"><div class="card-title"><span class="bar"></span>加工层（生产/处理）</div>
+<div class="row">
+  <div class="col">
+    <div class="card"><div class="card-title"><span class="bar"></span>原料管理</div>
+      <div class="form-group"><label>原料及包材来源信息</label><input value="原料来自自有基地，包材来自XX包装厂"></div>
+      <div class="form-group"><label>原料/包材验收合格证明</label><input value="验收合格，附合格证明"></div>
+      <div class="form-group"><label>原料入库</label><input value="2026-07-18 入库"></div>
+      <div class="form-group"><label>添加剂管理</label><input value="无添加/符合GB 2760"></div>
+      <div class="form-group"><label>原料领用</label><input value="按生产计划领用"></div>
+      <div class="form-group"><label>生产用水检测报告</label><input value="山泉水检测报告合格"></div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card"><div class="card-title"><span class="bar"></span>生产过程</div>
+      <div class="form-group"><label>工艺流程及设备</label><input value="过滤→杀菌→灌装→封盖"></div>
+      <div class="form-group"><label>核心工艺参数（如杀菌）</label><input value="杀菌温度/时间等关键参数"></div>
+      <div class="form-group"><label>原辅料使用</label><textarea rows="2">记录原辅料使用量、批次</textarea></div>
+      <div class="form-group"><label>添加剂使用</label><input value="无/按标准使用"></div>
+      <div class="form-group"><label>工序质控记录</label><textarea rows="2">各工序质量检查记录</textarea></div>
+      <div class="form-group"><label>温湿度监测</label><input value="生产车间温湿度记录"></div>
+      <div class="form-group"><label>包装记录</label><input value="包装日期、数量、批次"></div>
+    </div>
+  </div>
+</div>
+<div class="row"><div class="col">
+  <div class="card"><div class="card-title"><span class="bar"></span>成品检测</div>
+    <div class="form-group"><label>成品出厂/型式检测</label><input value="出厂检验报告齐全"></div>
+    <div class="form-group"><label>成品出库核验</label><input value="核验合格，准备出库"></div>
+  </div>
 </div></div>
+</div>
+<div class="card"><div class="card-title"><span class="bar"></span>凭证上传</div>
+<div class="photo-grid">
+  <div class="photo-box">基地全景</div><div class="photo-box">加工车间</div><div class="photo-box">投入品票据</div>
+  <div class="photo-box">质检报告</div><div class="photo-box">生产记录</div><div class="photo-box">+</div>
+</div>
+</div>
+<div class="mt-12"><button class="btn btn-primary" onclick="submitForm('supplier')">提交溯源信息</button> <span id="supplier-trace-result" class="badge badge-green hide">已提交，待检测机构核对</span></div>
+<div style="height:80px;"></div>
+</div>
 <div class="screen" id="supplier-label"><div class="page-title">供应商端 · 溯源码应用</div><div class="page-desc">打印一物一码标签，下载与管理溯源标签</div><div class="phone-frame"><div class="phone-notch"></div><div class="phone-screen">
 <div class="appbar"><span>溯源码应用</span></div>
 <div class="mt-12">
@@ -1222,7 +1244,7 @@ html,body{height:100%;margin:0;padding:0;font-family:var(--font);background:var(
     </div>
     <div class="accordion">
       <div class="accordion-hd" onclick="toggleAcc(this)"><span>中航声明</span><span class="arr">▼</span></div>
-      <div class="accordion-bd">本溯源信息由航空工业高质量乡村振兴赋能平台汇总，数据来源于销售平台提报、第三方检测机构实地检查及供应商源头资料。</div>
+      <div class="accordion-bd">本溯源信息由航空工业高质量乡村振兴赋能平台汇总，数据来源于销售平台提报、第三方检测机构实地检查及供应商溯源信息。</div>
     </div>
   </div>
   <div style="display:flex;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #e0e5ec;padding:10px 14px;gap:10px;z-index:50;">
