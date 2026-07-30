@@ -472,13 +472,13 @@ html,body{height:100%;margin:0;padding:0;font-family:var(--font);background:var(
     <div class="arch-layer-title">① 基础主数据（配置 / 建档）</div>
     <div class="arch-boxes">
       <div class="arch-box"><div class="t">销售平台</div><div class="d">平台ID·名称·集团归属·状态·OpenAPI密钥</div></div>
-      <div class="arch-box"><div class="t">供应商</div><div class="d">供应商ID·名称·资质·所属销售平台</div></div>
+      <div class="arch-box"><div class="t">供应商</div><div class="d">供应商ID·名称·资质·首次创建销售平台·平台供应商库共享</div></div>
       <div class="arch-box"><div class="t">商品档案</div><div class="d">商品ID·名称·供应商·分类·是否溯源</div></div>
       <div class="arch-box"><div class="t">检测模板</div><div class="d">模板ID·检查项·标准值·来源(平台/机构)</div></div>
       <div class="arch-box"><div class="t">检测机构</div><div class="d">机构ID·名称·资质·费用标准·状态</div></div>
     </div>
   </div>
-  <div class="arch-arrow">⬇ 销售平台 → 供应商 → 商品（归属链路）</div>
+  <div class="arch-arrow">⬇ 销售平台创建供应商后进入平台供应商库，其他销售平台可直接复用；供应商 → 商品为归属链路</div>
 
   <div class="arch-layer t2">
     <div class="arch-layer-title">② 业务流转（任务派发）</div>
@@ -501,9 +501,9 @@ html,body{height:100%;margin:0;padding:0;font-family:var(--font);background:var(
   <div class="arch-layer t3">
     <div class="arch-layer-title">④ 赋码（一物一码）</div>
     <div class="arch-boxes">
-      <div class="arch-box"><div class="t">溯源码</div><div class="d">码值·商品ID·报告ID·是否激活·打印状态</div></div>
+      <div class="arch-box"><div class="t">溯源码</div><div class="d">码值·商品ID·关联报告ID列表·是否激活·打印状态</div></div>
     </div>
-    <div class="note" style="margin-top:8px;">关联：商品 × 检测报告</div>
+    <div class="note" style="margin-top:8px;">关联：商品 × 多份检测报告（字段信息汇总进一个溯源码）</div>
   </div>
   <div class="arch-arrow">⬇ OpenAPI 推送溯源信息 → 销售平台</div>
 
@@ -517,14 +517,14 @@ html,body{height:100%;margin:0;padding:0;font-family:var(--font);background:var(
 
   <div class="card mt-12"><div class="card-title"><span class="bar"></span>主表间流转关系（逻辑 ERD）</div>
     <div class="checklist">
-      <div class="ci"><span>销售平台 → 供应商</span><span class="ci-r ci-ok">1:N，供应商归属某销售平台</span></div>
+      <div class="ci"><span>销售平台 → 供应商</span><span class="ci-r ci-ok">创建即入库，平台级复用，非强绑定</span></div>
       <div class="ci"><span>供应商 → 商品档案</span><span class="ci-r ci-ok">1:N，供应商提供多个商品</span></div>
       <div class="ci"><span>商品档案 → 任务</span><span class="ci-r ci-ok">1:N，商品被派发多个检测任务</span></div>
-      <div class="ci"><span>检测模板 → 任务</span><span class="ci-r ci-ok">N:1，任务引用模板标准</span></div>
+      <div class="ci"><span>检测模板 → 任务</span><span class="ci-r ci-ok">1:1，一个任务仅对应一个检测模板</span></div>
       <div class="ci"><span>检测机构 → 任务</span><span class="ci-r ci-ok">N:1，机构或天虹作执行方</span></div>
-      <div class="ci"><span>任务 → 检测报告</span><span class="ci-r ci-ok">1:N，一个任务可出多份报告</span></div>
+      <div class="ci"><span>任务 → 检测报告</span><span class="ci-r ci-ok">1:1，一个任务仅出一份完整检测报告</span></div>
       <div class="ci"><span>源头资料 → 报告</span><span class="ci-r ci-ok">补充，绑定供应商/商品</span></div>
-      <div class="ci"><span>报告 → 溯源码</span><span class="ci-r ci-ok">1:N，审核通过后生成码</span></div>
+      <div class="ci"><span>报告 → 溯源码</span><span class="ci-r ci-ok">N:1，多份报告汇总生成一个商品溯源码</span></div>
       <div class="ci"><span>溯源码 → 销售平台</span><span class="ci-r ci-ok">OpenAPI 推送溯源信息</span></div>
       <div class="ci"><span>销售平台 → 销售回传</span><span class="ci-r ci-ok">平台回传销量/扫码数据</span></div>
     </div>
