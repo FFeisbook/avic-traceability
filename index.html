@@ -531,22 +531,136 @@ html,body{height:100%;margin:0;padding:0;font-family:var(--font);background:var(
   </div>
   <div class="note mt-8"><b>说明：</b>以上为原型阶段逻辑数据模型（实体与关系），用于对齐各端数据口径；落地时按实际选型（如关系库 + 一物一码引擎）细化字段、索引与一致性约束。</div>
 
-  <div class="card mt-12"><div class="card-title"><span class="bar"></span>主数据表字段示例与关联示意</div>
-    <table class="table">
-      <thead><tr><th style="width:12%">表名</th><th style="width:34%">示例字段（示例值）</th><th style="width:12%">关联到</th><th style="width:12%">关系</th><th style="width:30%">说明</th></tr></thead>
-      <tbody>
-        <tr><td>销售平台</td><td style="font-family:monospace;font-size:12px;">platform_id: PLAT_001<br>name: 天虹超市<br>group: 中国航空工业集团</td><td>供应商</td><td>创建</td><td>销售平台创建供应商后进入平台供应商库，其他销售平台可复用</td></tr>
-        <tr><td>供应商</td><td style="font-family:monospace;font-size:12px;">supplier_id: SUP_001<br>name: 贵州苗干妈食品<br>created_by: PLAT_001</td><td>商品档案</td><td>1:N</td><td>一个供应商可提供多个商品</td></tr>
-        <tr><td>商品档案</td><td style="font-family:monospace;font-size:12px;">product_id: PROD_001<br>name: 苗干妈荞麦面<br>supplier_id: SUP_001</td><td>任务</td><td>1:N</td><td>一个商品可被派发多个检测任务</td></tr>
-        <tr><td>检测模板</td><td style="font-family:monospace;font-size:12px;">template_id: TPL_001<br>items: [农残, 重金属]<br>source: 平台标准</td><td>任务</td><td>1:1</td><td>一个任务仅引用一个检测模板</td></tr>
-        <tr><td>检测机构</td><td style="font-family:monospace;font-size:12px;">org_id: ORG_001<br>name: CCIC<br>fee_std: 500元/样</td><td>任务</td><td>N:1</td><td>机构或天虹作为任务执行方</td></tr>
-        <tr><td>溯源/监督任务</td><td style="font-family:monospace;font-size:12px;">task_id: TASK_001<br>product_id: PROD_001<br>template_id: TPL_001<br>executor: ORG_001</td><td>检测报告</td><td>1:1</td><td>一个任务仅出一份完整检测报告</td></tr>
-        <tr><td>源头资料</td><td style="font-family:monospace;font-size:12px;">origin_id: ORIG_001<br>product_id: PROD_001<br>farm: 安顺基地<br>pesticide: 生物农药</td><td>检测报告</td><td>补充</td><td>供应商补充产地、农事、投入品等资料</td></tr>
-        <tr><td>检测报告</td><td style="font-family:monospace;font-size:12px;">report_id: RPT_001<br>task_id: TASK_001<br>result: 合格<br>pdf_url: ...</td><td>溯源码</td><td>N:1</td><td>一个商品的多份报告汇总生成一个溯源码</td></tr>
-        <tr><td>溯源码</td><td style="font-family:monospace;font-size:12px;">code_id: CODE_001<br>product_id: PROD_001<br>report_ids: [RPT_001, ...]<br>status: 已激活</td><td>销售平台</td><td>OpenAPI</td><td>通过 OpenAPI 向销售平台推送溯源信息</td></tr>
-        <tr><td>销售回传</td><td style="font-family:monospace;font-size:12px;">sales_id: SAL_001<br>platform_id: PLAT_001<br>product_id: PROD_001<br>sales_qty: 1200</td><td>—</td><td>回传</td><td>销售平台回传销量、扫码验真次数等数据</td></tr>
-      </tbody>
-    </table>
+  <div class="card mt-12"><div class="card-title"><span class="bar"></span>主数据表 ER 关系图（含示例字段）</div>
+    <div style="overflow-x:auto;">
+    <svg viewBox="0 0 1040 760" width="100%" style="min-width:1000px;">
+      <defs>
+        <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,3 L0,6 Z" fill="#94a3b8"/></marker>
+      </defs>
+      <style>
+        .tn{font-weight:700;fill:#fff;font-size:13px;}
+        .tf{font-family:monospace;fill:#334155;font-size:11px;}
+        .rel{font-weight:700;font-size:12px;fill:#b45309;paint-order:stroke;stroke:#fff;stroke-width:3px;}
+        .box{fill:#fff;stroke-width:1.5;}
+      </style>
+
+      <!-- 关系连线 -->
+      <path d="M115,170 C115,225 300,225 300,313" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+      <text class="rel" x="148" y="232" text-anchor="middle">1:N</text>
+
+      <path d="M115,250 L115,173" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+      <text class="rel" x="124" y="215" text-anchor="start">1:N</text>
+
+      <path d="M385,380 C320,445 260,525 202,525" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+      <text class="rel" x="290" y="478" text-anchor="middle">N:1</text>
+
+      <path d="M645,170 C645,255 470,255 470,313" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+      <text class="rel" x="558" y="258" text-anchor="middle">1:1</text>
+
+      <path d="M470,315 L558,315" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+      <text class="rel" x="510" y="308" text-anchor="middle">1:1</text>
+
+      <path d="M645,382 L645,458" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+      <text class="rel" x="654" y="425" text-anchor="start">N:1</text>
+
+      <path d="M730,525 C800,525 770,375 842,330" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+      <text class="rel" x="788" y="448" text-anchor="middle">OpenAPI</text>
+
+      <path d="M925,382 L925,458" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+      <text class="rel" x="934" y="425" text-anchor="start">1:N</text>
+
+      <path d="M840,317 C840,690 200,690 200,319" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#arr)"/>
+      <text class="rel" x="520" y="678" text-anchor="middle">创建/复用 1:N</text>
+
+      <!-- 表框：商品档案 -->
+      <g>
+        <rect class="box" x="30" y="40" width="170" height="130" rx="6" stroke="#1B3A6B"/>
+        <rect x="30" y="40" width="170" height="26" rx="6" fill="#1B3A6B"/>
+        <text x="115" y="58" text-anchor="middle" class="tn">商品档案</text>
+        <text x="42" y="84" class="tf">product_id: PROD_001</text>
+        <text x="42" y="104" class="tf">name: 苗干妈荞麦面</text>
+        <text x="42" y="124" class="tf">supplier_id: SUP_001</text>
+        <text x="42" y="144" class="tf">is_trace: 是</text>
+      </g>
+      <!-- 供应商 -->
+      <g>
+        <rect class="box" x="30" y="250" width="170" height="130" rx="6" stroke="#1B3A6B"/>
+        <rect x="30" y="250" width="170" height="26" rx="6" fill="#1B3A6B"/>
+        <text x="115" y="268" text-anchor="middle" class="tn">供应商</text>
+        <text x="42" y="294" class="tf">supplier_id: SUP_001</text>
+        <text x="42" y="314" class="tf">name: 贵州苗干妈食品</text>
+        <text x="42" y="334" class="tf">created_by: PLAT_001</text>
+        <text x="42" y="354" class="tf">qual: SC认证</text>
+      </g>
+      <!-- 检测机构 -->
+      <g>
+        <rect class="box" x="30" y="460" width="170" height="110" rx="6" stroke="#1B3A6B"/>
+        <rect x="30" y="460" width="170" height="26" rx="6" fill="#1B3A6B"/>
+        <text x="115" y="478" text-anchor="middle" class="tn">检测机构</text>
+        <text x="42" y="504" class="tf">org_id: ORG_001</text>
+        <text x="42" y="524" class="tf">name: CCIC</text>
+        <text x="42" y="544" class="tf">fee_std: 500元/样</text>
+      </g>
+      <!-- 任务 -->
+      <g>
+        <rect class="box" x="300" y="250" width="170" height="130" rx="6" stroke="#C2410C"/>
+        <rect x="300" y="250" width="170" height="26" rx="6" fill="#C2410C"/>
+        <text x="385" y="268" text-anchor="middle" class="tn">溯源/监督任务</text>
+        <text x="312" y="294" class="tf">task_id: TASK_001</text>
+        <text x="312" y="314" class="tf">product_id: PROD_001</text>
+        <text x="312" y="334" class="tf">template_id: TPL_001</text>
+        <text x="312" y="354" class="tf">executor: ORG_001</text>
+      </g>
+      <!-- 检测模板 -->
+      <g>
+        <rect class="box" x="560" y="40" width="170" height="110" rx="6" stroke="#1B3A6B"/>
+        <rect x="560" y="40" width="170" height="26" rx="6" fill="#1B3A6B"/>
+        <text x="645" y="58" text-anchor="middle" class="tn">检测模板</text>
+        <text x="572" y="84" class="tf">template_id: TPL_001</text>
+        <text x="572" y="104" class="tf">items: 农残,重金属</text>
+        <text x="572" y="124" class="tf">source: 平台标准</text>
+      </g>
+      <!-- 检测报告 -->
+      <g>
+        <rect class="box" x="560" y="250" width="170" height="130" rx="6" stroke="#C2410C"/>
+        <rect x="560" y="250" width="170" height="26" rx="6" fill="#C2410C"/>
+        <text x="645" y="268" text-anchor="middle" class="tn">检测报告</text>
+        <text x="572" y="294" class="tf">report_id: RPT_001</text>
+        <text x="572" y="314" class="tf">task_id: TASK_001</text>
+        <text x="572" y="334" class="tf">result: 合格</text>
+        <text x="572" y="354" class="tf">pdf_url: ...</text>
+      </g>
+      <!-- 溯源码 -->
+      <g>
+        <rect class="box" x="560" y="460" width="170" height="130" rx="6" stroke="#0F766E"/>
+        <rect x="560" y="460" width="170" height="26" rx="6" fill="#0F766E"/>
+        <text x="645" y="478" text-anchor="middle" class="tn">溯源码</text>
+        <text x="572" y="504" class="tf">code_id: CODE_001</text>
+        <text x="572" y="524" class="tf">product_id: PROD_001</text>
+        <text x="572" y="544" class="tf">report_ids: [...] </text>
+        <text x="572" y="564" class="tf">status: 已激活</text>
+      </g>
+      <!-- 销售平台 -->
+      <g>
+        <rect class="box" x="840" y="250" width="170" height="110" rx="6" stroke="#1B3A6B"/>
+        <rect x="840" y="250" width="170" height="26" rx="6" fill="#1B3A6B"/>
+        <text x="925" y="268" text-anchor="middle" class="tn">销售平台</text>
+        <text x="852" y="294" class="tf">platform_id: PLAT_001</text>
+        <text x="852" y="314" class="tf">name: 天虹超市</text>
+        <text x="852" y="334" class="tf">group: 航空工业集团</text>
+      </g>
+      <!-- 销售回传 -->
+      <g>
+        <rect class="box" x="840" y="460" width="170" height="110" rx="6" stroke="#0F766E"/>
+        <rect x="840" y="460" width="170" height="26" rx="6" fill="#0F766E"/>
+        <text x="925" y="478" text-anchor="middle" class="tn">销售回传</text>
+        <text x="852" y="504" class="tf">sales_id: SAL_001</text>
+        <text x="852" y="524" class="tf">platform_id: PLAT_001</text>
+        <text x="852" y="544" class="tf">sales_qty: 1200</text>
+      </g>
+    </svg>
+    </div>
+    <div class="note mt-8"><b>图例：</b>实线为引用/生成关系，虚线为「销售平台创建供应商后进入平台供应商库、其他销售平台可复用」；业务流转表（橙）关联基础主数据表（蓝），并由检测报告（橙）汇总生成溯源码（青），溯源码经 OpenAPI 推送至销售平台，销售平台回传销量数据。</div>
   </div>
 </div>
 <div class="screen" id="admin-dashboard"><div class="page-title">平台运营端 · 工作台</div><div class="page-desc">集团运营方总控视图：待办、KPI、核心单据流转</div>
