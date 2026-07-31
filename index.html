@@ -1356,7 +1356,7 @@ body{display:flex;flex-direction:column;height:100vh;overflow:hidden;}
   <div style="height:60px;"></div>
 </div>
 </div></div></div>
-<div class="screen" id="label-design"><div class="page-title">平台运营端 · 溯源码标签设计</div><div class="page-desc">平台运营方统一配置溯源码标签样式、展示要素与背书机构，配置生效后供各销售平台/供应商下载使用</div>
+<div class="screen" id="label-design"><div class="page-title">平台运营端 · 溯源码标签设计</div><div class="page-desc">平台运营方统一配置溯源码标签样式、扫码页展示内容、展示要素与背书机构，配置生效后供各销售平台/供应商下载使用</div>
 <div class="row">
   <div class="col">
     <div class="label-mock">
@@ -1397,6 +1397,49 @@ body{display:flex;flex-direction:column;height:100vh;overflow:hidden;}
     <div class="form-group"><label>背书机构名称</label><input type="text" value="CCIC 中国检验认证集团"></div>
     <div class="form-group"><label>扫码引导文案</label><input type="text" value="微信扫码查看完整溯源信息"></div>
     <div class="form-group"><label>平台归属文案</label><input type="text" value="航空工业高质量乡村振兴赋能平台 · 一物一码"></div>
+
+    <div style="border-top:1px solid #e0e5ec;margin:18px 0;"></div>
+    <div class="card-title"><span class="bar"></span>扫码页内容配置</div>
+    <div class="note mt-8 mb-12">以下三大类目固定展示在消费者扫码页；类目下具体字段可多选组合，字段来源于商品基础信息、供应商档案、溯源信息录入、检测报告及监督报告。不同标签版本/销售平台可分别配置。</div>
+    <div class="accordion open">
+      <div class="accordion-hd" onclick="toggleAcc(this)"><span>产品信息（固定）</span><span class="arr">▼</span></div>
+      <div class="accordion-bd">
+        <div class="form-group" style="margin-bottom:8px;"><label style="display:flex;align-items:center;gap:6px;font-weight:400;"><input type="checkbox" checked> 产品名称</label></div>
+        <div class="form-group" style="margin-bottom:8px;"><label style="display:flex;align-items:center;gap:6px;font-weight:400;"><input type="checkbox" checked> 产品品牌</label></div>
+        <div class="form-group" style="margin-bottom:8px;"><label style="display:flex;align-items:center;gap:6px;font-weight:400;"><input type="checkbox" checked> 规格型号</label></div>
+        <div class="form-group" style="margin-bottom:8px;"><label style="display:flex;align-items:center;gap:6px;font-weight:400;"><input type="checkbox" checked> 保质期</label></div>
+        <div class="form-group" style="margin-bottom:8px;"><label style="display:flex;align-items:center;gap:6px;font-weight:400;"><input type="checkbox" checked> 储存环境</label></div>
+        <div class="form-group" style="margin-bottom:8px;"><label style="display:flex;align-items:center;gap:6px;font-weight:400;"><input type="checkbox" checked> 配料信息</label></div>
+        <div class="form-group" style="margin-bottom:8px;"><label style="display:flex;align-items:center;gap:6px;font-weight:400;"><input type="checkbox" checked> 原产地</label></div>
+        <div class="form-group" style="margin-bottom:8px;"><label style="display:flex;align-items:center;gap:6px;font-weight:400;"><input type="checkbox"> 销售平台</label></div>
+        <div class="form-group" style="margin-bottom:8px;"><label style="display:flex;align-items:center;gap:6px;font-weight:400;"><input type="checkbox" checked> 商品图片</label></div>
+      </div>
+    </div>
+    <div class="accordion open">
+      <div class="accordion-hd" onclick="toggleAcc(this)"><span>企业信息（固定）</span><span class="arr">▼</span></div>
+      <div class="accordion-bd">
+        <div class="form-group" style="margin-bottom:8px;"><label style="display:flex;align-items:center;gap:6px;font-weight:400;"><input type="checkbox" checked> 企业名称</label></div>
+        <div class="form-group" style="margin-bottom:8px;"><label style="display:flex;align-items:center;gap:6px;font-weight:400;"><input type="checkbox" checked> 社会信用代码</label></div>
+        <div class="form-group" style="margin-bottom:8px;"><label style="display:flex;align-items:center;gap:6px;font-weight:400;"><input type="checkbox" checked> 许可证编号</label></div>
+        <div class="form-group" style="margin-bottom:8px;"><label style="display:flex;align-items:center;gap:6px;font-weight:400;"><input type="checkbox" checked> 企业地址</label></div>
+        <div class="form-group" style="margin-bottom:8px;"><label style="display:flex;align-items:center;gap:6px;font-weight:400;"><input type="checkbox"> 企业简介</label></div>
+        <div class="form-group" style="margin-bottom:8px;"><label style="display:flex;align-items:center;gap:6px;font-weight:400;"><input type="checkbox"> 联系人 / 联系电话</label></div>
+      </div>
+    </div>
+    <div class="accordion open">
+      <div class="accordion-hd" onclick="toggleAcc(this)"><span>追溯信息（固定）</span><span class="arr">▼</span></div>
+      <div class="accordion-bd">
+        <div class="form-group" style="margin-bottom:8px;"><label style="display:flex;align-items:center;gap:6px;font-weight:400;"><input type="checkbox" checked> 生产原料（来源产地、品种、采购记录）</label></div>
+        <div class="form-group" style="margin-bottom:8px;"><label style="display:flex;align-items:center;gap:6px;font-weight:400;"><input type="checkbox" checked> 生产加工（生产日期、生产线、关键控制点）</label></div>
+        <div class="form-group" style="margin-bottom:8px;"><label style="display:flex;align-items:center;gap:6px;font-weight:400;"><input type="checkbox"> 产品包装（包材合规、标签批次）</label></div>
+        <div class="form-group" style="margin-bottom:8px;"><label style="display:flex;align-items:center;gap:6px;font-weight:400;"><input type="checkbox" checked> 产品检测（快检/定量检测结论、报告号）</label></div>
+        <div class="form-group" style="margin-bottom:8px;"><label style="display:flex;align-items:center;gap:6px;font-weight:400;"><input type="checkbox"> 实地验证（溯源机构检查项摘要）</label></div>
+        <div class="form-group" style="margin-bottom:8px;"><label style="display:flex;align-items:center;gap:6px;font-weight:400;"><input type="checkbox"> 监督报告摘要（天虹监督/整改结论）</label></div>
+        <div class="form-group" style="margin-bottom:8px;"><label style="display:flex;align-items:center;gap:6px;font-weight:400;"><input type="checkbox" checked> 帮扶证明（中航溯源）</label></div>
+        <div class="form-group" style="margin-bottom:8px;"><label style="display:flex;align-items:center;gap:6px;font-weight:400;"><input type="checkbox" checked> 平台声明（中航/天虹）</label></div>
+      </div>
+    </div>
+    <div class="note mt-12">提示：勾选字段需在对应商品的检测报告/监督报告/溯源信息录入中存在数据，扫码页才会展示；未勾选字段即使存在数据也不对消费者展示。</div>
     <div class="mt-12"><button class="btn btn-primary">保存配置</button><button class="btn btn-teal">预览标签</button><button class="btn btn-gray">下载设计稿</button></div>
     </div>
   </div>
