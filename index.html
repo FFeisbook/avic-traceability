@@ -681,7 +681,7 @@ body{display:flex;flex-direction:column;height:100vh;overflow:hidden;}
 </div>
 <div class="card mt-12">
   <div class="card-title"><span class="bar"></span>待办提醒</div>
-  <table class="table"><thead><tr><th>事项</th><th>来源</th><th>状态</th><th>操作</th></tr></thead><tbody><tr><td>贵州苗干妈食品有限公司 / 苗干妈荞麦面（PG2508220）</td><td>天虹销售平台</td><td><span class="badge badge-orange">待派发</span></td><td><button class="btn btn-teal" onclick="showScreen(\'admin-dispatch\')" >去派发</button></td></tr><tr><td>蓝天水井山泉水（批次 20260522A）</td><td>爱心航空销售平台</td><td><span class="badge badge-orange">待审核</span></td><td><button class="btn btn-primary" onclick="showScreen(\'admin-products\')" >去审核</button></td></tr><tr><td>云南哈尼红米（云S-1001）</td><td>天虹销售平台</td><td><span class="badge badge-red">整改中</span></td><td><button class="btn btn-orange" onclick="showScreen(\'admin-reports\')" >查看</button></td></tr></tbody></table>
+  <table class="table"><thead><tr><th>事项</th><th>来源</th><th>状态</th><th>操作</th></tr></thead><tbody><tr><td>贵州苗干妈食品有限公司 / 苗干妈荞麦面（PG2508220）</td><td>天虹数科（乡村振兴）销售平台</td><td><span class="badge badge-orange">待派发</span></td><td><button class="btn btn-teal" onclick="showScreen(\'admin-dispatch\')" >去派发</button></td></tr><tr><td>蓝天水井山泉水（批次 20260522A）</td><td>天虹数科（超市商品）销售平台</td><td><span class="badge badge-orange">待审核</span></td><td><button class="btn btn-primary" onclick="showScreen(\'admin-products\')" >去审核</button></td></tr><tr><td>云南哈尼红米（云S-1001）</td><td>爱心航空销售平台</td><td><span class="badge badge-red">整改中</span></td><td><button class="btn btn-orange" onclick="showScreen(\'admin-reports\')" >查看</button></td></tr></tbody></table>
 </div>
 </div>
 <div class="screen" id="admin-platforms"><div class="page-title">平台运营端 · 销售平台管理</div><div class="page-desc">维护集团及旗下子公司/销售渠道基础信息，配置 OpenAPI 对接。支持多集团租户，未来可对外输出。</div><div class="card" style="background:linear-gradient(90deg,#1B3A6B 0%,#2C4F7C 100%);color:#fff;"><div style="display:flex;justify-content:space-between;align-items:center;"><div><div style="font-size:12px;opacity:.85;margin-bottom:4px;">当前集团租户</div><div style="font-size:18px;font-weight:700;">中国航空工业集团</div></div><div><button class="btn" style="background:#fff;color:var(--navy);" >+ 新增集团</button><button class="btn" style="background:rgba(255,255,255,.2);color:#fff;margin-left:8px;" >切换集团</button></div></div></div><div class="card"><div class="card-title"><span class="bar"></span>销售平台管理（集团子公司/销售渠道）</div><table class="table"><thead><tr><th>所属集团</th><th>销售平台</th><th>使用溯源码类型</th><th>负责人</th><th>手机号</th><th>状态</th><th>操作</th></tr></thead><tbody><tr><td>中国航空工业集团</td><td>天虹数科（乡村振兴）</td><td><select><option selected>中航溯源</option><option>天虹溯源</option></select></td><td>张明</td><td>138****1234</td><td><span class="badge badge-green">已启用</span></td><td><button class="btn btn-gray"  >配置</button></td></tr><tr><td>中国航空工业集团</td><td>天虹数科（超市商品）</td><td><select><option>中航溯源</option><option selected>天虹溯源</option></select></td><td>李婷</td><td>138****1235</td><td><span class="badge badge-green">已启用</span></td><td><button class="btn btn-gray"  >配置</button></td></tr><tr><td>中国航空工业集团</td><td>爱心航空</td><td><select><option selected>中航溯源</option><option>天虹溯源</option></select></td><td>李红</td><td>139****5678</td><td><span class="badge badge-green">已启用</span></td><td><button class="btn btn-gray"  >配置</button></td></tr><tr><td>中国航空工业集团</td><td>航空工业集团内部采购平台</td><td><select><option selected>中航溯源</option><option>天虹溯源</option></select></td><td>王磊</td><td>137****9012</td><td><span class="badge badge-orange">待启用</span></td><td><button class="btn btn-teal"  >启用</button></td></tr></tbody></table><div class="mt-12"><button class="btn btn-primary"  >+ 新增销售平台</button></div><div class="note mt-8"><b>溯源码类型说明：</b>「中航溯源」用于乡村振兴商品，扫码页展示中航品牌；「天虹溯源」用于天虹超市商品，扫码页展示天虹品牌。销售平台启用时绑定一种溯源码，商品审核通过后按该类型生成溯源码与扫码页。</div><div class="note mt-8"><b>多集团租户示意：</b>未来对外输出时，可为中石油、国家电网等外部集团创建独立租户；各集团拥有独立的销售平台、供应商、溯源模板与数据权限，底层共享同一套平台能力。</div></div>
@@ -744,9 +744,9 @@ body{display:flex;flex-direction:column;height:100vh;overflow:hidden;}
 <div class="card"><div class="card-title"><span class="bar"></span>检测费用配置</div><table class="table"><thead><tr><th>检测项目</th><th>许可项目</th><th>CCIC</th><th>CTI</th><th>SGS</th><th>操作</th></tr></thead><tbody><tr><td>农残快检套餐</td><td>蔬菜制品</td><td>¥1,200/批次</td><td>¥1,100/批次</td><td>¥1,300/批次</td><td><button class="btn btn-gray">编辑</button></td></tr><tr><td>重金属+微生物全检</td><td>粮食加工品</td><td>¥2,800/批次</td><td>¥2,600/批次</td><td>¥3,000/批次</td><td><button class="btn btn-gray">编辑</button></td></tr><tr><td>企业资质现场核查</td><td>全品类</td><td>¥3,500/家</td><td>¥3,200/家</td><td>¥3,800/家</td><td><button class="btn btn-gray">编辑</button></td></tr></tbody></table><div class="mt-12"><button class="btn btn-primary">+ 新增费用标准</button></div></div>
 <div class="card"><div class="card-title"><span class="bar"></span>溯源机构资质与能力档案</div><div class="row"><div class="col"><div class="form-group"><label>资质证书</label><input value="CMA/CNAS/CATL" readonly></div><div class="form-group"><label>服务类型</label><input value="检测、现场核查、报告签章、溯源码支持" readonly></div></div><div class="col"><div class="form-group"><label>服务范围</label><textarea readonly rows="3">粮食加工品、蔬菜制品、饮料、茶叶及相关制品等农产品与食品检测</textarea></div><div class="form-group"><label>API 对接能力</label><input value="支持检测报告结构化直推" readonly></div></div></div></div>
 </div>
-<div class="screen" id="admin-suppliers"><div class="page-title">平台运营端 · 供应商管理</div><div class="page-desc">查看/审核各单位提报商品的供应商信息，聚合资质档案与天虹供应商编码</div><div class="card"><div class="card-title"><span class="bar"></span>供应商管理</div><table class="table"><thead><tr><th>供应商名称</th><th>社会信用代码</th><th>天虹供应商编码</th><th>许可项目</th><th>销售平台</th><th>已溯源商品数量</th><th>状态</th><th>操作</th></tr></thead><tbody><tr><td>贵州苗干妈食品有限公司</td><td>91520422314335401P</td><td>TH-GZ-001234</td><td>粮食加工品、蔬菜制品</td><td>天虹</td><td>2</td><td><span class="badge badge-blue">已建档</span></td><td><button class="btn btn-gray"  >详情</button></td></tr><tr><td>蓝天水井饮品有限公司</td><td>91520000MA6DJxxxx</td><td>TH-GZ-005678</td><td>饮料</td><td>天虹/爱心航空</td><td>1</td><td><span class="badge badge-blue">已建档</span></td><td><button class="btn btn-gray"  >详情</button></td></tr><tr><td>云南哈尼红米合作社</td><td>未提供</td><td>TH-YN-009012</td><td>粮食加工品</td><td>天虹</td><td>0</td><td><span class="badge badge-orange">待补资料</span></td><td><button class="btn btn-orange"  >催办</button></td></tr></tbody></table><div class="mt-12 note">供应商由销售平台提报，平台运营端统一管理，并供溯源机构实地核查。<br><b>天虹供应商编码说明：</b>超市商品溯源时，检测对象可能是生产基地；一个生产基地可能给多个天虹供应商编码供货，一个供应商编码也可能对应多个生产基地。该编码主要用于监督/检测结果回传供应链中台时，关联到对应供应商编码的供应商评价体系（质量评分）。</div></div></div>
+<div class="screen" id="admin-suppliers"><div class="page-title">平台运营端 · 供应商管理</div><div class="page-desc">查看/审核各单位提报商品的供应商信息，聚合资质档案与天虹供应商编码</div><div class="card"><div class="card-title"><span class="bar"></span>供应商管理</div><table class="table"><thead><tr><th>供应商名称</th><th>社会信用代码</th><th>天虹供应商编码</th><th>许可项目</th><th>销售平台</th><th>已溯源商品数量</th><th>状态</th><th>操作</th></tr></thead><tbody><tr><td>贵州苗干妈食品有限公司</td><td>91520422314335401P</td><td>TH-GZ-001234</td><td>粮食加工品、蔬菜制品</td><td>天虹数科（乡村振兴）</td><td>2</td><td><span class="badge badge-blue">已建档</span></td><td><button class="btn btn-gray"  >详情</button></td></tr><tr><td>蓝天水井饮品有限公司</td><td>91520000MA6DJxxxx</td><td>TH-GZ-005678</td><td>饮料</td><td>天虹数科（乡村振兴）/爱心航空</td><td>1</td><td><span class="badge badge-blue">已建档</span></td><td><button class="btn btn-gray"  >详情</button></td></tr><tr><td>云南哈尼红米合作社</td><td>未提供</td><td>TH-YN-009012</td><td>粮食加工品</td><td>爱心航空</td><td>0</td><td><span class="badge badge-orange">待补资料</span></td><td><button class="btn btn-orange"  >催办</button></td></tr></tbody></table><div class="mt-12 note">供应商由销售平台提报，平台运营端统一管理，并供溯源机构实地核查。<br><b>天虹供应商编码说明：</b>超市商品溯源时，检测对象可能是生产基地；一个生产基地可能给多个天虹供应商编码供货，一个供应商编码也可能对应多个生产基地。该编码主要用于监督/检测结果回传供应链中台时，关联到对应供应商编码的供应商评价体系（质量评分）。</div></div></div>
 <div class="screen" id="admin-products"><div class="page-title">平台运营端 · 溯源商品管理</div><div class="page-desc">新增/查看/审核各单位提报商品，判断是否进入溯源流程</div><div class="card"><div class="card-title"><span class="bar"></span>溯源商品管理 · 审核</div>
-<table class="table"><thead><tr><th>商品名称</th><th>销售平台</th><th>供应商</th><th>许可项目</th><th>优先级</th><th>审核状态</th><th>溯源完成状态</th><th>溯源码</th><th>检测报告</th><th>操作</th></tr></thead><tbody><tr><td>苗干妈荞麦面</td><td>天虹</td><td>贵州苗干妈食品有限公司</td><td>粮食加工品</td><td>高</td><td><span class="badge badge-orange">待审核</span></td><td><span class="badge badge-gray">未开始</span></td><td>—</td><td>—</td><td><button class="btn btn-teal"  >通过</button><button class="btn btn-red"  >驳回</button></td></tr><tr><td>蓝天水井山泉水</td><td>天虹</td><td>蓝天水井饮品有限公司</td><td>饮料</td><td>高</td><td><span class="badge badge-green">已通过</span></td><td><span class="badge badge-green">已完成</span></td><td><a href="javascript:void(0)" style="color:var(--teal);text-decoration:underline;cursor:pointer;" onclick="showScreen(\'consumer-scan-avic\')">0000033200609123</a></td><td><a href="javascript:void(0)" style="color:var(--teal);text-decoration:underline;cursor:pointer;" onclick="showScreen(\'admin-reports\')">CCIC-GZ-2026-0524</a></td><td><button class="btn btn-gray"  >查看详情</button></td></tr><tr><td>哈尼红米 1kg</td><td>天虹</td><td>云南哈尼红米合作社</td><td>粮食加工品</td><td>中</td><td><span class="badge badge-orange">待补资料</span></td><td><span class="badge badge-gray">未开始</span></td><td>—</td><td>—</td><td><button class="btn btn-orange"  >查看</button></td></tr></tbody></table>
+<table class="table"><thead><tr><th>商品名称</th><th>销售平台</th><th>供应商</th><th>许可项目</th><th>优先级</th><th>审核状态</th><th>溯源完成状态</th><th>溯源码</th><th>检测报告</th><th>操作</th></tr></thead><tbody><tr><td>苗干妈荞麦面</td><td>天虹数科（乡村振兴）</td><td>贵州苗干妈食品有限公司</td><td>粮食加工品</td><td>高</td><td><span class="badge badge-orange">待审核</span></td><td><span class="badge badge-gray">未开始</span></td><td>—</td><td>—</td><td><button class="btn btn-teal"  >通过</button><button class="btn btn-red"  >驳回</button></td></tr><tr><td>蓝天水井山泉水</td><td>天虹数科（超市商品）</td><td>蓝天水井饮品有限公司</td><td>饮料</td><td>高</td><td><span class="badge badge-green">已通过</span></td><td><span class="badge badge-green">已完成</span></td><td><a href="javascript:void(0)" style="color:var(--teal);text-decoration:underline;cursor:pointer;" onclick="showScreen(\'consumer-scan-tianhong\')">0000033200609123</a></td><td><a href="javascript:void(0)" style="color:var(--teal);text-decoration:underline;cursor:pointer;" onclick="showScreen(\'admin-reports\')">CCIC-GZ-2026-0524</a></td><td><button class="btn btn-gray"  >查看详情</button></td></tr><tr><td>哈尼红米 1kg</td><td>爱心航空</td><td>云南哈尼红米合作社</td><td>粮食加工品</td><td>中</td><td><span class="badge badge-orange">待补资料</span></td><td><span class="badge badge-gray">未开始</span></td><td>—</td><td>—</td><td><button class="btn btn-orange"  >查看</button></td></tr></tbody></table>
 <div class="mt-12 row">
   <div class="col">
     <div class="card"><div class="card-title"><span class="bar"></span>审核详情（苗干妈荞麦面）</div>
@@ -758,7 +758,7 @@ body{display:flex;flex-direction:column;height:100vh;overflow:hidden;}
   </div>
 </div>
 </div></div>
-<div class="screen" id="admin-dispatch"><div class="page-title">平台运营端 · 溯源/监督任务派发</div><div class="page-desc">对可溯源商品一对多派发检测任务（快检/定量/工厂审核/虫害，生成溯源码），或派发内部监督任务（天虹执行，仅报告结果）</div><div class="card"><div class="card-title"><span class="bar"></span>溯源任务派发</div>
+<div class="screen" id="admin-dispatch"><div class="page-title">平台运营端 · 溯源/监督任务派发</div><div class="page-desc">勾选多个商品、勾选多项检测/监督任务，一键批量派发，提升运营效率</div><div class="card"><div class="card-title"><span class="bar"></span>任务派发</div>
 <div class="seg-control mt-8">
   <button class="seg active" id="seg-trace" onclick="toggleDispatch('trace')">溯源任务（溯源机构执行 · 生成溯源码）</button>
   <button class="seg" id="seg-spot" onclick="toggleDispatch('spot')">监督任务（天虹执行 · 仅报告结果）</button>
@@ -766,64 +766,68 @@ body{display:flex;flex-direction:column;height:100vh;overflow:hidden;}
 
 <div id="dispatch-trace">
 <div class="steps mt-12">
-  <div class="step done">商品审核</div><div class="step-arrow">→</div>
-  <div class="step active">派发检测任务（一对多）</div><div class="step-arrow">→</div>
+  <div class="step done">选择商品</div><div class="step-arrow">→</div>
+  <div class="step active">勾选检测任务</div><div class="step-arrow">→</div>
+  <div class="step">一键批量派发</div><div class="step-arrow">→</div>
   <div class="step">机构执行</div><div class="step-arrow">→</div>
   <div class="step">四类全部完成</div><div class="step-arrow">→</div>
   <div class="step">生成溯源码</div>
 </div>
-<div class="note mt-12">一个商品需派发 <b>多项检测任务（一对多）</b>：<b>快检、定量、供应商工厂审核、虫害防治</b>，分别由溯源机构 / 审核机构 / 虫害机构执行，<b>四类任务全部完成并通过</b>后方可生成溯源码。</div>
+<div class="note mt-12">在左侧勾选需要派发任务的<b>商品（可多选）</b>，在右侧勾选要派发的<b>多项检测任务（快检/定量/工厂审核/虫害，可多选）</b>，点击「批量派发」即可一次性将所选任务派发给所选商品；四类任务全部完成并通过后方可生成溯源码。</div>
 <div class="row mt-12">
-  <div class="col">
-    <div class="card"><div class="card-title"><span class="bar"></span>商品/供应商信息</div>
-    <div class="form-group"><label>任务编号</label><input value="PG2508220" readonly></div>
-    <div class="form-group"><label>商品</label><input value="苗干妈荞麦面" readonly></div>
-    <div class="form-group"><label>供应商</label><input value="贵州苗干妈食品有限公司" readonly></div>
-    <div class="form-group"><label>检查依据</label><input value="2026年中航工业帮扶溯源检查表" readonly></div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card"><div class="card-title"><span class="bar"></span>检测任务派发（一对多）</div>
-    <table class="table"><thead><tr><th style="width:40px;"><input type="checkbox" checked></th><th>任务类型</th><th>执行机构</th><th>负责机构</th><th>状态</th><th>操作</th></tr></thead><tbody>
-    <tr><td><input type="checkbox" checked></td><td>快检</td><td>溯源机构</td><td><select><option selected>中国检验认证集团 CCIC</option><option>华测检测 CTI</option><option>SGS 通标</option></select></td><td><span class="badge badge-orange">待派发</span></td><td><button class="btn btn-primary">派发</button></td></tr>
-    <tr><td><input type="checkbox" checked></td><td>定量检测</td><td>溯源机构</td><td><select><option selected>华测检测 CTI</option><option>中国检验认证集团 CCIC</option><option>SGS 通标</option></select></td><td><span class="badge badge-orange">待派发</span></td><td><button class="btn btn-primary">派发</button></td></tr>
-    <tr><td><input type="checkbox"></td><td>供应商工厂审核</td><td>审核机构</td><td><select><option selected>中检集团认证有限公司</option><option>华测认证</option></select></td><td><span class="badge badge-orange">待派发</span></td><td><button class="btn btn-primary">派发</button></td></tr>
-    <tr><td><input type="checkbox"></td><td>虫害防治</td><td>虫害机构</td><td><select><option selected>中粮营养健康研究院虫控中心</option><option>艺康虫控</option></select></td><td><span class="badge badge-orange">待派发</span></td><td><button class="btn btn-primary">派发</button></td></tr>
+  <div class="col" style="flex:1.3;">
+    <div class="card"><div class="card-title"><span class="bar"></span>选择商品（可多选）</div>
+    <table class="table"><thead><tr><th style="width:40px;"><input type="checkbox" id="selAllProd" onclick="toggleAllProd(this)"></th><th>商品</th><th>供应商</th><th>销售平台</th></tr></thead><tbody>
+      <tr><td><input type="checkbox" class="prodCb"></td><td>苗干妈荞麦面</td><td>贵州苗干妈食品有限公司</td><td>天虹数科（乡村振兴）</td></tr>
+      <tr><td><input type="checkbox" class="prodCb"></td><td>蓝天水井山泉水</td><td>蓝天水井饮品有限公司</td><td>天虹数科（超市商品）</td></tr>
+      <tr><td><input type="checkbox" class="prodCb"></td><td>哈尼红米 1kg</td><td>云南哈尼红米合作社</td><td>爱心航空</td></tr>
     </tbody></table>
-    <div id="dispatch-btn"><button class="btn btn-primary" onclick="dispatchTask()" >一键派发勾选任务</button></div>
-    <div id="dispatch-result" class="hide"><span class="badge badge-blue">已派发 4 项检测任务 → 各对应机构</span> <div class="mt-8"><button class="btn btn-teal" onclick="showScreen('inspector-tasks')" >查看任务状态</button></div></div>
+    </div>
+  </div>
+  <div class="col" style="flex:1;">
+    <div class="card"><div class="card-title"><span class="bar"></span>勾选派发任务（可多选）</div>
+    <table class="table"><thead><tr><th style="width:40px;">选</th><th>任务类型</th><th>执行机构</th><th>负责机构</th></tr></thead><tbody>
+      <tr><td><input type="checkbox" class="taskCb" checked></td><td>快检</td><td>溯源机构</td><td><select><option selected>中国检验认证集团 CCIC</option><option>华测检测 CTI</option><option>SGS 通标</option></select></td></tr>
+      <tr><td><input type="checkbox" class="taskCb" checked></td><td>定量检测</td><td>溯源机构</td><td><select><option selected>华测检测 CTI</option><option>中国检验认证集团 CCIC</option><option>SGS 通标</option></select></td></tr>
+      <tr><td><input type="checkbox" class="taskCb"></td><td>供应商工厂审核</td><td>审核机构</td><td><select><option selected>中检集团认证有限公司</option><option>华测认证</option></select></td></tr>
+      <tr><td><input type="checkbox" class="taskCb"></td><td>虫害防治</td><td>虫害机构</td><td><select><option selected>中粮营养健康研究院虫控中心</option><option>艺康虫控</option></select></td></tr>
+    </tbody></table>
+    <div id="batchDispatchBtn"><button class="btn btn-primary" onclick="batchDispatch()" >批量派发所选任务</button></div>
+    <div id="batchDispatchResult" class="hide"><span class="badge badge-blue" id="batchDispatchMsg">已派发</span> <div class="mt-8"><button class="btn btn-teal" onclick="showScreen('inspector-tasks')" >查看任务状态</button></div></div>
     </div>
   </div>
 </div>
 </div>
+
 <div id="dispatch-spot" class="hide">
 <div class="steps mt-12">
-  <div class="step done">商品审核</div><div class="step-arrow">→</div>
-  <div class="step active">确认执行方（天虹）</div><div class="step-arrow">→</div>
-  <div class="step">下达监督任务</div><div class="step-arrow">→</div>
-  <div class="step">供应商预填信息</div><div class="step-arrow">→</div>
+  <div class="step done">选择商品</div><div class="step-arrow">→</div>
+  <div class="step active">确认执行方</div><div class="step-arrow">→</div>
+  <div class="step">批量下达监督</div><div class="step-arrow">→</div>
+  <div class="step">供应商预填</div><div class="step-arrow">→</div>
   <div class="step">天虹执行</div><div class="step-arrow">→</div>
-  <div class="step">报告回传供应链中台</div><div class="step-arrow">→</div>
-  <div class="step">整改闭环（无溯源码）</div>
+  <div class="step">回传中台</div><div class="step-arrow">→</div>
+  <div class="step">整改闭环</div>
 </div>
-<div class="note mt-12">本模式由平台运营方对指定产品派发内部监督任务，<b>供应商先预填基础信息/自检资料</b>，再由<b>天虹质量检测组</b>按溯源模板执行；监督报告除整改闭环外，<b>回传供应链中台</b>纳入供应商评价体系的质量评分，<b>不生成溯源码</b>。</div>
+<div class="note mt-12">本模式由平台运营方对<b>选中的多个商品</b>批量派发内部监督任务，<b>供应商先预填基础信息/自检资料</b>，再由<b>天虹质量检测组</b>按溯源模板执行；监督报告除整改闭环外，<b>回传供应链中台</b>纳入供应商评价体系的质量评分，<b>不生成溯源码</b>。</div>
 <div class="row mt-12">
-  <div class="col">
-    <div class="card"><div class="card-title"><span class="bar"></span>商品/供应商信息</div>
-    <div class="form-group"><label>监督编号</label><input value="JC2509001" readonly></div>
-    <div class="form-group"><label>商品</label><input value="蓝天水井山泉水" readonly></div>
-    <div class="form-group"><label>供应商</label><input value="蓝天水井饮品有限公司" readonly></div>
-    <div class="form-group"><label>监督依据</label><input value="2026年中航工业帮扶溯源检查表" readonly></div>
+  <div class="col" style="flex:1.3;">
+    <div class="card"><div class="card-title"><span class="bar"></span>选择商品（可多选）</div>
+    <table class="table"><thead><tr><th style="width:40px;"><input type="checkbox" id="selAllProdSpot" onclick="toggleAllProdSpot(this)"></th><th>商品</th><th>供应商</th><th>销售平台</th></tr></thead><tbody>
+      <tr><td><input type="checkbox" class="prodCbSpot"></td><td>蓝天水井山泉水</td><td>蓝天水井饮品有限公司</td><td>天虹数科（超市商品）</td></tr>
+      <tr><td><input type="checkbox" class="prodCbSpot"></td><td>哈尼红米 1kg</td><td>云南哈尼红米合作社</td><td>爱心航空</td></tr>
+      <tr><td><input type="checkbox" class="prodCbSpot"></td><td>苗干妈荞麦面</td><td>贵州苗干妈食品有限公司</td><td>天虹数科（乡村振兴）</td></tr>
+    </tbody></table>
     </div>
   </div>
-  <div class="col">
+  <div class="col" style="flex:1;">
     <div class="card"><div class="card-title"><span class="bar"></span>执行方与监督配置</div>
     <div class="form-group"><label>执行方</label><input value="天虹质量检测组（内部）" readonly></div>
     <div class="form-group"><label>溯源模板</label><input value="乡村振兴商品溯源模板" readonly></div>
     <div class="form-group"><label>监督方式</label><select><option selected>到厂监督</option><option>市场流通监督</option></select></div>
     <div class="form-group"><label>计划监督日期</label><input type="date" value="2026-09-10"></div>
-    <div id="spot-btn"><button class="btn btn-primary" onclick="spotTask()" >下达监督任务</button></div>
-    <div id="spot-result" class="hide"><span class="badge badge-blue">已派发 → 天虹质量检测组</span> <div class="mt-8"><button class="btn btn-teal" onclick="showScreen(\'admin-spotcheck\')" >查看监督任务</button></div></div>
+    <div id="batchSpotBtn"><button class="btn btn-primary" onclick="batchSpot()" >批量下达监督任务</button></div>
+    <div id="batchSpotResult" class="hide"><span class="badge badge-blue" id="batchSpotMsg">已派发</span> <div class="mt-8"><button class="btn btn-teal" onclick="showScreen('admin-spotcheck')" >查看监督任务</button></div></div>
     </div>
   </div>
 </div>
@@ -931,7 +935,7 @@ body{display:flex;flex-direction:column;height:100vh;overflow:hidden;}
 <div class="card"><div class="card-title"><span class="bar"></span>接口状态与接入管理（销售平台 + 供应链中台）</div><div class="rule-note mb-12"><b>超市商品检测结果回传：</b>天虹超市商品经溯源机构出具的检测报告，除同步至 C 端销售平台外，需通过标准接口回传至<b>天虹供应链中台</b>，支撑采购、品控、供应商协同等供应链业务闭环。</div><table class="table"><thead><tr><th>接入方</th><th>AppKey</th><th>接口权限</th><th>最后调用</th><th>状态</th><th>操作</th></tr></thead><tbody><tr><td>天虹 APP/小程序</td><td>th_***1234</td><td>查询+回传+同步</td><td>2026-07-28 09:23</td><td><span class="badge badge-green">已启用</span></td><td><button class="btn btn-gray">查看密钥</button></td></tr><tr><td>爱心航空</td><td>yt_***5678</td><td>查询+回传+同步</td><td>2026-07-27 16:45</td><td><span class="badge badge-green">已启用</span></td><td><button class="btn btn-gray">查看密钥</button></td></tr><tr><td>天虹供应链中台</td><td>thsc_***9012</td><td>超市商品检测结果回传</td><td>2026-07-28 10:05</td><td><span class="badge badge-green">已启用</span></td><td><button class="btn btn-gray">查看密钥</button></td></tr><tr><td>航空工业集团内部采购</td><td>—</td><td>待分配</td><td>—</td><td><span class="badge badge-gray">待启用</span></td><td><button class="btn btn-teal">启用</button></td></tr></tbody></table></div><div class="card"><div class="card-title"><span class="bar"></span>溯源码同步至销售平台管理</div><table class="table"><thead><tr><th>商品</th><th>目标销售平台</th><th>同步内容</th><th>最近同步</th><th>状态</th><th>操作</th></tr></thead><tbody><tr><td>苗干妈荞麦面</td><td>爱心航空</td><td>溯源码 + 检测报告</td><td>2026-07-28 10:15</td><td><span class="badge badge-green">成功</span></td><td><button class="btn btn-gray">查看日志</button></td></tr><tr><td>蓝天水井山泉水</td><td>天虹 APP/小程序</td><td>溯源码 + 商品信息</td><td>2026-07-28 09:30</td><td><span class="badge badge-green">成功</span></td><td><button class="btn btn-gray">查看日志</button></td></tr><tr><td>哈尼红米</td><td>天虹 APP/小程序</td><td>—</td><td>—</td><td><span class="badge badge-gray">未同步</span></td><td><button class="btn btn-teal">立即同步</button></td></tr></tbody></table></div></div>
 
 <div class="screen" id="admin-report-products"><div class="page-title">平台运营端 · 乡村振兴商品清单</div><div class="page-desc">汇总已接入溯源体系的乡村振兴商品及其溯源码状态</div>
-<div class="card"><div class="card-title"><span class="bar"></span>乡村振兴商品清单</div><table class="table"><thead><tr><th>商品名称</th><th>供应商</th><th>销售平台</th><th>溯源码状态</th><th>溯源码编号</th></tr></thead><tbody><tr><td>苗干妈荞麦面</td><td>贵州苗干妈食品有限公司</td><td>天虹</td><td><span class="badge badge-green">已发码</span></td><td>0000033300609168</td></tr><tr><td>蓝天水井山泉水</td><td>蓝天水井饮品有限公司</td><td>天虹/爱心航空</td><td><span class="badge badge-green">已发码</span></td><td>0000033200609123</td></tr><tr><td>哈尼红米</td><td>云南哈尼红米合作社</td><td>天虹</td><td><span class="badge badge-red">整改中</span></td><td>—</td></tr></tbody></table></div>
+<div class="card"><div class="card-title"><span class="bar"></span>乡村振兴商品清单</div><table class="table"><thead><tr><th>商品名称</th><th>供应商</th><th>销售平台</th><th>溯源码状态</th><th>溯源码编号</th></tr></thead><tbody><tr><td>苗干妈荞麦面</td><td>贵州苗干妈食品有限公司</td><td>天虹数科（乡村振兴）</td><td><span class="badge badge-green">已发码</span></td><td>0000033300609168</td></tr><tr><td>蓝天水井山泉水</td><td>蓝天水井饮品有限公司</td><td>天虹数科（乡村振兴）/爱心航空</td><td><span class="badge badge-green">已发码</span></td><td>0000033200609123</td></tr><tr><td>哈尼红米</td><td>云南哈尼红米合作社</td><td>爱心航空</td><td><span class="badge badge-red">整改中</span></td><td>—</td></tr></tbody></table></div>
 </div>
 <div class="screen" id="admin-report-fees"><div class="page-title">平台运营端 · 溯源机构费用报表</div><div class="page-desc">统计各溯源机构的检测任务量及费用结算情况</div>
 <div class="card"><div class="card-title"><span class="bar"></span>溯源机构费用报表</div><table class="table"><thead><tr><th>溯源机构</th><th>任务数</th><th>费用合计</th><th>结算状态</th></tr></thead><tbody><tr><td>CCIC</td><td>12</td><td>¥ 38,400</td><td><span class="badge badge-orange">待结算</span></td></tr><tr><td>CTI</td><td>5</td><td>¥ 16,500</td><td><span class="badge badge-green">已结算</span></td></tr><tr><td>SGS</td><td>3</td><td>¥ 12,300</td><td><span class="badge badge-green">已结算</span></td></tr></tbody></table></div>
@@ -1461,9 +1465,11 @@ function prevScreen(){const ids=[...document.querySelectorAll('.screen')].map(s=
 function toggleMobile(btn){const phone=document.querySelector('.main .phone-frame');if(phone){phone.classList.toggle('wide');btn.textContent=phone.classList.contains('wide')?'PC视图':'手机视图';}}
 function setDemo(role){}
 function submitForm(id){alert('保存成功（原型演示）');}
-function dispatchTask(){document.getElementById('dispatch-result').classList.remove('hide');document.getElementById('dispatch-btn').classList.add('hide');}
+function toggleAllProd(box){var cbs=document.querySelectorAll('.prodCb');cbs.forEach(function(cb){cb.checked=box.checked;});}
+function batchDispatch(){var p=document.querySelectorAll('.prodCb:checked').length;var t=document.querySelectorAll('.taskCb:checked').length;if(p===0||t===0){alert('请至少选择 1 个商品和 1 项任务');return;}var msg=document.getElementById('batchDispatchMsg');if(msg){msg.textContent='已派发 '+p+' 个商品 × '+t+' 项任务 → 各对应机构';}document.getElementById('batchDispatchResult').classList.remove('hide');document.getElementById('batchDispatchBtn').classList.add('hide');}
 function toggleDispatch(mode){document.getElementById('seg-trace').classList.toggle('active',mode==='trace');document.getElementById('seg-spot').classList.toggle('active',mode==='spot');document.getElementById('dispatch-trace').classList.toggle('hide',mode!=='trace');document.getElementById('dispatch-spot').classList.toggle('hide',mode!=='spot');}
-function spotTask(){document.getElementById('spot-result').classList.remove('hide');document.getElementById('spot-btn').classList.add('hide');}
+function toggleAllProdSpot(box){var cbs=document.querySelectorAll('.prodCbSpot');cbs.forEach(function(cb){cb.checked=box.checked;});}
+function batchSpot(){var p=document.querySelectorAll('.prodCbSpot:checked').length;if(p===0){alert('请至少选择 1 个商品');return;}var msg=document.getElementById('batchSpotMsg');if(msg){msg.textContent='已向天虹质量检测组派发 '+p+' 个商品的监督任务';}document.getElementById('batchSpotResult').classList.remove('hide');document.getElementById('batchSpotBtn').classList.add('hide');}
 function saveSpotReport(){document.getElementById('spot-report-result').classList.remove('hide');}
 function genCode(){document.getElementById('code-panel').classList.remove('hide');}
 function inspectionResult(result){if(result==='pass'){document.getElementById('inspection-pass').classList.remove('hide');document.getElementById('inspection-fail').classList.add('hide');}else{document.getElementById('inspection-fail').classList.remove('hide');document.getElementById('inspection-pass').classList.add('hide');}}
