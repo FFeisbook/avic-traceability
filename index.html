@@ -125,7 +125,8 @@ body{display:flex;flex-direction:column;height:100vh;overflow:hidden;}
 .role-card.rc-inspector{border-top-color:var(--orange);} .role-card.rc-inspector .role-tag{background:var(--orange);}
 .role-card.rc-supplier{border-top-color:var(--purple);} .role-card.rc-supplier .role-tag{background:var(--purple);}
 .role-card.rc-spot{border-top-color:var(--red);} .role-card.rc-spot .role-tag{background:var(--red);}
-.role-card.rc-viewer{border-top-color:#64748b;} .role-card.rc-viewer .role-tag{background:#64748b;}
+.role-card.rc-consumer{border-top-color:#64748b;} .role-card.rc-consumer .role-tag{background:#64748b;}
+.role-card.rc-group{border-top-color:var(--green);} .role-card.rc-group .role-tag{background:var(--green);}
 .flow-lane-wrap{border:1px solid #e0e5ec;border-radius:8px;overflow:hidden;margin-top:12px;}
 .rule-note{font-size:11px;color:var(--gray);line-height:1.7;}
 .rule-note .h{font-size:12px;font-weight:700;color:var(--navy);margin:8px 0 3px;}
@@ -332,10 +333,15 @@ body{display:flex;flex-direction:column;height:100vh;overflow:hidden;}
       <div class="t">天虹内部监督人员</div>
       <div class="d">接收天虹自行监督任务，依据溯源模板对供应商进行现场检查，回填监督结果并形成监督报告回传供应链中台。</div>
     </div>
-    <div class="role-card rc-viewer">
-      <div class="role-tag">消费者 / 集团视角</div>
-      <div class="t">扫码验真与成果查看</div>
-      <div class="d">消费者扫码查看产品/企业/追溯信息；集团管理人员通过平台运管端查看各类报告、乡村振兴商品清单及帮扶成果。</div>
+    <div class="role-card rc-consumer">
+      <div class="role-tag">消费者端</div>
+      <div class="t">扫码验真</div>
+      <div class="d">通过天虹 APP/小程序、超市线下或集团销售渠道扫码，查看产品信息、企业信息与追溯信息，验证商品真伪与溯源链路。</div>
+    </div>
+    <div class="role-card rc-group">
+      <div class="role-tag">集团视角</div>
+      <div class="t">成果查看与管理</div>
+      <div class="d">集团管理人员通过平台运管端查看各类检测/监督报告、乡村振兴商品清单与帮扶成果汇总，支撑管理决策与成果展示。</div>
     </div>
   </div>
 </div>
