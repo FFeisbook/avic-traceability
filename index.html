@@ -771,8 +771,8 @@ body{display:flex;flex-direction:column;height:100vh;overflow:hidden;}
     </div>
   </div>
 </div>
-<div class="card mt-12"><div class="card-title"><span class="bar"></span>模板与任务类型关系</div>
-<div class="note" style="margin-bottom:12px;">一个溯源模板可绑定到一种或多种任务类型；派发任务时按任务类型选择对应模板，确保检查项与执行要求一致。</div>
+<div class="card mt-12"><div class="card-title"><span class="bar"></span>模板适配关系（模板为主键）</div>
+<div class="note" style="margin-bottom:12px;">以溯源模板为主键，配置其适配的任务类型与适用许可项目；后续派发任务或匹配商品时，系统根据「任务类型 + 许可项目」自动命中对应模板。</div>
 <div class="form-row">
   <div class="form-group"><label style="display:flex;align-items:center;gap:6px;"><input type="checkbox" checked> 快检</label></div>
   <div class="form-group"><label style="display:flex;align-items:center;gap:6px;"><input type="checkbox" checked> 定量检测</label></div>
@@ -780,12 +780,10 @@ body{display:flex;flex-direction:column;height:100vh;overflow:hidden;}
   <div class="form-group"><label style="display:flex;align-items:center;gap:6px;"><input type="checkbox"> 虫害防治</label></div>
   <div class="form-group"><label style="display:flex;align-items:center;gap:6px;"><input type="checkbox"> 天虹监督</label></div>
 </div>
-<table class="table mt-12"><thead><tr><th>任务类型</th><th>默认模板</th><th>说明</th></tr></thead><tbody>
-  <tr><td>快检</td><td>乡村振兴商品溯源模板</td><td>适用于现场快速筛查，项少周期短</td></tr>
-  <tr><td>定量检测</td><td>乡村振兴商品溯源模板</td><td>实验室全项定量，项多周期长</td></tr>
-  <tr><td>供应商工厂审核</td><td>企业资质检查模板</td><td>资质、现场、体系合规审核</td></tr>
-  <tr><td>虫害防治</td><td>乡村振兴商品溯源模板</td><td>虫控方案与现场防治效果核查</td></tr>
-  <tr><td>天虹监督</td><td>天虹超市自有商品溯源模板</td><td>天虹内部人员执行，不生成溯源码</td></tr>
+<table class="table mt-12"><thead><tr><th>模板名称</th><th>适配任务类型</th><th>适用许可项目</th><th>说明</th></tr></thead><tbody>
+  <tr><td>乡村振兴商品溯源模板</td><td>快检、定量检测、虫害防治</td><td>粮食加工品、蔬菜制品</td><td>适用于乡村振兴商品；可覆盖现场快检、实验室全项定量及虫害防治</td></tr>
+  <tr><td>企业资质检查模板</td><td>供应商工厂审核</td><td>全品类（资质审核）</td><td>资质、现场、体系合规审核</td></tr>
+  <tr><td>天虹超市自有商品溯源模板</td><td>天虹监督</td><td>天虹超市自有商品</td><td>天虹内部人员执行，不生成溯源码</td></tr>
 </tbody></table>
 </div>
 <div class="mt-12"><button class="btn btn-primary" onclick="submitForm("template")" >保存模板</button></div>
