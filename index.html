@@ -115,6 +115,17 @@ body{display:flex;flex-direction:column;height:100vh;overflow:hidden;}
 .scenario-card.sc4 .num{background:var(--purple);}
 .scenario-card .t{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:5px;}
 .scenario-card .d{font-size:11px;color:var(--gray);line-height:1.5;}
+.role-cards{display:flex;gap:10px;margin:12px 0;flex-wrap:wrap;}
+.role-card{flex:1;min-width:160px;background:#fff;border:1px solid #e0e5ec;border-radius:8px;padding:10px 12px;border-top:3px solid var(--navy);}
+.role-card .role-tag{font-size:11px;color:#fff;background:var(--navy);display:inline-block;padding:2px 8px;border-radius:10px;margin-bottom:6px;}
+.role-card .t{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:5px;}
+.role-card .d{font-size:11px;color:var(--gray);line-height:1.5;}
+.role-card.rc-sales{border-top-color:var(--teal);} .role-card.rc-sales .role-tag{background:var(--teal);}
+.role-card.rc-admin{border-top-color:var(--navy);} .role-card.rc-admin .role-tag{background:var(--navy);}
+.role-card.rc-inspector{border-top-color:var(--orange);} .role-card.rc-inspector .role-tag{background:var(--orange);}
+.role-card.rc-supplier{border-top-color:var(--purple);} .role-card.rc-supplier .role-tag{background:var(--purple);}
+.role-card.rc-spot{border-top-color:var(--red);} .role-card.rc-spot .role-tag{background:var(--red);}
+.role-card.rc-viewer{border-top-color:#64748b;} .role-card.rc-viewer .role-tag{background:#64748b;}
 .flow-lane-wrap{border:1px solid #e0e5ec;border-radius:8px;overflow:hidden;margin-top:12px;}
 .rule-note{font-size:11px;color:var(--gray);line-height:1.7;}
 .rule-note .h{font-size:12px;font-weight:700;color:var(--navy);margin:8px 0 3px;}
@@ -290,6 +301,41 @@ body{display:flex;flex-direction:column;height:100vh;overflow:hidden;}
       <div class="num">场景四</div>
       <div class="t">乡村振兴赋能</div>
       <div class="d">天虹乡村振兴人员在种-产-销全链路各环节赋能帮扶供应商，在平台运管端结构化填写帮扶工作内容，形成汇总报告，向集团展示乡村振兴工作成果。</div>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="card-title"><span class="bar"></span>主要角色说明</div>
+  <div class="role-cards">
+    <div class="role-card rc-sales">
+      <div class="role-tag">销售平台端</div>
+      <div class="t">集团子单位 / 销售渠道</div>
+      <div class="d">各集团子公司及天虹数科等销售平台，负责提报/导入需溯源的商品，接收溯源码并在自有渠道展示，面向消费者提供扫码验真入口。</div>
+    </div>
+    <div class="role-card rc-admin">
+      <div class="role-tag">平台运管端</div>
+      <div class="t">天虹平台运营方</div>
+      <div class="d">平台运营方（天虹）负责商品审核、任务派发、报告审核、溯源码生成及全链路数据监管，是连接各端的核心枢纽。</div>
+    </div>
+    <div class="role-card rc-inspector">
+      <div class="role-tag">溯源机构端</div>
+      <div class="t">第三方检测机构</div>
+      <div class="d">具备 CMA/CNAS 等资质的检测机构，接收检测任务后开展溯源检测，通过 API 或人工录入回传结构化检测报告。</div>
+    </div>
+    <div class="role-card rc-supplier">
+      <div class="role-tag">供应商端</div>
+      <div class="t">商品生产 / 供货方</div>
+      <div class="d">乡村振兴商品或超市商品的实际供应方，负责预填基础信息、上传自检资料、打印/粘贴溯源标签并配合现场检查。</div>
+    </div>
+    <div class="role-card rc-spot">
+      <div class="role-tag">监督执行端</div>
+      <div class="t">天虹内部监督人员</div>
+      <div class="d">接收天虹自行监督任务，依据溯源模板对供应商进行现场检查，回填监督结果并形成监督报告回传供应链中台。</div>
+    </div>
+    <div class="role-card rc-viewer">
+      <div class="role-tag">消费者 / 集团视角</div>
+      <div class="t">扫码验真与成果查看</div>
+      <div class="d">消费者扫码查看产品/企业/追溯信息；集团管理人员通过平台运管端查看各类报告、乡村振兴商品清单及帮扶成果。</div>
     </div>
   </div>
 </div>
