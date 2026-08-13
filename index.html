@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>航空工业高质量乡村振兴赋能平台 · 产品原型</title>
-<meta name="description" content="航空工业高质量乡村振兴赋能平台产品原型：覆盖平台运营端、销售平台端、溯源机构端、供应商端及消费者端，支持溯源任务派发、检测协同、溯源码管理与乡村振兴赋能。">
-<meta property="og:title" content="航空工业高质量乡村振兴赋能平台 · 产品原型">
-<meta property="og:description" content="航空工业高质量乡村振兴赋能平台产品原型：覆盖平台运营端、销售平台端、溯源机构端、供应商端及消费者端，支持溯源任务派发、检测协同、溯源码管理与乡村振兴赋能。">
+<title>航空工业集团消费帮扶赋能平台 · 产品原型</title>
+<meta name="description" content="航空工业集团消费帮扶赋能平台产品原型：覆盖平台运营端、销售平台端、溯源机构端、供应商端及消费者端，支持溯源任务派发、检测协同、溯源码管理与乡村振兴赋能。">
+<meta property="og:title" content="航空工业集团消费帮扶赋能平台 · 产品原型">
+<meta property="og:description" content="航空工业集团消费帮扶赋能平台产品原型：覆盖平台运营端、销售平台端、溯源机构端、供应商端及消费者端，支持溯源任务派发、检测协同、溯源码管理与乡村振兴赋能。">
 <meta property="og:type" content="website">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
@@ -266,7 +266,7 @@ body{display:flex;flex-direction:column;height:100vh;overflow:hidden;}
 </head>
 <body>
 <div class="topbar">
-  <div style="display:flex;align-items:center;"><span class="logo">航空工业高质量乡村振兴赋能平台</span><span class="sub">产品端功能原型</span><span class="disclaimer">本原型仅用于业务需求澄清，实际功能以产品需求文档为准</span></div>
+  <div style="display:flex;align-items:center;"><span class="logo">航空工业集团消费帮扶赋能平台</span><span class="sub">产品端功能原型</span><span class="disclaimer">本原型仅用于业务需求澄清，实际功能以产品需求文档为准</span></div>
   <div class="actions">
     <select onchange="showScreen(this.value)"><option value="">快速跳转...</option><option value="overview-flow">业务需求理解</option><option value="overview-arch">产品架构总图</option><option value="admin-dashboard">工作台</option><option value="admin-platforms">销售平台管理</option><option value="admin-templates">溯源模板配置</option><option value="admin-providers">溯源机构与费用配置</option><option value="admin-suppliers">供应商管理</option><option value="admin-products">溯源商品管理</option><option value="admin-dispatch">溯源任务派发</option><option value="admin-spotcheck">天虹监督任务</option><option value="admin-reports">溯源报告&溯源码管理</option><option value="admin-api-interface">溯源信息标准接口</option><option value="admin-report-products">乡村振兴商品清单</option><option value="admin-report-fees">溯源机构费用报表</option><option value="admin-report-sales">销售报表/看板</option><option value="admin-report-rural">乡村振兴工作报告</option><option value="admin-empower">乡村振兴赋能</option><option value="admin-roles">角色管理</option><option value="admin-permissions">权限管理</option><option value="admin-accounts">账号配置</option><option value="sales-submit">商品与供应商提报</option><option value="sales-tracking">溯源商品跟踪</option><option value="sales-collab">检测协同</option><option value="sales-code">溯源码下载</option><option value="inspector-tasks">任务接收</option><option value="inspector-detail">任务详情</option><option value="inspector-manual-check">检测信息核对与报告填写</option><option value="inspector-api">检测报告API对接</option><option value="supplier-trace-entry">溯源信息录入</option><option value="supplier-label">溯源码应用</option><option value="consumer-scan-avic">扫码结果（中航溯源）</option><option value="consumer-scan-tianhong">扫码结果（天虹溯源）</option><option value="label-design">标签设计</option></select>
     <button onclick="nextScreen()">下一页 ↓</button>
@@ -733,7 +733,7 @@ body{display:flex;flex-direction:column;height:100vh;overflow:hidden;}
 <div class="card"><div class="card-title"><span class="bar"></span>平台品牌配置（名称 / Slogan）</div>
 <div class="row">
   <div class="col">
-    <div class="form-group"><label>平台名称</label><input value="航空工业高质量乡村振兴赋能平台"></div>
+    <div class="form-group"><label>平台名称</label><input value="航空工业集团消费帮扶赋能平台"></div>
   </div>
   <div class="col">
     <div class="note"><b>配置说明：</b>平台名称会同步影响顶部导航栏、登录页及报告/标签水印文字。不同集团租户可配置独立品牌，互不干扰。</div>
@@ -1006,7 +1006,7 @@ body{display:flex;flex-direction:column;height:100vh;overflow:hidden;}
   <div class="col" style="max-width:200px;"><div class="form-group"><label>状态</label><select><option>全部</option><option>启用</option><option>停用</option></select></div></div>
   <div class="col" style="max-width:160px;"><button class="btn btn-primary"  >查询</button></div>
 </div>
-<table class="table"><thead><tr><th>账号</th><th>姓名</th><th>角色</th><th>所属组织</th><th>状态</th><th>最近登录</th><th>操作</th></tr></thead><tbody><tr><td>admin</td><td>系统管理员</td><td>平台超级管理员</td><td>航空工业高质量乡村振兴赋能平台</td><td><span class="badge badge-green">启用</span></td><td>2026-07-27 09:12</td><td><button class="btn btn-gray"  >编辑</button><button class="btn btn-red"  >停用</button></td></tr><tr><td>op01</td><td>王运营</td><td>运营专员</td><td>航空工业高质量乡村振兴赋能平台</td><td><span class="badge badge-green">启用</span></td><td>2026-07-26 18:40</td><td><button class="btn btn-gray"  >编辑</button><button class="btn btn-red"  >停用</button></td></tr><tr><td>13800138001</td><td>陈检测</td><td>溯源机构操作员</td><td>CCIC</td><td><span class="badge badge-green">启用</span></td><td>2026-07-25 14:03</td><td><button class="btn btn-gray"  >编辑</button><button class="btn btn-red"  >停用</button></td></tr><tr><td>miao123</td><td>苗干妈</td><td>供应商管理员</td><td>贵州苗干妈食品</td><td><span class="badge badge-green">启用</span></td><td>2026-07-24 10:21</td><td><button class="btn btn-gray"  >编辑</button><button class="btn btn-red"  >停用</button></td></tr><tr><td>th_op</td><td>李婷</td><td>销售平台管理员</td><td>天虹数科</td><td><span class="badge badge-red">停用</span></td><td>2026-07-20 11:00</td><td><button class="btn btn-gray"  >编辑</button><button class="btn btn-teal"  >启用</button></td></tr></tbody></table>
+<table class="table"><thead><tr><th>账号</th><th>姓名</th><th>角色</th><th>所属组织</th><th>状态</th><th>最近登录</th><th>操作</th></tr></thead><tbody><tr><td>admin</td><td>系统管理员</td><td>平台超级管理员</td><td>航空工业集团消费帮扶赋能平台</td><td><span class="badge badge-green">启用</span></td><td>2026-07-27 09:12</td><td><button class="btn btn-gray"  >编辑</button><button class="btn btn-red"  >停用</button></td></tr><tr><td>op01</td><td>王运营</td><td>运营专员</td><td>航空工业集团消费帮扶赋能平台</td><td><span class="badge badge-green">启用</span></td><td>2026-07-26 18:40</td><td><button class="btn btn-gray"  >编辑</button><button class="btn btn-red"  >停用</button></td></tr><tr><td>13800138001</td><td>陈检测</td><td>溯源机构操作员</td><td>CCIC</td><td><span class="badge badge-green">启用</span></td><td>2026-07-25 14:03</td><td><button class="btn btn-gray"  >编辑</button><button class="btn btn-red"  >停用</button></td></tr><tr><td>miao123</td><td>苗干妈</td><td>供应商管理员</td><td>贵州苗干妈食品</td><td><span class="badge badge-green">启用</span></td><td>2026-07-24 10:21</td><td><button class="btn btn-gray"  >编辑</button><button class="btn btn-red"  >停用</button></td></tr><tr><td>th_op</td><td>李婷</td><td>销售平台管理员</td><td>天虹数科</td><td><span class="badge badge-red">停用</span></td><td>2026-07-20 11:00</td><td><button class="btn btn-gray"  >编辑</button><button class="btn btn-teal"  >启用</button></td></tr></tbody></table>
 <div class="mt-12"><button class="btn btn-primary"  >+ 新增账号</button></div>
 </div><div class="card"><div class="card-title"><span class="bar"></span>新增账号</div>
 <div class="row">
@@ -1344,7 +1344,7 @@ body{display:flex;flex-direction:column;height:100vh;overflow:hidden;}
     </div>
     <div class="accordion">
       <div class="accordion-hd" onclick="toggleAcc(this)"><span>中航声明</span><span class="arr">▼</span></div>
-      <div class="accordion-bd">本溯源信息由航空工业高质量乡村振兴赋能平台汇总，数据来源于销售平台提报、第三方溯源机构实地检查及供应商溯源信息。</div>
+      <div class="accordion-bd">本溯源信息由航空工业集团消费帮扶赋能平台汇总，数据来源于销售平台提报、第三方溯源机构实地检查及供应商溯源信息。</div>
     </div>
   </div>
   <div style="display:flex;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #e0e5ec;padding:10px 14px;gap:10px;z-index:50;">
@@ -1431,7 +1431,7 @@ body{display:flex;flex-direction:column;height:100vh;overflow:hidden;}
         </div>
       </div>
       <div class="label-foot">
-        <div>航空工业高质量乡村振兴赋能平台 · 一物一码</div>
+        <div>航空工业集团消费帮扶赋能平台 · 一物一码</div>
       </div>
     </div>
     <div style="text-align:center;margin-top:12px;">
@@ -1448,7 +1448,7 @@ body{display:flex;flex-direction:column;height:100vh;overflow:hidden;}
     <div class="form-group"><label>是否显示检测背书</label><select><option selected>显示</option><option>不显示</option></select></div>
     <div class="form-group"><label>背书机构名称</label><input type="text" value="CCIC 中国检验认证集团"></div>
     <div class="form-group"><label>扫码引导文案</label><input type="text" value="微信扫码查看完整溯源信息"></div>
-    <div class="form-group"><label>平台归属文案</label><input type="text" value="航空工业高质量乡村振兴赋能平台 · 一物一码"></div>
+    <div class="form-group"><label>平台归属文案</label><input type="text" value="航空工业集团消费帮扶赋能平台 · 一物一码"></div>
 
     <div style="border-top:1px solid #e0e5ec;margin:18px 0;"></div>
     <div class="card-title"><span class="bar"></span>扫码页内容配置</div>
